@@ -65,7 +65,7 @@ export const techSkills =[
   },
   {
     id:"1",
-    imageUrl:nextjsIcon
+    imageUrl:Nextjs
   },
   {
     id:"2",
