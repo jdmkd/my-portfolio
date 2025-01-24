@@ -18,7 +18,10 @@ export default function Home() {
       <Hero />
       <Tech />
       <Aboutus />
-      <WorkExperience />
+      {/* <WorkExperience /> */}
+      <div className="my-[5rem]">
+
+      </div>
       {/* <Projectwork /> */}
       <Contactus />
       <Footer />
