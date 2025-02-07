@@ -1,7 +1,7 @@
 import {
   javascriptIcon,
   nextjsIcon,
-  reactjsIcon,
+  // reactjsIcon,
   tailwindIcon,
   typescriptIcon,
   reduxIcon,
@@ -20,7 +20,7 @@ import {
   NumPyIcon,
   Numpyx,
   pandasIcon,
-  pandasx,
+  // pandasx,
   sklearnIcon,
 
 
@@ -65,9 +65,9 @@ export const techSkillsImg =[
   {
     imageUrl:Nextjs
   },
-  {
-    imageUrl:reactjsIcon
-  },
+  // {
+  //   imageUrl:reactjsIcon
+  // },
 
   {
 
@@ -123,9 +123,9 @@ export const techSkillsImg =[
   
   
   
-  {
-    imageUrl:pandasx,
-  },
+  // {
+  //   imageUrl:pandasx,
+  // },
   {
     imageUrl:sklearnIcon,
   },

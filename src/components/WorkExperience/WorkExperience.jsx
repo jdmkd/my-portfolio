@@ -21,7 +21,7 @@ function WorkExperience() {
                     <h2 className='tracking-wide text-[1.2rem] font-normal'>Software Developer</h2>    
                     <h3 className='tracking-wide text-[1rem] font-normal italic'>January 2022 - May 2024</h3>    
 
-                    <p className='tracking-wide'>Spearheaded development initiatives for JERA, Japan&apos;s largest power generation company, contributing to the enhancement of critical systems that support the production of 30% of the nation's electricity.
+                    <p className='tracking-wide'>Spearheaded development initiatives for JERA, Japan's largest power generation company, contributing to the enhancement of critical systems that support the production of 30% of the nation's electricity.
                         Designed and implemented new features aligned with project requirements, focusing on scalable and efficient code that optimized performance.
                         </p>
                     <p className='tracking-wide'>Utilized a tech stack including React, Jest, Styled Components, TypeScript, and Context API to deliver robust solutions.
