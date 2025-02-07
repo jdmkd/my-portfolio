@@ -2,7 +2,7 @@ import tailwindIcon from "./icons/tailwind.svg"
 import javascriptIcon from "./icons/javascript.svg"
 import cssIcon from "./icons/css.svg"
 import htmlIcon from "./icons/html.svg"
-import reactjsIcon from "./icons/react.svg"
+// import reactjsIcon from "./icons/react.svg"
 import gitIcon from "./icons/git.svg"
 import figmaIcon from "./icons/figma.svg"
 import reduxIcon from "./icons/redux.svg"
@@ -16,7 +16,6 @@ import djangoIcon from "./icons/djangoIcon.png"
 import NumPyIcon from "./icons/NumPyIcon.png"
 import Numpyx from "./icons/Numpyx.png"
 import pandasIcon from "./icons/pandasIcon.png"
-import pandasx from "./icons/pandasx.png"
 import sklearnIcon from "./icons/sklearnIcon.png"
 
 import CIcon from "./icons/C.svg"
@@ -38,7 +37,7 @@ import NumPy from "./icons/NumPy.svg"
 import numpyx from "./icons/numpyx.svg"
 import Pythonx from "./icons/Pythonx.svg"
 import Postman from "./icons/Postman.svg"
-import Reactjs from "./icons/react.svg"
+// import Reactjs from "./icons/react.svg"
 import scikitlearn from "./icons/scikit-learn.svg"
 
 
@@ -57,7 +56,7 @@ export {
     Jupyter,
     MySQL,
     scikitlearn,
-    Reactjs,
+    // Reactjs,
     Pythonx,
     Postman,
     NumPy,
@@ -75,11 +74,10 @@ export {
     NumPyIcon,
     Numpyx,
     pandasIcon,
-    pandasx,
     sklearnIcon,
 
     javascriptIcon,
-    reactjsIcon,
+    // reactjsIcon,
     tailwindIcon,
     cssIcon,
     htmlIcon,
