@@ -21,7 +21,7 @@ export default function Home() {
       <Tech />
       <Aboutus />
       {/* <WorkExperience /> */}
-      <div className="my-[3rem]">
+      <div className="my-[4rem]">
 
       </div>
       {/* <Projectwork /> */}
