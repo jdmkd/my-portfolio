@@ -112,9 +112,9 @@ function Contactus() {
                   </div>
                 </div>
 
-                <section className="px-[1rem] py-[1rem] w-full max-w-[40rem] border border-gray-800 hover:border-gray-600/80 rounded-md bg-slate-900/30">
-                  <iframe className="w-full max-w-[40rem]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237767.81579679187!2d72.41493085434342!3d23.02047409962005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1720349425140!5m2!1sen!2sin" width="400" height="300" style={{border:0,borderRadius:"4"}}  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </section>
+                {/* <section className="px-[1rem] py-[1rem] w-full max-w-[40rem] border border-gray-800 hover:border-gray-600/80 rounded-md bg-slate-900/30">
+                  <iframe className="w-full max-w-[40rem]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237767.81579679187!2d72.41493085434342!3d23.02047409962005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1720349425140!5m2!1sen!2sin" width="400" height="300" style={{border:0,borderRadius:"4"}}  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </section> */}
               </div>
             </div>
 

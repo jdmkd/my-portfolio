@@ -8,6 +8,7 @@ import Contactus from "@/components/Contactus/Contactus";
 import Footer from "@/components/Footer/Footer";
 import Aboutus from "@/components/Aboutus/Aboutus";
 import WorkExperience from "@/components/WorkExperience/WorkExperience";
+import Education from "@/components/Education/Education";
 
 
 export default function Home() {
@@ -16,10 +17,11 @@ export default function Home() {
       {/* <Cursor /> */}
       <Navbar />
       <Hero />
+      <Education />
       <Tech />
       <Aboutus />
       {/* <WorkExperience /> */}
-      <div className="my-[5rem]">
+      <div className="my-[3rem]">
 
       </div>
       {/* <Projectwork /> */}

@@ -58,81 +58,65 @@ export const OpenCloseIcons =[
 ]
 
 
-export const techSkills =[
+export const techSkillsImg =[
   {
-    id:"0",
     imageUrl:javascriptIcon,
   },
   {
-    id:"1",
     imageUrl:Nextjs
   },
   {
-    id:"2",
     imageUrl:reactjsIcon
   },
 
   {
-    id:"41",
+
     imageUrl:Nodejs
   },
   {
-    id:"30",
     imageUrl:MongoDB
   },
   {
-    id:"27",
     imageUrl:Express
   },
   
   {
-    id:"3",
     imageUrl:tailwindIcon
     
   },
   {
-    id:"20",
     imageUrl:Bootstrap,
   },
   {
-    id:"6",
     imageUrl:htmlIcon
     
   },
   {
-    id:"7",
     imageUrl:cssIcon
     
   },
   {
-    id:"4",
     imageUrl:pythonIcon
   },
   {
-    id:"18",
     imageUrl:CIcon,
   },
   {
-    id:"19",
     imageUrl:CppIcon,
   },
   {
-    id:"31",
     imageUrl:Java
   },
   {
-    id:"28",
     imageUrl:Flutter
   },
   
   {
-    id:"24",
     imageUrl:djangoNegative
   },
   
   
   {
-    id:"10",
     imageUrl:matplotlibIcon
   },
   
@@ -140,41 +124,34 @@ export const techSkills =[
   
   
   {
-    id:"16",
     imageUrl:pandasx,
   },
   {
-    id:"17",
     imageUrl:sklearnIcon,
   },
   
   {
-    id:"39",
     imageUrl:NumPy
   },
   
   {
-    id:"32",
     imageUrl:Jupyter
   },
   {
-    id:"37",
     imageUrl:Postman
   },
   
   
 
   {
-    id:"33",
     imageUrl:MySQL
   },
 
   {
-    id:"11",
     imageUrl:gitIcon
   },
   {
-    id:"29",
+    
     imageUrl:GitHub
   },
   

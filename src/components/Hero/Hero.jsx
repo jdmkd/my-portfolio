@@ -5,10 +5,21 @@ const Hero = () => {
   return (
     <>
     <div className="section-hero mx-[1rem] px-[1rem] sm:px-[4rem]  top-[10rem] relative " id="home">
-        <h1 className='text-[2rem] sm:text-[3rem] md:text-[4rem]' >Hi 👋🏻 I&apos;m Dinesh</h1>
-        <h1 className='hero-skill-heading t-gradient3 text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem]' data-text="I MAKE">I MAKE</h1>
-        <h1 className="hero-skill-heading text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem]" data-text="APPS">APPS</h1>
-        <h1 className="hero-skill-heading t-gradient2 text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem]" data-text="WEBSITE">WEBSITE</h1>
+        <h1 className='text-[2rem] sm:text-[3rem] md:text-[4rem]' >Hi 👋🏻 I&apos;m <span className='hover:underline'>Dinesh</span></h1>
+        <h1 className='hero-skill-heading t-gradient1 text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem] transition-transform' data-text="🚀">Full-Stack Developer </h1>
+        <h1 className="hero-skill-heading t-gradient5 text-[1.5rem] sm:text-[2.3rem] md:text-[2.8rem]" data-text="🚀">
+          Web Development  
+          <span className='hero-skill-heading t-gradient2 text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem] px-4 transition-transform'>
+            & 
+          </span> 
+          <span className=' t-gradient4 text-[1.5rem] hover:underline sm:text-[2.3rem] md:text-[2.8rem] transition-transform'>
+              Machine Learning Enthusiast
+          </span> 
+        </h1>
+        <h3 className="pt-[1.5rem] text-[1rem] sm:text-[1.3rem] md:text-[1.5rem] transition-transform" data-text="">
+              Skilled in React.js, Next.js, Tailwind CSS, and Django, Django REST Framework, PostgreSQL. Built several projects focusing on responsive, scalable, and API-driven web applications. Passionate about problem-solving and continuous learning.
+
+        </h3>
     </div>
     </>
   )

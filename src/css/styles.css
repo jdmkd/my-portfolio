@@ -104,16 +104,36 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.t-gradient4 {
+    background: linear-gradient(90deg,#eaff00 0%,#E83F3F 25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.t-gradient5 {
+    background: linear-gradient(140deg,#ffe600 0%,#001eff 25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.t-gradient6 {
+    background: linear-gradient(90deg,#0099c3 0%,#00ff84 25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 /* section hero */
 
 /* section: technologies */
 .section-technologies {
-    margin-top: 13rem;
+    margin-top: 1.5rem;
     text-align: center;
 }
 
 .section-headings {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .section-headings h1 {
@@ -148,8 +168,12 @@ body {
 
 /* section: portfolio */
 .section-portfolio {
-    margin-top: 4rem;
+    margin-top: 13rem;
     text-align: center;
+}
+
+.section-headings {
+    margin-bottom: 3rem;
 }
 .link-more {
     text-decoration: none;
@@ -414,10 +438,10 @@ body {
         content: attr(data-text);
         position: absolute;
         /* font-size: 12rem; */
-        color: transparent;
+        /* color: transparent; */
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #fff;
-        opacity: 0.1;
+        /* opacity: 0.1; */
         z-index: -1;
     }
     .portfolio-card:hover img {
@@ -457,7 +481,7 @@ body {
     
     /* section: technologies */
     .section-technologies {
-        margin-top: 250px;
+        margin-top: 2rem;
         text-align: center;
     }
 
@@ -488,7 +512,7 @@ body {
     
     /* section: portfolio */
     .section-portfolio {
-        margin-top: 4rem;
+        margin-top: 200px;
         text-align: center;
     }
     .link-more {

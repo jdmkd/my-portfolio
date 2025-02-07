@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { techSkills } from '../../constants/constants.js'
+import { techSkillsImg } from '../../constants/constants.js'
 
 function WorkExperience() {
   return (
@@ -16,7 +16,7 @@ function WorkExperience() {
         <div className="text-left mx-[1rem] sm:mx-[2rem] lg:mx-[3rem] xl:mx-[8rem] px-[1rem] py-[1rem] grid grid-cols-1 sm:grid-cols-2  gap-[2rem]">
             <Link className=" py-[2rem] px-[2rem] border border-gray-700/70 bg-slate-900/70 shadow shadow-slate-300/20 rounded-md" href="./html-css-projects.html">
                 <div className="flex flex-col items-start gap-[1rem]">
-                    {/* <Image src={techSkills[0].imageUrl} alt="img" height={100} width={100} /> */}
+                    {/* <Image src={techSkillsImg[0].imageUrl} alt="img" height={100} width={100} /> */}
                     <h2 className='tracking-wide text-[1.2rem] font-semibold'>ThinkBiz Technology</h2>
                     <h2 className='tracking-wide text-[1.2rem] font-normal'>Software Developer</h2>    
                     <h3 className='tracking-wide text-[1rem] font-normal italic'>January 2022 - May 2024</h3>    
@@ -30,7 +30,7 @@ function WorkExperience() {
             </Link>
             <Link className="py-[2rem] px-[2rem] border border-gray-700/70 bg-slate-900/70 shadow shadow-slate-300/20 rounded-md" href="">
                 <div className="flex flex-col items-start gap-[1rem]">
-                    {/* <Image src={techSkills[1].imageUrl} alt="img" height={100} width={100} /> */}
+                    {/* <Image src={techSkillsImg[1].imageUrl} alt="img" height={100} width={100} /> */}
                     <h2 className='tracking-wide text-[1.2rem] font-semibold'>Blatform.com</h2>
                     <h2 className='tracking-wide text-[1.2rem] font-normal'>Software Developer</h2>
                     <h3 className='tracking-wide text-[1rem] font-normal italic'>June 2022 - November 2022</h3>
@@ -41,7 +41,7 @@ function WorkExperience() {
             </Link>
             <Link className="col-span-1 sm:col-span-2  py-[2rem] px-[2rem] border border-gray-700/70 bg-slate-900/70 shadow shadow-slate-300/20 rounded-md" href="">
                 <div className="flex flex-col justify-center items-center gap-[2rem]">
-                    {/* <Image src={techSkills[3].imageUrl} alt="img" height={100} width={100} /> */}
+                    {/* <Image src={techSkillsImg[3].imageUrl} alt="img" height={100} width={100} /> */}
                     <h2 className='tracking-wide text-[1.2rem] font-semibold'>Key Achievements</h2>
                     <h4>
                         Impactful Contributions: Delivered solutions that directly supported the operational efficiency and scalability of a major power generation company.
