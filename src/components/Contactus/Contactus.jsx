@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
-import Loader from "../Loader/Loader";
+import Spinner from "../Spinner/Spinner";
 
 function Contactus() {
   const [formData, setFormData] = useState({
@@ -120,16 +120,8 @@ function Contactus() {
 
 
             {/* contact form */}
-            <div className="px-[2rem] py-[2rem] bg-slate-900/30 border rounded-lg shadow-lg border-gray-800 hover:border-gray-600/80 text-white flex flex-col justify-center items-center">
-              <h4 className="mb-4">Get In Touch</h4>
-              <div className=" flex justify-center items-center text-center">
-                {loading ? (
-                  <div className="relative right-[1.5rem] ">
-                    <Loader/> 
-                  </div>): (successMessage || "" ? 
-                  <span className="px-[.7rem] bg-green-900/60 text-white font-normal text-[1rem] border border-green-800/50 rounded-md">{successMessage}</span> : "")
-                }
-              </div>
+            <div className="px-[2rem] py-[1rem] bg-slate-900/30 border rounded-lg shadow-lg border-gray-800 hover:border-gray-600/80 text-white flex flex-col justify-center items-center">
+              <h4 className=" text-[1.5rem] pb-[1rem] ">Get In Touch</h4>
               
               <form onSubmit={handleSubmit} method="post">
                 <label className="py-[2rem] pr-[1rem]">
@@ -199,8 +191,22 @@ function Contactus() {
                   title='This field must be at least "3" characters.'
                 ></textarea>
                 <div className="clearfix"></div>
-                <div className="my-[1rem] py-[.3rem] flex justify-center items-center border border-blue-900/80 rounded-md bg-blue-900/70 hover:bg-blue-900/90 cursor-pointer">
+
+                {/* <div className="my-[1rem] py-[.3rem] flex justify-center items-center border border-blue-900/80 rounded-md bg-blue-900/70 hover:bg-blue-900/90 cursor-pointer">
                   <button className="w-full" type="submit">Send</button>
+                </div> */}
+                <div className="my-[1rem] py-[.5rem] flex justify-center items-center border border-blue-900/80 rounded-md bg-blue-900/70 hover:bg-blue-900/90 cursor-pointer">
+                  <button
+                    className="w-full flex justify-center items-center"
+                    type="submit"
+                    disabled={loading} // Disable button while loading
+                  >
+                    {loading ? (
+                      <Spinner size="w-6 h-6" color="border-white" /> // Show spinner while loading
+                    ) : (
+                      "Submit"
+                    )}
+                  </button>
                 </div>
                   
               </form>
