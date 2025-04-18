@@ -73,7 +73,7 @@ const Navbar = () => {
           <Link href="#skills" className="nav-link">SKILLS</Link>
           {/* <Link href="#about" className="nav-link">ABOUT</Link> */}
           
-          <Link href="#projects" className="nav-link">PROJECTS</Link>
+          {/* <Link href="#projects" className="nav-link">PROJECTS</Link> */}
           <Link href="#contact" className="nav-link">CONTACT</Link>
         </div>
         <button className="nav-link-btn " onClick={openFullScreenNav}>

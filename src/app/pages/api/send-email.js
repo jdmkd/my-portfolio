@@ -1,3 +1,4 @@
+
 // api/send-email.js
 
 import nodemailer from "nodemailer";
@@ -23,7 +24,7 @@ export default async function handler(req, res) {
       let info = await transporter.sendMail({
         from: `"Contact Form" <${email}>`, // sender address
         to: "djkumarr9@gmail.com", // list of receivers
-        subject: "New Contact Form Submission", // Subject line
+        subject: "Contact Form Submission", // Subject line
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`, // plain text body
         html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`, // html body
       });

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
 import Cursor from "@/components/Cursor/Cursor";
-import Tech from "@/components/Tech/Tech";
+import Tech from "@/components/TechSkills/TechSkills";
 import Projectwork from "@/components/Projectwork/Projectwork";
 import Contactus from "@/components/Contactus/Contactus";
 import Footer from "@/components/Footer/Footer";
