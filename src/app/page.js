@@ -1,14 +1,13 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
 import Cursor from "@/components/Cursor/Cursor";
 import Tech from "@/components/TechSkills/TechSkills";
-import Projectwork from "@/components/Projectwork/Projectwork";
 import Contactus from "@/components/Contactus/Contactus";
 import Footer from "@/components/Footer/Footer";
 import Aboutus from "@/components/Aboutus/Aboutus";
-import WorkExperience from "@/components/WorkExperience/WorkExperience";
 import Education from "@/components/Education/Education";
+import Projects from "@/components/Projects/Projects";
+import WorkExperience from "@/components/WorkExperience/WorkExperience";
 
 
 export default function Home() {
@@ -21,10 +20,7 @@ export default function Home() {
       <Tech />
       <Aboutus />
       {/* <WorkExperience /> */}
-      <div className="my-[4rem]">
-
-      </div>
-      {/* <Projectwork /> */}
+      <Projects />
       <Contactus />
       <Footer />
     </>

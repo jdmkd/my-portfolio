@@ -74,18 +74,6 @@ body {
     margin-top: 80px;
 }
 
-
-/* section hero */
-.section-hero {
-    /* margin-top: 6rem; */
-    /* margin-left: 160px; */
-
-}
-.section-hero h1 {
-    font-weight: 900;
-    position: relative;
-    transition: 200ms all;
-}
 .t-gradient1 {
     background: linear-gradient(90deg,#8337FF 0%,#E87421 25%);
     background-clip: text;
@@ -124,23 +112,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-/* section hero */
 
-/* section: technologies */
-.section-technologies {
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
-.section-headings {
-    margin-bottom: 5rem;
-}
-
-.section-headings h1 {
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 900;
-}
 
 .heading-stroke-only {
     color: transparent;
@@ -162,19 +134,7 @@ body {
 .tech-icon-img {
     height: 75px;
 }
-/* section: technologies */
 
-
-
-/* section: portfolio */
-.section-portfolio {
-    margin-top: 13rem;
-    text-align: center;
-}
-
-.section-headings {
-    margin-bottom: 3rem;
-}
 .link-more {
     text-decoration: none;
     color: #fff;
@@ -468,28 +428,6 @@ body {
         display: block;
     }
 
-
-
-
-    /* section hero */
-    .section-hero {
-        /* margin-top: 40px; */
-        /* margin-left: 30px; */
-    }
-
-    /* section hero */
-    
-    /* section: technologies */
-    .section-technologies {
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    
-    .section-headings h1 {
-        font-size: 2rem;
-    }
-
     .row {
         display: flex;
         justify-content: center;
@@ -510,11 +448,7 @@ body {
     
     
     
-    /* section: portfolio */
-    .section-portfolio {
-        margin-top: 200px;
-        text-align: center;
-    }
+    
     .link-more {
         font-size: 2rem;
     }

@@ -5,7 +5,9 @@ import DownloadPdf from '../DownloadPdf/Downloadpdf'
 function Aboutus() {
   return (
     <section>
-      <DownloadPdf />
+      <div className='my-[4rem]'>
+        <DownloadPdf />
+      </div>
     </section>
   )
 }

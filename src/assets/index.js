@@ -1,93 +1,87 @@
-import tailwindIcon from "./icons/tailwind.svg"
-import javascriptIcon from "./icons/javascript.svg"
-import cssIcon from "./icons/css.svg"
-import htmlIcon from "./icons/html.svg"
-// import reactjsIcon from "./icons/react.svg"
-import gitIcon from "./icons/git.svg"
-import figmaIcon from "./icons/figma.svg"
-import reduxIcon from "./icons/redux.svg"
-import pythonIcon from "./icons/python.svg"
-import typescriptIcon from "./icons/typescript.svg"
-import closeIcon from "./icons/close.svg"
-import meneIcon from "./icons/menu.svg"
+import javascriptIcon from "./tech_skill_Icon/javascript.svg"
+import CIcon from "./tech_skill_Icon/C.svg"
+import CppIcon from "./tech_skill_Icon/Cpp.svg"
+import Java from "./tech_skill_Icon/Java.svg"
+import reduxIcon from "./tech_skill_Icon/redux.svg"
+import pythonIcon from "./tech_skill_Icon/python.svg"
+import typescriptIcon from "./tech_skill_Icon/typescript.svg"
 
-import matplotlibIcon from "./icons/matplotlibIcon.svg"
-import djangoIcon from "./icons/djangoIcon.png"
-import NumPyIcon from "./icons/NumPyIcon.png"
-import Numpyx from "./icons/Numpyx.png"
-import pandasIcon from "./icons/pandasIcon.png"
-import sklearnIcon from "./icons/sklearnIcon.png"
+import matplotlibIcon from "./tech_skill_Icon/matplotlib.svg"
+import NumPyIcon from "./tech_skill_Icon/NumPyIcon.png"
+import NumPy from "./tech_skill_Icon/NumPy.svg"
+import pandasIcon from "./tech_skill_Icon/Pandasx.png"
 
-import CIcon from "./icons/C.svg"
-import CppIcon from "./icons/Cpp.svg"
-import Bootstrap from "./icons/Bootstrap.svg"
-import djangoNegative from "./icons/django-logo-negative.svg"
-import djangoPositive from "./icons/django-logo-positive.svg"
-import django from "./icons/Django.svg"
-import Express from "./icons/Express.svg"
-import Flutter from "./icons/Flutter.svg"
-import GitHub from "./icons/GitHub.svg"
-import Java from "./icons/Java.svg"
-import Jupyter from "./icons/Jupyter.svg"
-import MongoDB from "./icons/MongoDB.svg"
-import MySQL from "./icons/MySQL.svg"
-import Nextjs from "./icons/Nextjs.svg"
-import Nodejs from "./icons/Nodejs.svg"
-import NumPy from "./icons/NumPy.svg"
-import numpyx from "./icons/numpyx.svg"
-import Pythonx from "./icons/Pythonx.svg"
-import Postman from "./icons/Postman.svg"
-// import Reactjs from "./icons/react.svg"
-import scikitlearn from "./icons/scikit-learn.svg"
+import scikitlearn from "./tech_skill_Icon/scikit-learn.svg"
+
+import Jupyter from "./tech_skill_Icon/Jupyter.svg"
+import MySQL from "./tech_skill_Icon/MySQL.svg"
+import PostgresQL from "./tech_skill_Icon/PostgresQL.svg"
+
+import djangoNegative from "./tech_skill_Icon/django-logo-negative.svg"
+import djangoPositive from "./tech_skill_Icon/django-logo-positive.svg"
+import Express from "./tech_skill_Icon/Express.svg"
+import Flutter from "./tech_skill_Icon/Flutter.svg"
+import MongoDB from "./tech_skill_Icon/MongoDB.svg"
+import Nextjs from "./tech_skill_Icon/Nextjs.svg"
+import Nodejs from "./tech_skill_Icon/Nodejs.svg"
+import Reactjs from "./tech_skill_Icon/React.svg"
+
+
+import Bootstrap from "./tech_skill_Icon/Bootstrap.svg"
+import tailwindIcon from "./tech_skill_Icon/tailwind.svg"
+import cssIcon from "./tech_skill_Icon/css.svg"
+import htmlIcon from "./tech_skill_Icon/html.svg"
+
+import GitHub from "./tech_skill_Icon/GitHub.svg"
+import gitIcon from "./tech_skill_Icon/git.svg"
+import Postman from "./tech_skill_Icon/Postman.svg"
+
+
+import closeIcon from "./tech_skill_Icon/close.svg"
+import meneIcon from "./tech_skill_Icon/menu.svg"
+
 
 
 export {
+    pythonIcon,
+    Java,
     CppIcon,
     CIcon,
-    Bootstrap,
+    typescriptIcon,
+    javascriptIcon,
+
+    Nextjs,
+    Reactjs,
+    reduxIcon,
+    Nodejs,
     djangoNegative,
     djangoPositive,
-    django,
     Express,
-    Flutter,
-    GitHub,
-    Java,
     MongoDB,
+    Flutter,
+
+
+    tailwindIcon,
+    Bootstrap,
+    htmlIcon,
+    cssIcon,
+    
+
     Jupyter,
     MySQL,
-    scikitlearn,
-    // Reactjs,
-    Pythonx,
+    PostgresQL,
+
     Postman,
-    NumPy,
-    numpyx,
-    Nextjs,
-    Nodejs,
-
-
-
-
-
-
     matplotlibIcon,
-    djangoIcon,
     NumPyIcon,
-    Numpyx,
+    NumPy,
+    scikitlearn,
     pandasIcon,
-    sklearnIcon,
 
-    javascriptIcon,
-    // reactjsIcon,
-    tailwindIcon,
-    cssIcon,
-    htmlIcon,
+    GitHub,
     gitIcon,
-    figmaIcon,
-    reduxIcon,
-    pythonIcon,
-    typescriptIcon,
+    
     meneIcon,
     closeIcon,
-
 
 }

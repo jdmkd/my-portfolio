@@ -16,6 +16,12 @@
   }
 }
 
+@layer base {
+  html {
+    scroll-padding-top: 100px;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

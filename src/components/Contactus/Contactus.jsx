@@ -82,11 +82,11 @@ function Contactus() {
     <>
       <section className="" id="contact">
         <div className=" ">
-          <h3 className="heading text-[3rem] font-bold flex justify-center">
+          <h3 className="text-[2rem] md:text-[3rem] font-bold flex justify-center">
             Contact
           </h3>
           <div className="w-full my-[1rem] px-[1rem] py-[2rem] flex flex-col sm:px-[2rem] sm:flex-row gap-[4rem] sm:gap-[2rem] md:gap-[3rem] lg:gap-[5rem] xl:gap-[10rem] justify-center">
-            <div className="mt-[2rem] text-white text-[1.2rem] flex flex-col">
+            <div className="px-[2rem] mt-[2rem] text-white text-[1.2rem] flex flex-col">
               <h4 className="mb-4">Address Info</h4>
               <div className="">
                 <div className="flex flex-col gap-2 pb-5">
@@ -120,7 +120,7 @@ function Contactus() {
 
 
             {/* contact form */}
-            <div className="px-[2rem] py-[1rem] bg-slate-900/30 border rounded-lg shadow-lg border-gray-800 hover:border-gray-600/80 text-white flex flex-col justify-center items-center">
+            <div className="px-[2rem] py-[1rem] bg-neutral-900/90 hover:bg-gray-900/70 border rounded-lg shadow-lg border-gray-800/50 text-white flex flex-col justify-center items-center transition-all duration-400 ease-in-out cursor-pointer">
               <h4 className=" text-[1.5rem] pb-[1rem] ">Get In Touch</h4>
               
               <form onSubmit={handleSubmit} method="post">

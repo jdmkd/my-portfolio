@@ -1,50 +1,47 @@
 import {
   javascriptIcon,
-  nextjsIcon,
-  // reactjsIcon,
-  tailwindIcon,
-  typescriptIcon,
-  reduxIcon,
-  vueIcon,
   pythonIcon,
-  cssIcon,
-  htmlIcon,
-  azureIcon,
-  gitIcon,
-  figmaIcon,
-  meneIcon,
-  closeIcon,
-
-  matplotlibIcon,
-  djangoIcon,
-  NumPyIcon,
-  Numpyx,
-  pandasIcon,
-  // pandasx,
-  sklearnIcon,
-
-
   CppIcon,
   CIcon,
-  Bootstrap,
-  djangoNegative,
-  djangoPositive,
-  django,
-  Express,
-  Flutter,
-  GitHub,
   Java,
-  MongoDB,
-  Jupyter,
-  MySQL,
-  scikitlearn,
+
+
+
   Reactjs,
-  Pythonx,
-  Postman,
-  NumPy,
-  numpyx,
+  reduxIcon,
   Nextjs,
   Nodejs,
+  MongoDB,
+  Express,
+  tailwindIcon,
+  typescriptIcon,
+  Flutter,
+
+
+  cssIcon,
+  htmlIcon,
+  Bootstrap,
+
+
+  matplotlibIcon,
+  pandasIcon,
+  djangoNegative,
+  djangoPositive,
+  scikitlearn,
+
+  NumPy,
+
+  
+  PostgresQL,
+  MySQL,
+  Jupyter,
+  Postman,
+  GitHub,
+  gitIcon,
+
+
+  meneIcon,
+  closeIcon,
 
 } from "../assets";
 
@@ -59,18 +56,15 @@ export const OpenCloseIcons =[
 
 
 export const techSkillsImg =[
-  {
-    imageUrl:javascriptIcon,
-  },
+
+  // Languages and Libraries
   {
     imageUrl:Nextjs
   },
-  // {
-  //   imageUrl:reactjsIcon
-  // },
-
   {
-
+    imageUrl:Reactjs
+  },
+  {
     imageUrl:Nodejs
   },
   {
@@ -79,14 +73,22 @@ export const techSkillsImg =[
   {
     imageUrl:Express
   },
-  
+  {
+    imageUrl:Flutter
+  },
+  {
+    imageUrl:djangoNegative
+  },
   {
     imageUrl:tailwindIcon
-    
-  },
-  {
-    imageUrl:Bootstrap,
-  },
+  },  
+
+
+
+// web technologies
+  // {
+  //   imageUrl:Bootstrap,
+  // },
   {
     imageUrl:htmlIcon
     
@@ -95,8 +97,17 @@ export const techSkillsImg =[
     imageUrl:cssIcon
     
   },
+
+
+  // Programming languages
+  {
+    imageUrl:javascriptIcon,
+  },
   {
     imageUrl:pythonIcon
+  },
+  {
+    imageUrl:Java
   },
   {
     imageUrl:CIcon,
@@ -105,48 +116,36 @@ export const techSkillsImg =[
     imageUrl:CppIcon,
   },
   {
-    imageUrl:Java
+    imageUrl:PostgresQL
   },
+  
+  // Data science and ML
   {
-    imageUrl:Flutter
+    imageUrl:MySQL
   },
-  
-  {
-    imageUrl:djangoNegative
-  },
-  
-  
   {
     imageUrl:matplotlibIcon
   },
-  
-  
-  
-  
-  // {
-  //   imageUrl:pandasx,
-  // },
   {
-    imageUrl:sklearnIcon,
+    imageUrl:pandasIcon,
+  },
+  {
+    imageUrl:scikitlearn,
   },
   
   {
     imageUrl:NumPy
   },
-  
+
+
+
+// Other Tools
   {
     imageUrl:Jupyter
   },
   {
     imageUrl:Postman
   },
-  
-  
-
-  {
-    imageUrl:MySQL
-  },
-
   {
     imageUrl:gitIcon
   },
@@ -154,10 +153,6 @@ export const techSkillsImg =[
     
     imageUrl:GitHub
   },
-  
-  
-  
-  
 
       
 ]
