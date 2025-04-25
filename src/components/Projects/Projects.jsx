@@ -5,7 +5,7 @@ import { check2, grid, loading1 } from "../../assets";
 // import { Gradient } from "../design/Roadmap";
 import Image from "next/image";
 
-import Project from "./project_data.json"
+import {projectData} from "./project_data"
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => (
@@ -16,7 +16,7 @@ const Projects = () => (
 
     <div className="px-[1.3rem] sm:px-[2rem] lg:px-[8rem] mb-5 justify-center items-center">
       <div className="relative grid gap-6 md:grid-cols-2 md:gap-8 md:pb-[7rem]">
-        {Project.map((item, index) => (
+        {projectData.map((item, index) => (
 
           <ProjectCard key={index} item={item} />
           

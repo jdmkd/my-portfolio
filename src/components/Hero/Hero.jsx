@@ -5,7 +5,9 @@ const Hero = () => {
   return (
     // <>
     <section className="mx-[1rem] px-[1rem] sm:px-[4rem] mt-[10rem] mb-[2rem] lg:mt-[13rem] relative" id="home">
-        <h1 className='text-[2rem] sm:text-[3rem] md:text-[4rem] font-extrabold' >Hi 👋🏻 I&apos;m <span className='hover:underline'>Dinesh Harish Kumar</span></h1>
+        <h1 className='text-[2rem] sm:text-[3rem] md:text-[4rem] font-extrabold' >
+          Hi<span className='px-[1rem] inline-block hover:animate-wave origin-bottom transition-all cursor-pointer'>👋🏻</span>
+          I&apos;m <span className='hover:underline'>Dinesh Harish Kumar</span></h1>
         {/* 🚀 */}
 
         <h1 className='t-gradient1 text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem] transition-transform font-bold' data-text="">Full-Stack Developer </h1>

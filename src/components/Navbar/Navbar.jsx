@@ -24,16 +24,17 @@ const Navbar = () => {
 
   return (
     <section className="fixed w-full sm:w-full top-0 z-10">
-      <div className="nav-full-screen relative  flex-col items-center" id="navFullScreen">
+      <div className="nav-full-screen relative flex-col items-center" id="navFullScreen">
         <div className="relative flex flex-col items-center">
 
-          <Link href="#home" onClick={closeFullScreenNav} className="nav-link">HOME</Link>
+          <Link href="/" onClick={closeFullScreenNav} className="nav-link">HOME</Link>
           {/* <Link href="#portfolio" onClick={closeFullScreenNav} className="nav-link">WORK</Link> */}
           {/* <Link href="#about" onClick={closeFullScreenNav} className="nav-link">ABOUT</Link> */}
-          <Link href="#education" onClick={closeFullScreenNav} className="nav-link">EDU</Link>
-          <Link href="#skills" onClick={closeFullScreenNav} className="nav-link">SKILLS</Link>          
-          <Link href="#projects" onClick={closeFullScreenNav} className="nav-link">PROJECTS</Link>
-          <Link href="#contact" onClick={closeFullScreenNav} className="nav-link">CONTACT</Link>
+          <Link href="/education" onClick={closeFullScreenNav} className="nav-link">EDU</Link>
+          <Link href="/skills" onClick={closeFullScreenNav} className="nav-link">SKILLS</Link>          
+          <Link href="/projects" onClick={closeFullScreenNav} className="nav-link">PROJECTS</Link>
+          <Link href="/resume" className="nav-link">RESUME</Link>
+          <Link href="/contact-us" onClick={closeFullScreenNav} className="nav-link">CONTACT</Link>
 
           <div className="relative flex flex-row py-[2rem] gap-[1rem] justify-between items-center ">
             <Link href="https://www.instagram.com/jd_mkd_09/" className="social-link" target="_blank">
@@ -63,20 +64,24 @@ const Navbar = () => {
 
 
       {/* Main Navbar */}
-      <nav className="navbar py-[1rem] px-[5rem] font-bold bg-neutral-900/90">
+      <nav className="navbar py-[1rem] px-[2rem] md:px-[5rem] font-bold bg-neutral-900/90">
         <div className="flex flex-col">
-          <h1 className="navbar-title text-[1rem] md:text-[2rem] relative w-[max-content] font-extrabold before:absolute before:inset-0 before:animate-typewriter before:bg-neutral-900/90">DJ</h1>
-          <span className="text-[.8rem] md:text-[1rem]">FullStack Developer</span>
+          <Link href="/" onClick={closeFullScreenNav} className="">
+            <h1 className="navbar-title text-[1rem] md:text-[2rem] relative w-[max-content] font-extrabold before:absolute before:inset-0 before:animate-typewriter before:bg-neutral-900/90">
+              DJ</h1>
+            <span className="text-[.8rem] md:text-[1rem]">FullStack Developer</span>
+          </Link>
         </div>
 
         <div className="nav-links">
           <Link href="/" className="nav-link nav-link-active">HOME</Link>
-          <Link href="#education" className="nav-link">EDU</Link>
-          <Link href="#skills" className="nav-link">SKILLS</Link>
+          <Link href="/education" className="nav-link">EDU</Link>
+          <Link href="/skills" className="nav-link">SKILLS</Link>
           {/* <Link href="#about" className="nav-link">ABOUT</Link> */}
           
-          <Link href="#projects" className="nav-link">PROJECTS</Link>
-          <Link href="#contact" className="nav-link">CONTACT</Link>
+          <Link href="/projects" className="nav-link">PROJECTS</Link>
+          <Link href="/resume" className="nav-link">RESUME</Link>
+          <Link href="/contact-us" className="nav-link">CONTACT</Link>
         </div>
         <button className="nav-link-btn " onClick={openFullScreenNav}>
           <Image

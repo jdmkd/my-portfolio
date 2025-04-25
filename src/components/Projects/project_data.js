@@ -1,5 +1,20 @@
-[
+import {
+  Rental_vehicle_customer_side1,
+  Rental_vehicle_customer_side2,
+  Rental_vehicle_customer_side3,
+  Rental_vehicle_customer_side4,
+  Rental_vehicle_customer_side5,
+  Rental_vehicle_customer_side6,
+  Rental_vehicle_customer_side7,
+  Rental_vehicle_customer_side8,
+  Rental_vehicle_vendor_side1,
+  Rental_vehicle_vendor_side2 
+} from "../../assets/index";
+
+
+export const projectData = [
   {
+    "id": 1,
     "title": "Rental Vehicle Application",
     "tech_stack": [
       "Python",
@@ -13,9 +28,22 @@
     ],
     "live_demo": "https://starlettex.pythonanywhere.com",
     "code": "https://github.com/jdmkd/Starlettecars",
+    "images": [
+      Rental_vehicle_customer_side1,
+      Rental_vehicle_customer_side2,
+      Rental_vehicle_customer_side3,
+      Rental_vehicle_customer_side4,
+      Rental_vehicle_customer_side5,
+      Rental_vehicle_customer_side6,
+      Rental_vehicle_customer_side7,
+      Rental_vehicle_customer_side8,
+      Rental_vehicle_vendor_side1,
+      Rental_vehicle_vendor_side2,
+      ],
     "about": "Developed a full-featured rental platform with separate portals for Users, Vendors, and Admins. Implemented custom authentication, session handling, and a secure PostgreSQL schema. Built core features including vehicle listings, booking system, and dedicated interfaces for managing vehicles and bookings."
   },
   {
+    "id": 2,
     "title": "Flutter E-Commerce App",
     "tech_stack": [
       "Flutter",
@@ -29,6 +57,7 @@
     "about": "Designed a cross-platform e-commerce app with Node.js backend and MongoDB, dedicated interfaces for admins and customers. Allowing real-time product management for admin and seamless customer checkout experience."
   },
   {
+    "id": 3,
     "title": "Personal Portfolio Application",
     "tech_stack": [
       "Next.js",
@@ -40,6 +69,7 @@
     "about": "Designed and deployed a personal portfolio highlighting skills and projects."
   },
   {
+    "id": 4,
     "title": "PHP E-Commerce Platform",
     "tech_stack": [
       "PHP",

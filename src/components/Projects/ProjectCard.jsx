@@ -1,47 +1,42 @@
-// src/components/ProjectCard.jsx
 import Image from "next/image";
 import Tagline from "../../widgets/Tagline";
 import TechTags from "./TechTags";
+import Link from "next/link";
 
 const ProjectCard = ({ item }) => (
-  <div className={`md:flex even:md:translate-y-[5rem] rounded-[.8rem] `}>
-    <div className="relative p-6 bg-neutral-900/90 hover:bg-gray-900/70 cursor-pointer w-full rounded-[.8rem] overflow-hidden xl:p-13 justify-center content-center transition-all duration-500 ease-in-out ">
-      <div className="absolute top-0 left-0 w-full">
+  <div className="relative rounded-[.8rem] overflow-hidden bg-neutral-900/90 hover:bg-gray-900/70 cursor-pointer transition-all duration-500 ease-in-out transform hover:scale-105">
+    <Link href={`/projects/${item.id}`}>
+        <div className="p-6 xl:p-13">
+          <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-[2rem] text-[1.1rem] font-semibold">
+            <h2>{item.title}</h2>
+          </div>
 
-      </div>
-      <div className="relative z-1">
-        <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-[2rem] text-[1.1rem]  font-semibold">
-          <h2>[{item.title}]</h2>
-        </div>
+          <TechTags tags={item.tech_stack} />
 
-        {/* <h4 className="h4 my-4">{item.title}</h4> */}
+          <p className="body-2 my-[1rem]">{item.about}</p>
 
-        <TechTags tags={item.tech_stack} />
-
-        <p className="body-2 my-[1rem]">{item.about}</p>
-
-        <div className="flex gap-4 mt-4">
-          {item.live_demo && (
-            <a
-              href={item.live_demo}
+          {/* <div className="flex gap-4 mt-4">
+            {item.live_demo && (
+              <Link
+                href={item.live_demo}
+                className="text-sm underline text-blue-500 hover:text-blue-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </Link>
+            )}
+            <Link
+              href={item.code}
               className="text-sm underline text-blue-500 hover:text-blue-300"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Demo
-            </a>
-          )}
-          <a
-            href={item.code}
-            className="text-sm underline text-blue-500 hover:text-blue-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github Code
-          </a>
+              Github Code
+            </Link>
+          </div> */}
         </div>
-      </div>
-    </div>
+    </Link>
   </div>
 );
 

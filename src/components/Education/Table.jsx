@@ -1,10 +1,8 @@
-import Image from "next/image";
-
-const brandData = [
+const EducationData = [
   {
     // logo: "/images/brand/brand-01.svg",
-    university: "LJ University",
-    degree:"Master of Computer Application",
+    university: "LJ University, Ahmedabad",
+    degree:"Master of Computer Application (MCA)",
     admission_year: 2023,
     passout_year: 2025,
     sgpa: 7.5,
@@ -12,8 +10,8 @@ const brandData = [
   },
   {
     // logo: "/images/brand/brand-02.svg",
-    university: "Gujarat University",
-    degree:"Bachelor of Computer Applications",
+    university: "Gujarat University, Ahmedabad",
+    degree:"Bachelor of Computer Applications (BCA)",
     admission_year: 2023,
     passout_year: 2023,
     sgpa: 7.5,
@@ -25,64 +23,43 @@ const brandData = [
 
 const Table = () => {
   return (
-    <div className="rounded-[10px]  mx-[2rem] lg:mx-[5rem] pt-7.5 shadow-1 bg-gray dark:bg-gray-dark">
-      
-
-      <div className="flex flex-col text-white ">
-        {/* <div className=" grid grid-cols-3 sm:grid-cols-3 pt-2 bg-gray-800">
-          <div className="px-2 py-4">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              University
-            </h5>
-          </div>
-          <div className="px-2 py-4">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Year
-            </h5>
-          </div>
-          <div className="px-2 py-4 ">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              CGPA
-            </h5>
-          </div>
-          
-        </div> */}
-
-        {brandData.map((brand, key) => (
+    <div className="rounded-[10px] mx-4 sm:mx-8 lg:mx-20 shadow-lg bg-neutral-800 text-white">
+      <div className="flex flex-col">
+        {EducationData.map((item, key) => (
           <div
-            className={`flex justify-between  items-center text-white hover:bg-white/5 cursor-pointer transition-all duration-500 ease-in-out ${
-              key === brandData.length - 1
-                ? ""
-                : "border-b border-stroke dark:border-dark-3"
-            }`}
             key={key}
+            className={`flex flex-col sm:flex-row sm:justify-between gap-y-3 sm:gap-y-0 items-start sm:items-center py-4 px-4 sm:px-6 hover:bg-white/5 transition-all duration-300 ${
+              key === EducationData.length - 1
+                ? ""
+                : "border-b border-white/10"
+            }`}
           >
-            <div className="px-0 md:px-1 py-2 md:py-4 ">
-              <p className="font-medium text-[.9rem] sm:text-[1.5rem] text-start">
-                {brand.degree}
-              </p>
+            {/* Degree */}
+            <div className="relative flex w-full sm:w-[70%] justify-start">
+              <p className="text-[1rem] md:text-xl font-semibold">{item.degree}</p>
+              {/* <p className="text-xs sm:hidden text-white/70 mt-1">Degree</p> */}
             </div>
 
-            <div className="px-0 md:px-1 py-2 md:py-4">
-              {/* <div className="flex-shrink-0">
-                <Image src={brand.logo} alt="Brand" width={48} height={48} />
-              </div> */}
-              <p className="font-medium text-[.9rem] sm:text-[1.5rem] text-start">
-                {brand.university}
+            {/* University */}
+            <div className="flex w-full gap-[1rem] items-center justify-between">
+              <p className="text-md sm:text-lg">{item.university} </p>
+              <span className="sm:hidden">|</span>
+              <p className="text-xl sm:text-4xl font-extrabold sm:text-end text-green-400">
+                {item.passout_year}
               </p>
+              {/* <p className="text-xs sm:hidden text-white/70 mt-1">University</p> */}
             </div>
 
-            <div className="px-0 md:px-1 py-2 md:py-4 text-end ">
-              <p className="font-bold text-[1.8rem] sm:text-[2.5rem] text-green-light-1">
-              {brand.passout_year}
-              </p>
-            </div>           
-
+            {/* Passout Year */}
+            {/* <div className="w-full sm:w-1/3 sm:text-end"> */}
+              {/* <p className="text-xs sm:hidden text-white/70 mt-1">Passout Year</p> */}
+            {/* </div> */}
           </div>
         ))}
       </div>
     </div>
   );
 };
+
 
 export default Table;

@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <section className='py-[.5rem] bg-neutral-900/90'>
-      <div className='flex flex-row justify-center text-[1.1rem]'>
+      <div className='flex flex-row justify-center text-[1.1rem] text-white'>
         <h1 id='currentYear'>© {currentYear} All rights reserved</h1>
       </div>
     </section>
