@@ -86,7 +86,12 @@ function Contactus() {
 
   return (
     <>
-      <Message type={successMessage.type} text={successMessage.text} />
+      {successMessage ? (
+        <Message type={successMessage.type} text={successMessage.text} />
+      ) : (
+        ""
+      )}
+
       {/* <div className="fixed px-4 py-2 bg-red-600 rounded-md">
         <div>hiiiiii</div>
       </div> */}
