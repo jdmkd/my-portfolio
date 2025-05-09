@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import Spinner from "../Spinner/Spinner";
+import Message from "./Message";
 
 function Contactus() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ function Contactus() {
     message: "",
   });
 
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState({ type: "", text: "" });
   const [loading, setLoading] = useState(false);
   const [quote, setQuote] = useState({});
 
@@ -38,48 +39,57 @@ function Contactus() {
         phone: formData.phone,
       };
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      
+
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      
+
       const userId = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-      
 
       emailjs.send(serviceId, templateId, Data, userId).then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
           setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            message: ''
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
           });
-          setSuccessMessage("Form data submitted successfully.");
+          setSuccessMessage({
+            type: "success",
+            text: "Message sent successfully!",
+          });
           setLoading(false);
           setTimeout(() => {
-            setSuccessMessage('');
-          }, 3000); // Remove success message after 10 seconds
+            setSuccessMessage({ type: "", text: "" });
+          }, 6000); // Remove success message after 10 seconds
         },
         (error) => {
-          console.log('FAILED...', error);
-          setSuccessMessage("Failed to submit the Form data.");
+          setSuccessMessage({
+            type: "error",
+            text: "Failed to send message. Please try again.",
+          });
           setLoading(false);
           setTimeout(() => {
-            setSuccessMessage('');
+            setSuccessMessage({ type: "", text: "" });
           }, 3000);
-        },
+        }
       );
     } catch (error) {
-      console.error('Error sending message:', error);
-      setSuccessMessage("Failed to send message.");
-          setLoading(false);
-          setTimeout(() => {
-            setSuccessMessage('');
-          }, 3000);
+      setSuccessMessage({
+        type: "error",
+        text: "Failed to send message. Please try again.",
+      });
+      setLoading(false);
+      setTimeout(() => {
+        setSuccessMessage({ type: "", text: "" });
+      }, 3000);
     }
   };
 
   return (
     <>
+      <Message type={successMessage.type} text={successMessage.text} />
+      {/* <div className="fixed px-4 py-2 bg-red-600 rounded-md">
+        <div>hiiiiii</div>
+      </div> */}
       <section className="" id="contact">
         <div className=" ">
           <h3 className="text-[2rem] md:text-[3rem] font-bold flex justify-center">
@@ -96,7 +106,10 @@ function Contactus() {
                   <div className="">
                     <h5>Email</h5>
                     <p>
-                      <a href="mailto:djkumarr9@gmail.com"> djkumarr9@gmail.com</a>
+                      <a href="mailto:djkumarr9@gmail.com">
+                        {" "}
+                        djkumarr9@gmail.com
+                      </a>
                     </p>
                   </div>
                   <div className="">
@@ -118,11 +131,10 @@ function Contactus() {
               </div>
             </div>
 
-
             {/* contact form */}
             <div className="px-[2rem] py-[1rem] bg-neutral-900/90 hover:bg-gray-900/70 border rounded-lg shadow-lg border-gray-800/50 text-white flex flex-col justify-center items-center transition-all duration-400 ease-in-out cursor-pointer">
               <h4 className=" text-[1.5rem] pb-[1rem] ">Get In Touch</h4>
-              
+
               <form onSubmit={handleSubmit} method="post">
                 <label className="py-[2rem] pr-[1rem]">
                   <i className="fa mr-2 fa-user" aria-hidden="true"></i> Name
@@ -149,7 +161,7 @@ function Contactus() {
                 </label>
                 <input
                   className="w-full my-[1rem] px-[1rem] py-[.5rem] border border-gray-500/50 rounded-md text-gray-900"
-                  type="email"  
+                  type="email"
                   name="email"
                   placeholder="Email"
                   value={formData.email}
@@ -208,7 +220,6 @@ function Contactus() {
                     )}
                   </button>
                 </div>
-                  
               </form>
             </div>
           </div>
