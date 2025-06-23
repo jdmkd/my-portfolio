@@ -28,7 +28,7 @@ export default function SocialLinks() {
   return (
 
 <section
-  className={`fixed px-[.6rem] py-[.6rem] z-10 rounded-md bg-neutral-800/90 
+  className={`fixed px-[.6rem] py-[.6rem] z-[999] rounded-md bg-neutral-800/90 
     ${isScrolled ? 'bottom-[4rem] right-4' : 'top-[8rem] right-4'}
     transition-all duration-500 ease-in-out
     md:top-[8rem] md:right-4 md:left-auto md:bottom-auto
