@@ -1,29 +1,19 @@
-import Button from "../../widgets/Button";
-import Heading from "../../widgets/Heading";
-import Tagline from "../../widgets/Tagline";
-import { check2, grid, loading1 } from "../../assets";
-// import { Gradient } from "../design/Roadmap";
-import Image from "next/image";
-
 import {projectData} from "./project_data"
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => (
-  <section id="projects" className="relative my-[2rem]">
-    <h3 className="text-[2rem] md:text-[3rem] mb-[3rem] font-bold flex justify-center">
-        Project Works
+  <section
+    id="projects"
+    className="relative px-4 sm:px-6 lg:px-6 py-10 bg-gradient-to-br from-[#0f0f0f] via-[#1c1c1c]/70 to-[#0f0f0f] backdrop-blur-xl shadow-inner border-t border-neutral-800"
+  >
+    <h3 className="text-center text-[2rem] md:text-[3rem] font-bold text-white mb-10">
+      Project Works
     </h3>
 
-    <div className="px-[1.3rem] sm:px-[2rem] lg:px-[8rem] mb-5 justify-center items-center">
-      <div className="relative grid gap-6 md:grid-cols-2 md:gap-8 md:pb-[7rem]">
-        {projectData.map((item, index) => (
-
-          <ProjectCard key={index} item={item} />
-          
-        ))}
-
-        {/* <Gradient /> */}
-      </div>
+    <div className="px-2 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+      {projectData.map((item, index) => (
+        <ProjectCard key={index} item={item} />
+      ))}
     </div>
   </section>
 );
