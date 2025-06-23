@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import SocialLinks from "@/components/SocialLinks/SocialLinks";
+import RouteProgress from "@/widgets/RouteProgress";
+import PageWrapper from "@/widgets/PageWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +21,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
       <Navbar />
+      <RouteProgress />
       <SocialLinks />
+      <PageWrapper>
         {children}
+      </PageWrapper>
       <Footer />
       </body>
     </html>
