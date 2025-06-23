@@ -36,7 +36,7 @@ export default function SocialLinks() {
 >
       <div className="flex items-center gap-4 flex-wrap">
         {/* LinkedIn Link */}
-        <Link href="https://www.linkedin.com/in/dj-kumar-x" className="social-link" target="_blank">
+        <Link href="https://www.linkedin.com/in/dinesh-kumar-x" className="social-link" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
             <g fill="#ffffff" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: 'normal' }}>
               <g transform="scale(5.12,5.12)">
