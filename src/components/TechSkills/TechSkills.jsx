@@ -6,25 +6,33 @@ import { techSkillsImg } from '../../constants/constants.js'
 
 const Tech = () => {
   return (
-    <>
-    {/* <!-- section: technologies --> */}
-    <div className="relative my-[2rem]" id="skills">
-        <div className="text-center mb-[3rem] ">
-            {/* <h1 className="heading-stroke-only">Skills</h1> */}
-            <h3 className='text-[2rem] md:text-[3rem] font-bold'>Skills</h3>
-        </div>
+    <div className="relative py-8 px-4 sm:px-8 bg-gradient-to-b from-black via-neutral-900 to-black" id="skills">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow tracking-tight">
+          Skills
+        </h3>
+      </div>
 
-        <div className="px-[1.3rem] sm:px-[2rem] lg:px-[8rem] mb-5 grid grid-flow-row grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 lg:gap-[4rem] justify-center items-center" >
+      {/* Skills Grid */}
+      <div className="max-w-5xl mx-auto grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-4 md:gap-6 px-4 sm:px-0">
         {techSkillsImg.map((item, index) => (
-            <div key={index} className='py-[1.5rem] lg:py-[2rem] px-[1rem] flex justify-center border border-gray-900/50 hover:border-gray-900/80 rounded-xl bg-white/15 hover:bg-gray-900 text-white cursor-pointer transition-all duration-500 ease-in-out ' >
-                <Image src={item.imageUrl} alt="img" width={100} height={100} className="tech-icon-img cursor-pointer"/>
+          <div
+            key={index}
+            className="flex items-center justify-center aspect-square bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:bg-white/20"
+          >
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20">
+              <Image
+                src={item.imageUrl}
+                alt="tech-skill"
+                fill
+                className="object-contain"
+              />
             </div>
+          </div>
         ))}
-        </div>
+      </div>
     </div>
-    {/* <!-- section: technologies --> */}
-    
-    </>
   )
 }
 
