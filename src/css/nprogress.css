@@ -1,0 +1,14 @@
+/* css/nprogress.css */
+#nprogress .bar {
+  background: #00ffff; /* Match to neon cyan or any theme color */
+  height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #00ffff, 0 0 5px #00ffff;
+}
+
