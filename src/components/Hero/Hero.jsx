@@ -45,7 +45,11 @@ const Hero = () => {
               View Projects
             </button>
           </Link>
-          <Link href="/Dinesh_kumar_resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/Dinesh_kumar_resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              download
+          >
             <button className="px-7 py-3 rounded-full bg-white text-black font-bold border-2 border-black hover:bg-gray-400 hover:text-black transition-all duration-200">
               Download Resume
             </button>
