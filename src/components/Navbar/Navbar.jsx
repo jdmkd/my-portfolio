@@ -19,7 +19,7 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="fixed w-full top-0 z-[999]">
+    <section className="fixed justify-center items-center w-full bg-neutral-900/90 top-0 z-[999]">
       {/* Fullscreen Nav (Mobile Menu) */}
       <AnimatePresence>
         {isNavOpen && (
@@ -61,7 +61,7 @@ const Navbar = () => {
       </AnimatePresence>
 
       {/* Main Navbar */}
-      <nav className="navbar py-4 px-6 md:px-16 font-bold bg-neutral-900/90 flex justify-between items-center">
+      <nav className="navbar max-w-5xl mx-auto py-4 font-bold  flex justify-between items-center">
         {/* Logo + Title */}
         <Link href="/" className="flex flex-col">
           <h1 className="text-xl md:text-2xl font-extrabold text-white">DJ</h1>

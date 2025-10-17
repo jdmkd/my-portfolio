@@ -1,4 +1,4 @@
-import { CalendarDays } from 'lucide-react';
+import { CalendarDays } from "lucide-react";
 
 const EducationData = [
   {
@@ -27,32 +27,35 @@ const Table = () => {
         >
           {/* Left: Degree & University Info */}
           <div className="flex-1 text-center sm:text-left">
-            <h4 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+            <h4 className="text-lg sm:text-3xl font-extrabold text-white tracking-tight mb-2">
               {item.degree}
             </h4>
-            <p className="text-lg sm:text-xl font-semibold text-indigo-200">{item.university}</p>
+            <p className="text-lg sm:text-xl font-semibold text-indigo-200">
+              {item.university}
+            </p>
             {/* <p className="text-sm text-gray-400 mt-1">{item.location}</p> */}
           </div>
 
           <div className="flex flex-row justify-center sm:justify-end gap-6 w-full sm:w-auto mt-4 sm:mt-0">
-  {/* Admission Year */}
-  <div className="flex items-center sm:items-end">
-    <span className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 drop-shadow-sm">
-      {item.admission_year}
-    </span>
-  </div>
+            {/* Admission Year */}
+            <div className="flex items-center sm:items-end">
+              <span className="text-lg sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 drop-shadow-sm">
+                {item.admission_year}
+              </span>
+            </div>
 
-  {/* Divider */}
-  <div className="flex items-center text-gray-400 text-xl font-light">–</div>
+            {/* Divider */}
+            <div className="flex items-center text-gray-400 text-xl font-light">
+              -
+            </div>
 
-  {/* Passout Year */}
-  <div className="flex items-center sm:items-end">
-    <span className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r bg-green-500 drop-shadow-sm">
-      {item.passout_year}
-    </span>
-  </div>
-</div>
-
+            {/* Passout Year */}
+            <div className="flex items-center sm:items-end">
+              <span className="text-lg sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r bg-green-500 drop-shadow-sm">
+                {item.passout_year}
+              </span>
+            </div>
+          </div>
         </div>
       ))}
     </div>

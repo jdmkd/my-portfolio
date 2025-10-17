@@ -27,6 +27,7 @@ import {
   pandasIcon,
   djangoNegative,
   djangoPositive,
+  djangoRestFramework,
   scikitlearn,
 
   NumPy,
@@ -43,6 +44,14 @@ import {
   meneIcon,
   closeIcon,
 
+
+  FastAPI,
+  Cloudinary,
+  Render_logo_Black,
+  Linux,
+  Spring_Boot,
+  Spring_3,
+
 } from "../assets";
 
 
@@ -57,7 +66,10 @@ export const OpenCloseIcons =[
 
 export const techSkillsImg =[
 
-  // Languages and Libraries
+  // JavaScript Stack
+  {
+    imageUrl:javascriptIcon,
+  },
   {
     imageUrl:Nextjs
   },
@@ -68,61 +80,45 @@ export const techSkillsImg =[
     imageUrl:Nodejs
   },
   {
-    imageUrl:MongoDB
-  },
-  {
     imageUrl:Express
   },
   {
-    imageUrl:Flutter
+    imageUrl:tailwindIcon
+  }, 
+  {
+    imageUrl:MongoDB
+  },
+
+  // Python Stack
+  {
+    imageUrl:pythonIcon
   },
   {
     imageUrl:djangoNegative
   },
   {
-    imageUrl:tailwindIcon
-  },  
-
-
-
-// web technologies
-  // {
-  //   imageUrl:Bootstrap,
-  // },
-  {
-    imageUrl:htmlIcon
-    
+    imageUrl:djangoRestFramework
   },
   {
-    imageUrl:cssIcon
-    
-  },
-
-
-  // Programming languages
-  {
-    imageUrl:javascriptIcon,
-  },
-  {
-    imageUrl:pythonIcon
-  },
-  {
-    imageUrl:Java
-  },
-  {
-    imageUrl:CIcon,
-  },
-  {
-    imageUrl:CppIcon,
+    imageUrl:FastAPI
   },
   {
     imageUrl:PostgresQL
   },
+  {
+    imageUrl:Cloudinary
+  },
+  {
+    imageUrl:Render_logo_Black
+  },
+  
+  
   
   // Data science and ML
   {
     imageUrl:MySQL
   },
+
   {
     imageUrl:matplotlibIcon
   },
@@ -132,14 +128,49 @@ export const techSkillsImg =[
   {
     imageUrl:scikitlearn,
   },
-  
   {
     imageUrl:NumPy
   },
 
+// web technologies
+
+  {
+    imageUrl:htmlIcon
+  },
+  {
+    imageUrl:cssIcon
+    
+  },
+
+
+  // Programming languages
+  
+  
+  {
+    imageUrl:Java
+  },
+  {
+    imageUrl:Spring_Boot
+  },
+  {
+    imageUrl:Spring_3
+  },
+
+  {
+    imageUrl:CIcon,
+  },
+  {
+    imageUrl:CppIcon,
+  },
+  
+  
+
 
 
 // Other Tools
+  {
+    imageUrl:Linux
+  },
   {
     imageUrl:Jupyter
   },
@@ -150,7 +181,6 @@ export const techSkillsImg =[
     imageUrl:gitIcon
   },
   {
-    
     imageUrl:GitHub
   },
 

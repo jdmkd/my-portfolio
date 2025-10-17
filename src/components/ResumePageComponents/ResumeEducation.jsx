@@ -9,12 +9,12 @@ export default function ResumeEducation() {
           <EducationItem
             degree="Master of Computer Applications (MCA)"
             institution="LJ University, Ahmedabad"
-            duration="2023 – 2025"
+            duration="2023 - 2025"
           />
           <EducationItem
             degree="Bachelor of Computer Applications (BCA)"
             institution="Gujarat University, Ahmedabad"
-            duration="2020 – 2023"
+            duration="2020 - 2023"
           />
         </div>
       </section>

@@ -18,6 +18,7 @@ import MySQL from "./tech_skill_Icon/MySQL.svg"
 import PostgresQL from "./tech_skill_Icon/PostgresQL.svg"
 
 import djangoNegative from "./tech_skill_Icon/django-logo-negative.svg"
+import djangoRestFramework from "./tech_skill_Icon/django_rest_framework.png"
 import djangoPositive from "./tech_skill_Icon/django-logo-positive.svg"
 import Express from "./tech_skill_Icon/Express.svg"
 import Flutter from "./tech_skill_Icon/Flutter.svg"
@@ -25,6 +26,13 @@ import MongoDB from "./tech_skill_Icon/MongoDB.svg"
 import Nextjs from "./tech_skill_Icon/Nextjs.svg"
 import Nodejs from "./tech_skill_Icon/Nodejs.svg"
 import Reactjs from "./tech_skill_Icon/React.svg"
+
+import FastAPI from "./tech_skill_Icon/FastAPI.svg"
+import Cloudinary from "./tech_skill_Icon/Cloudinary.png"
+import Render_logo_Black from "./tech_skill_Icon/Render-logo-Black.svg"
+import Linux from "./tech_skill_Icon/Linux.svg"
+import Spring_Boot from "./tech_skill_Icon/spring_boot.svg"
+import Spring_3 from "./tech_skill_Icon/spring-3.svg"
 
 
 import Bootstrap from "./tech_skill_Icon/Bootstrap.svg"
@@ -70,6 +78,7 @@ export {
     Nodejs,
     djangoNegative,
     djangoPositive,
+    djangoRestFramework,
     Express,
     MongoDB,
     Flutter,
@@ -99,8 +108,12 @@ export {
     closeIcon,
 
 
-
-
+    FastAPI,
+    Cloudinary,
+    Render_logo_Black,
+    Linux,
+    Spring_Boot,
+    Spring_3,
 
 
 

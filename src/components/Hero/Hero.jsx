@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 px-2 font-medium">
           Aspiring Full Stack Developer with a strong foundation in frontend and backend technologies. Skilled in JavaScript, Python, Java,
-          and SQL, with hands-on experience using frameworks like React.js, Next.js, Django, Spring, Spring Boot and Node.js. Experienced
+          and SQL, with hands-on experience using frameworks like React.js, Next.js, Node.js, Express.js, Django, Django REST Framework, Spring and Spring Boot. Experienced
           in building responsive user interfaces, developing RESTful APIs, and working with both relational and NoSQL databases. Actively
           enhancing skills through personal and academic projects.
         </p>
