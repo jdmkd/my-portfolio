@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ExperienceData = [
   {
-    company: "Param Divya IT Solution",
+    company: "Param Divya",
     role: "Full Stack Developer",
     duration: "Jul 2025 — Present",
     location: "Gandhinagar, Gujarat",
@@ -55,7 +57,233 @@ const ExperienceData = [
       },
     ],
   },
+  {
+    company: "Freelance / Independent",
+    role: "Full Stack Developer",
+    duration: "2023 — 2025",
+    location: "Remote",
+    overview:
+      "Architected and deployed multiple full-stack applications while pursuing my MCA. Focused heavily on mastering production-level system design, authentication flows, and relational database architecture.",
+    projects: [
+      {
+        name: "Independent Projects (StarletteCars & Ecotte)",
+        slug: "",
+        liveLink: "",
+        achievements: [
+          "Developed StarletteCars, a comprehensive vehicle rental platform built with Django and PostgreSQL.",
+          "Architected Ecotte, a scalable e-commerce backend API using Node.js and Stripe for secure payment processing.",
+          "Designed robust relational database schemas and implemented secure authentication and authorization systems.",
+        ],
+        techStack: ["Django", "PostgreSQL", "Node.js", "Stripe", "React.js"],
+      },
+    ],
+  },
+  {
+    company: "InfoLabz",
+    role: "Python Developer (Intern)",
+    duration: "Jul 2021 — Dec 2021",
+    location: "Ahmedabad, Gujarat",
+    overview:
+      "Completed an intensive internship focusing on backend software engineering, API design, and web development using Python and the Django framework.",
+    projects: [
+      {
+        name: "Backend Engineering Internship",
+        slug: "",
+        liveLink: "",
+        achievements: [
+          "Developed core backend logic and RESTful APIs using Python and Django.",
+          "Gained hands-on experience with relational database modeling and integrating with Django's ORM.",
+          "Collaborated on codebase management, learning industry-standard version control and deployment practices.",
+        ],
+        techStack: ["Python", "Django", "SQL", "REST APIs", "Git"],
+      },
+    ],
+  },
 ];
+
+const ProjectAccordion = ({
+  proj,
+  defaultOpen,
+}: {
+  proj: any;
+  defaultOpen: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="w-full flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 sm:px-8 sm:py-6 flex flex-row items-center justify-between outline-none cursor-pointer group"
+      >
+        <div className="flex flex-col gap-2 text-left mr-6">
+          <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111111] leading-tight">
+            {proj.name}
+          </h4>
+        </div>
+        <div
+          className={`shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+            isOpen
+              ? "border-[#111111] bg-[#111111] text-white"
+              : "border-gray-200 text-gray-400 group-hover:border-[#111111] group-hover:text-[#111111]"
+          }`}
+        >
+          {isOpen ? (
+            <Minus className="w-4 h-4" />
+          ) : (
+            <Plus className="w-4 h-4" />
+          )}
+        </div>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden w-full"
+          >
+            <div className="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col gap-8">
+              {/* Meta Top: Tech Stack & Action Links */}
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100 pb-8">
+                {/* Tech Stack Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {proj.techStack.map((tech: string, tIdx: number) => (
+                    <span
+                      key={tIdx}
+                      className="px-3 py-1 bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Action Links */}
+                <div className="flex items-center gap-4 shrink-0">
+                  {proj.slug && (
+                    <Link
+                      href={`/projects/${proj.slug}`}
+                      className="px-6 py-3 bg-[#111111] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-3 hover:bg-gray-800 transition-colors whitespace-nowrap shrink-0"
+                    >
+                      <span>Case Study</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
+                  {proj.liveLink && (
+                    <a
+                      href={proj.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 border border-gray-200 text-[#111111] text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-2 hover:border-[#111111] transition-colors whitespace-nowrap shrink-0"
+                    >
+                      <span>Live Site</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Achievements List */}
+              <div className="flex flex-col gap-6">
+                {proj.achievements.map((achievement: string, aIdx: number) => (
+                  <div key={aIdx} className="flex items-start gap-5 group/item">
+                    <span className="text-base lg:text-xl font-mono mt-1 text-gray-300 group-hover/item:text-[#111111] transition-colors">
+                      {String(aIdx + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium group-hover/item:text-[#111111] transition-colors">
+                      {achievement}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const CompanyAccordion = ({
+  exp,
+  defaultOpen,
+}: {
+  exp: any;
+  defaultOpen: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="w-full flex flex-col border-b border-gray-200 last:border-b-0 group bg-white transition-colors">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 sm:px-12 py-8 sm:py-12 flex flex-col sm:flex-row sm:items-center justify-between outline-none cursor-pointer gap-6 hover:bg-[#FAFAFA] transition-colors"
+      >
+        <div className="flex flex-col gap-2 text-left mr-8">
+          <h3 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#111111] leading-tight">
+            {exp.company}
+          </h3>
+          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold">
+            {exp.role} • {exp.duration}
+          </span>
+        </div>
+        <div
+          className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 sm:self-center self-start ${
+            isOpen
+              ? "border-[#111111] bg-[#111111] text-white"
+              : "border-gray-300 text-gray-400 group-hover:border-[#111111] group-hover:text-[#111111]"
+          }`}
+        >
+          {isOpen ? (
+            <Minus className="w-5 h-5" />
+          ) : (
+            <Plus className="w-5 h-5" />
+          )}
+        </div>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden w-full"
+          >
+            <div className="flex flex-col border-t border-gray-100 bg-[#F8F9FA]">
+              {/* Overview Block */}
+              <div className="p-6 sm:px-12 sm:pt-12 sm:pb-8">
+                <span className="text-sm uppercase tracking-widest text-gray-400 font-bold block mb-4">
+                  Overview
+                </span>
+                <p className="text-lg md:text-2xl font-medium tracking-tight text-[#111111] leading-snug">
+                  {exp.overview}
+                </p>
+              </div>
+
+              {/* Projects Ledger */}
+              <div className="flex flex-col px-6 sm:px-12 pb-12 gap-4">
+                <span className="text-sm uppercase tracking-widest text-gray-400 font-bold block mb-2 mt-4">
+                  Shipped Projects & Metrics
+                </span>
+                {exp.projects.map((proj: any, idx: number) => (
+                  <ProjectAccordion
+                    key={idx}
+                    proj={proj}
+                    defaultOpen={idx === 0}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 function WorkExperience() {
   return (
@@ -80,132 +308,7 @@ function WorkExperience() {
 
       <div className="w-full flex flex-col">
         {ExperienceData.map((exp, index) => (
-          <div
-            key={index}
-            className="w-full grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200 last:border-b-0"
-          >
-            {/* Left Column: Stark Meta Data */}
-            <div className="col-span-1 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-gray-200 p-6 sm:p-12 bg-white flex flex-col justify-between">
-              <div className="sticky top-32">
-                <h3 className="text-[15vw] md:text-6xl font-black tracking-tighter text-[#111111] leading-[0.9] mb-10">
-                  {exp.company}
-                </h3>
-                <div className="flex flex-col gap-8">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">
-                      Role
-                    </span>
-                    <span className="text-sm font-bold text-[#111111] uppercase tracking-wide">
-                      {exp.role}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">
-                      Duration
-                    </span>
-                    <span className="text-sm font-bold text-[#111111] uppercase tracking-wide">
-                      {exp.duration}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">
-                      Location
-                    </span>
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-wide">
-                      {exp.location}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Ledger Style Projects & Impact */}
-            <div className="col-span-1 lg:col-span-8 flex flex-col">
-              {/* Overview Block */}
-              <div className="p-6 sm:p-12 border-b border-gray-200 bg-[#FAFAFA]">
-                <span className="text-sm uppercase tracking-widest text-gray-400 font-bold block mb-6">
-                  Overview
-                </span>
-                <p className="text-lg md:text-2xl font-medium tracking-tight text-[#111111] leading-snug">
-                  {exp.overview}
-                </p>
-              </div>
-
-              {/* Projects Ledger */}
-              <div className="flex flex-col border-b border-gray-200">
-                <div className="p-6 sm:p-12 border-b border-gray-200 bg-white">
-                  <span className="text-base uppercase tracking-widest text-[#111111] font-black block">
-                    Shipped Projects & Metrics
-                  </span>
-                </div>
-
-                {exp.projects.map((proj, idx) => (
-                  <div
-                    key={idx}
-                    className="w-full flex flex-col border-b border-gray-200 last:border-b-0 group hover:bg-[#FAFAFA] transition-colors p-6 sm:p-12 gap-8"
-                  >
-                    {/* Project Title Area */}
-                    <div className="flex flex-col gap-2">
-                      <h4 className="text-[10vw] sm:text-3xl font-black tracking-tighter text-[#111111] leading-tight cursor-pointer">
-                        <Link href={`/projects/${proj.slug}`}>{proj.name}</Link>
-                      </h4>
-                    </div>
-
-                    {/* Achievements List - Minimalist SaaS UI */}
-                    <div className="flex flex-col gap-6">
-                      {proj.achievements.map((achievement, aIdx) => (
-                        <div
-                          key={aIdx}
-                          className="flex items-start gap-5 group/item"
-                        >
-                          <span className="text-base lg:text-xl font-mono mt-1 text-gray-300 group-hover/item:text-[#111111] transition-colors">
-                            {String(aIdx + 1).padStart(2, "0")}
-                          </span>
-                          <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium group-hover/item:text-[#111111] transition-colors">
-                            {achievement}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Tech Stack - Minimalist text UI */}
-                    <div className="pt-6">
-                      <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
-                        {proj.techStack.join(" • ")}
-                      </p>
-                    </div>
-
-                    {/* Action Links - Premium Animated Buttons */}
-                    <div className="flex items-center gap-8 pt-8 border-t border-gray-100">
-                      {proj.slug && (
-                        <Link
-                          href={`/projects/${proj.slug}`}
-                          className="text-[10px] font-black uppercase tracking-[0.2em] text-[#111111] flex items-center gap-4 group/btn cursor-pointer"
-                        >
-                          <span>Case Study</span>
-                          <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover/btn:bg-[#111111] group-hover/btn:border-[#111111] group-hover/btn:text-white transition-all duration-300 overflow-hidden relative">
-                            <ArrowRight className="w-3.5 h-3.5 absolute transition-transform duration-300 group-hover/btn:translate-x-8" />
-                            <ArrowRight className="w-3.5 h-3.5 absolute -translate-x-8 transition-transform duration-300 group-hover/btn:translate-x-0" />
-                          </div>
-                        </Link>
-                      )}
-                      {proj.liveLink && (
-                        <a
-                          href={proj.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 hover:text-[#111111] flex items-center gap-2 transition-colors cursor-pointer"
-                        >
-                          <span>Live Site</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <CompanyAccordion key={index} exp={exp} defaultOpen={index === 0} />
         ))}
       </div>
     </section>
