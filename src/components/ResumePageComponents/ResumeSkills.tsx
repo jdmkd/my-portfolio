@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPython, FaJava, FaJsSquare, FaCuttlefish, FaDatabase, FaGitAlt, FaLinux, FaAndroid, FaBootstrap, FaReact, FaNodeJs, FaGithub, FaPlug, FaChartLine} from "react-icons/fa";
-import { SiCplusplus, SiDart, SiDjango, SiNextdotjs, SiExpress, SiFlutter, SiTailwindcss, SiJquery, SiHtml5, SiCss, SiJson, SiPostgresql, SiMongodb, SiMysql, SiNumpy, SiPandas, SiMatplotlib, SiPostman } from "react-icons/si";
+import { SiCplusplus, SiDart, SiDjango, SiNextdotjs, SiExpress, SiFlutter, SiTailwindcss, SiJquery, SiHtml5, SiCss, SiJson, SiPostgresql, SiMongodb, SiMysql, SiNumpy, SiPandas, SiPostman } from "react-icons/si";
 import { BsFiletypeJson } from "react-icons/bs";
 
 const SKILLS = [
