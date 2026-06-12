@@ -96,10 +96,10 @@ function Contactus() {
       >
         {/* Header */}
         <div className="border-b border-gray-200 p-8 sm:p-12 bg-[#fcfcfc]">
-          <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-4 block text-center">
+          <span className="text-sm lg:text-base uppercase tracking-widest text-gray-500 font-bold mb-4 block text-center">
             Connect
           </span>
-          <h3 className="text-center text-4xl md:text-5xl font-black text-[#111111] tracking-tighter">
+          <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-[#111111] tracking-tighter">
             Get In Touch.
           </h3>
         </div>

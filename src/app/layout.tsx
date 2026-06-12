@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans bg-[#FAFAFA] text-[#111111] antialiased selection:bg-[#111111] selection:text-white`}>
         
         {/* Main Grid Wrapper - Strict Editorial Border */}
-        <div className="w-full max-w-[1400px] mx-auto bg-white min-h-screen border-x border-gray-200 shadow-[0_0_40px_rgba(0,0,0,0.02)] flex flex-col">
+        <div className="w-full max-w-[1400px] mx-auto bg-white min-h-screen flex flex-col">
           <Navbar />
           <RouteProgress />
 

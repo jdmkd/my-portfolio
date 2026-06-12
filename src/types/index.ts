@@ -25,5 +25,6 @@ export interface ProjectData {
 }
 
 export interface SkillItem {
+  name: string;
   imageUrl: any;
 }

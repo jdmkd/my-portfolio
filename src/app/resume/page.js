@@ -30,8 +30,8 @@ export default function Resume() {
       </div>
 
       {/* PDF Viewer Container */}
-      <div className="w-full max-w-6xl mx-auto p-4 sm:p-8 lg:p-12">
-        <div className="w-full h-[80vh] border border-gray-200 shadow-2xl bg-white rounded-sm overflow-hidden relative">
+      <div className="w-full max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
+        <div className="w-full h-[100vh] border border-gray-200 shadow-2xl bg-white rounded-sm overflow-hidden relative">
           
           {/* Fallback text for browsers that don't support inline PDFs */}
           <object 

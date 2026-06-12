@@ -1,30 +1,27 @@
-"use client"
+"use client";
 import { projectData } from "./project_data";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="w-full bg-white border-b border-gray-200"
-    >
+    <section id="projects" className="w-full bg-white border-b border-gray-200">
       <div className="border-b border-gray-200 p-8 sm:p-12 bg-[#fcfcfc]">
-        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-4 block text-center">
+        <span className="text-sm lg:text-base uppercase tracking-widest text-gray-400 font-bold mb-4 block text-center">
           Portfolio
         </span>
-        <h3 className="text-center text-4xl md:text-5xl font-black text-[#111111] tracking-tighter">
+        <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-[#111111] tracking-tighter">
           Featured Works.
         </h3>
       </div>
-      
+
       <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200"
         >
           {projectData.map((item, index) => (
             <motion.div

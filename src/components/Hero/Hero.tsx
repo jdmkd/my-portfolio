@@ -12,44 +12,49 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section id="home" className="w-full flex flex-col bg-[#FAFAFA] font-sans">
-      {/* 1. The Massive Centered Hero View */}
-      <div className="w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-6 sm:px-12 relative overflow-hidden">
-        {/* Subtle Background Accent */}
-        <div className="absolute inset-0 flex justify-center items-center pointer-events-none opacity-[0.02]">
-          <div className="w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-black rounded-full blur-[120px]"></div>
-        </div>
-
+      {/* 1. The Massive Editorial Hero View */}
+      <div className="w-full min-h-[calc(100vh-80px)] flex flex-col justify-center px-6 sm:px-12 lg:px-24 relative overflow-hidden py-12 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center text-center max-w-5xl relative z-10 w-full"
+          className="flex flex-col items-start text-left max-w-[1400px] mx-auto relative z-10 w-full"
         >
-          {/* Overline */}
-          <span className="text-xs lg:text-base uppercase tracking-[0.4em] text-gray-500 font-bold mb-8 flex items-center gap-4">
-            <div className="hidden sm:block w-2 h-[8px] bg-green-500"></div>
-            Software Engineer & System Architect
-            <div className="hidden sm:block w-2 h-[8px] bg-green-500"></div>
-          </span>
+          {/* Overline - Clean and Structural */}
+          <div className="flex items-center gap-4 mb-8 sm:mb-10">
+            <div className="w-8 sm:w-12 h-[2px] bg-[#111111]"></div>
+            <span className="text-xs sm:text-sm font-bold text-[#111111] uppercase tracking-widest">
+              Software Engineer{" "}
+              <span className="text-gray-400 font-medium mx-2">/</span> System
+              Architect
+            </span>
+          </div>
 
-          {/* Name */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-black tracking-tighter text-[#111111] leading-[0.9] mb-8">
-            Dinesh Kumar.
+          {/* Name - Massive, tight leading, structural */}
+          <h1 className="text-[18vw] md:text-[11vw] lg:text-[10rem] xl:text-[10rem] font-black tracking-tighter text-[#111111] leading-[0.85] mb-8 sm:mb-12 w-full">
+            Dinesh
+            <br className="block md:hidden" /> Kumar.
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-gray-600 font-medium max-w-3xl leading-relaxed mb-12">
-            Full Stack Developer. Architecting scalable B2B, SaaS, and ecommerce
-            systems in production.
-          </p>
+          {/* Subtitle - Editorial style border-left */}
+          <div className="w-full md:w-3/4 lg:w-auto border-l-4 border-[#111111] pl-6 sm:pl-8 lg:pl-10 mb-10 sm:mb-14">
+            <p className="text-lg sm:text-2xl text-gray-500 font-medium leading-snug tracking-tight">
+              Full Stack Developer & System Architect. Engineering
+              high-performance, scalable B2B platforms, SaaS products, and
+              robust ecommerce architecture. I transform complex technical
+              challenges into elegant, production-ready solutions focused on
+              speed, reliability, and exceptional user experience.
+            </p>
+          </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 mb-16">
-            <Link href="/projects">
-              <button className="flex items-center justify-center gap-4 bg-[#111111] text-white px-8 py-5 text-sm font-bold uppercase tracking-widest hover:bg-black transition-all hover:-translate-y-1 shadow-[0_10px_20px_rgba(0,0,0,0.1)] group w-full sm:w-auto">
-                View Featured Works
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
+          {/* Action Buttons - Brutalist, stark, no cheap shadows */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-12 sm:mb-16 w-full sm:w-auto">
+            <Link
+              href="/projects"
+              className="flex items-center justify-between sm:justify-center gap-6 bg-[#111111] border-2 border-[#111111] text-white px-8 py-5 sm:px-10 sm:py-6 text-sm lg:text-base font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#111111] transition-colors group w-full sm:w-auto rounded-none"
+            >
+              <span>View Featured Works</span>
+              <FaArrowRight className="transform group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
@@ -57,35 +62,34 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               download
+              className="flex items-center justify-center gap-4 bg-transparent text-[#111111] border-2 border-gray-200 px-8 py-5 sm:px-10 sm:py-6 text-sm lg:text-base font-black uppercase tracking-[0.2em] hover:border-[#111111] transition-colors w-full sm:w-auto rounded-none"
             >
-              <button className="flex items-center justify-center gap-4 bg-white text-[#111111] border border-gray-200 px-8 py-5 text-sm font-bold uppercase tracking-widest hover:border-gray-400 transition-all hover:-translate-y-1 shadow-sm w-full sm:w-auto">
-                Download Resume
-              </button>
+              Download Resume
             </Link>
           </div>
 
-          {/* Social Links Row */}
-          <div className="flex items-center gap-8">
+          {/* Social Links Row - Clean and structural */}
+          <div className="flex items-center gap-8 w-full sm:w-auto">
             <Link
               href="https://github.com/jdmkd"
               target="_blank"
               className="text-gray-400 hover:text-[#111111] transition-colors"
             >
-              <FaGithub className="text-3xl" />
+              <FaGithub className="text-2xl sm:text-3xl" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/dj-kumar-9a2a2b236"
               target="_blank"
               className="text-gray-400 hover:text-[#0a66c2] transition-colors"
             >
-              <FaLinkedin className="text-3xl" />
+              <FaLinkedin className="text-2xl sm:text-3xl" />
             </Link>
             <Link
               href="https://www.instagram.com/jd_mkd_09/"
               target="_blank"
               className="text-gray-400 hover:text-[#E1306C] transition-colors"
             >
-              <FaInstagram className="text-3xl" />
+              <FaInstagram className="text-2xl sm:text-3xl" />
             </Link>
           </div>
         </motion.div>
@@ -94,7 +98,7 @@ const Hero = () => {
       {/* 2. The Clean Summary Section (Below the Fold) */}
       <div className="w-full bg-white border-y border-gray-200">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-          <div className="md:col-span-8 p-12 sm:p-16 lg:p-24 flex flex-col justify-center">
+          <div className="md:col-span-8 p-8 sm:p-16 lg:p-24 flex flex-col justify-center">
             <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold mb-6 block">
               Professional Summary
             </span>
