@@ -54,6 +54,8 @@ import {
 
 } from "../assets";
 
+import { SkillItem, EducationItem } from "../types";
+
 
 export const OpenCloseIcons =[
   {
@@ -64,7 +66,7 @@ export const OpenCloseIcons =[
 ]
 
 
-export const techSkillsImg =[
+export const techSkillsImg: SkillItem[] =[
 
   // JavaScript Stack
   {
@@ -188,7 +190,7 @@ export const techSkillsImg =[
 ]
 
 
-export const educationDetails =[
+export const educationDetails: EducationItem[] =[
   {
     id:"0",
     schoolName:"MPSS School",

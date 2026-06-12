@@ -2,7 +2,12 @@
 
 const nextConfig = {
     images: {
-        domains: ['www.w3.org'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'www.w3.org',
+            },
+        ],
     },
 };
 

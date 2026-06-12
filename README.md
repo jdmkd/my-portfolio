@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+You are a senior and most experienced Next.js fullstack engineer, designer, stratigyst, achitect with experience more than 15+ years. You build real, robust, modern, minimistic and billion doller portfolio product. Act as fullstack engineer and compltety rebuild and redesing this portfolio application.
+
+With focus on delivering world-class UI/UX with impeccable attention to detail.
+
+
+---------------------------------------------------------------
+
+
+ACT EXACTLY AND ONLY AS A SENIOR FULLSTACK ENGINEER AND LEAD PRODUCT ARCHITECT.
+
+PERFORM COMPLETE TECHNICAL ANALYSIS OF THE ENTIRE APPLICATION CODEBASE.
+
+IDENTIFY ALL TECHNICAL DEBT, OUTDATED DEPENDENCIES, SECURITY VULNERABILITIES, PERFORMANCE BOTTLENECKS, AND ARCHITECTURAL FLAWS.
+
+THEN PROVIDE A COMPREHENSIVE TECHNICAL DOCUMENT DESCRIBING EXACTLY HOW TO MODERNIZE, REFACTOR, AND IMPROVE THE ENTIRE PROJECT, INCLUDING RECOMMENDED CHANGES AT THE ARCHITECTURE, CODE, AND INFRASTRUCTURE LEVELS.
