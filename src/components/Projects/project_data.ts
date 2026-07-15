@@ -82,7 +82,7 @@ export const projectData: ProjectData[] = [
       "Tailwind CSS",
       "Vercel"
     ],
-    "live_demo": "https://wwww.greenmendbio.com",
+    "live_demo": "https://www.greenmendbio.com",
     "code": null,
     "about": "Global export platform for a Made-in-India manufacturer of FDA-approved, ISO-certified sugarcane bagasse tableware serving businesses across 5+ countries.",
     "features": [
