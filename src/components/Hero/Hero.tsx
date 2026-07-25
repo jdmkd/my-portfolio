@@ -28,7 +28,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8 },
     },
   };
 
@@ -37,14 +37,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+      transition: { duration: 1 },
     },
   };
 
@@ -119,7 +112,7 @@ const Hero = () => {
           {/* Subtitle - Editorial style with enhanced border */}
           <motion.div
             variants={itemVariants}
-            className="w-full md:w-3/4 lg:w-auto border-l-4 border-gradient-to-b from-blue-600 to-purple-600 pl-6 sm:pl-8 lg:pl-10 mb-10 sm:mb-14 group hover:scale-105 transition-transform duration-300"
+            className="w-full md:w-3/4 lg:w-auto border-l-4 pl-6 sm:pl-8 lg:pl-10 mb-10 sm:mb-14 group hover:scale-105 transition-transform duration-300"
             style={{
               borderImage: "linear-gradient(to bottom, #2563eb, #9333ea) 1",
             }}
