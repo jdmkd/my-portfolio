@@ -1,4 +1,18 @@
 import {
+  inventoryops_image_1,
+  inventoryops_image_2,
+  inventoryops_image_3,
+  inventoryops_image_4,
+  inventoryops_image_5,
+  inventoryops_image_6,
+  inventoryops_image_7,
+  inventoryops_image_8,
+  inventoryops_image_9,
+  inventoryops_image_10,
+  inventoryops_image_11,
+  inventoryops_image_12,
+  inventoryops_image_13,
+
   Rental_vehicle_customer_side1,
   Rental_vehicle_customer_side2,
   Rental_vehicle_customer_side3,
@@ -8,8 +22,9 @@ import {
   Rental_vehicle_customer_side7,
   Rental_vehicle_customer_side8,
   Rental_vehicle_vendor_side1,
-  Rental_vehicle_vendor_side2 
+  Rental_vehicle_vendor_side2
 } from "../../assets/index";
+
 import { ProjectData } from "../../types";
 
 export const projectData: ProjectData[] = [
@@ -40,7 +55,22 @@ export const projectData: ProjectData[] = [
       "Designed transactional inventory update mechanisms to maintain stock consistency and prevent overselling across billing, purchase, and order operations."
     ],
     "isClientProject": true,
-    "clientMessage": "SaaS Platform currently in production"
+    "clientMessage": "SaaS Platform currently in production",
+    "images": [
+      inventoryops_image_1,
+      inventoryops_image_2,
+      inventoryops_image_3,
+      inventoryops_image_4,
+      inventoryops_image_5,
+      inventoryops_image_6,
+      inventoryops_image_7,
+      inventoryops_image_8,
+      inventoryops_image_9,
+      inventoryops_image_10,
+      inventoryops_image_11,
+      inventoryops_image_12,
+      inventoryops_image_13,
+    ]
   },
   {
     "id": 2,
