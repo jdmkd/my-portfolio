@@ -273,8 +273,8 @@ const CompanyDropdown = ({
                 <p className="text-xl md:text-2xl font-medium tracking-tight text-zinc-300 leading-relaxed">
                   {exp.overview}
                 </p>
-                <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">
-                  📍 {exp.location}
+                <span className="text-[10px] text-base uppercase tracking-widest text-zinc-600 font-bold">
+                  {exp.location}
                 </span>
               </div>
 

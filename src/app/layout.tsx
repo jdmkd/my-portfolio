@@ -7,6 +7,8 @@ import RouteProgress from "@/widgets/RouteProgress";
 import PageWrapper from "@/widgets/PageWrapper";
 import Script from "next/script";
 
+import FloatingSocials from "@/components/FloatingSocials/FloatingSocials";
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -30,18 +32,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.variable} font-sans bg-black text-white antialiased selection:bg-[#111111] selection:text-white`}>
-        
+      <body
+        className={`${inter.variable} font-sans bg-black text-white antialiased selection:bg-[#111111] selection:text-white`}
+      >
         {/* Main Grid Wrapper - Strict Editorial Border */}
-        <div className="w-full max-w-[1600px] mx-auto min-h-screen flex flex-col">
+        <div className="w-full max-w-[1600px] mx-auto min-h-screen flex flex-col relative">
           <Navbar />
           <RouteProgress />
 
-          <main className="flex-1 w-full flex flex-col">
-            {children}
-          </main>
+          <main className="flex-1 w-full flex flex-col">{children}</main>
 
           <Footer />
+          <FloatingSocials />
         </div>
 
         {process.env.NEXT_PUBLIC_MICROSOFT_CLARITY && (
