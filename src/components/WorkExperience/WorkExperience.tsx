@@ -101,7 +101,7 @@ const ExperienceData = [
   },
 ];
 
-const ProjectAccordion = ({
+const ProjectGlassCard = ({
   proj,
   defaultOpen,
 }: {
@@ -111,20 +111,20 @@ const ProjectAccordion = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full flex flex-col bg-black border border-white/10 rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+    <div className="w-full flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden shadow-lg backdrop-blur-md transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 sm:px-8 sm:py-6 flex flex-row items-center justify-between outline-none cursor-pointer group"
+        className="w-full px-6 sm:px-10 py-6 sm:py-8 flex flex-row items-center justify-between outline-none cursor-pointer group"
       >
         <div className="flex flex-col gap-2 text-left mr-6">
-          <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
+          <h4 className="text-xl sm:text-2xl font-semibold tracking-tight text-white leading-tight">
             {proj.name}
           </h4>
         </div>
         <div
-          className={`shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+          className={`shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
             isOpen
-              ? "border-white bg-white text-black"
+              ? "border-white bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.4)]"
               : "border-white/10 text-zinc-500 group-hover:border-white group-hover:text-white"
           }`}
         >
@@ -142,18 +142,18 @@ const ProjectAccordion = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden w-full"
           >
-            <div className="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col gap-8">
+            <div className="px-6 sm:px-10 pb-8 sm:pb-10 flex flex-col gap-10">
               {/* Meta Top: Tech Stack & Action Links */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-8">
+              <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-white/5 pb-8">
                 {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2">
                   {proj.techStack.map((tech: string, tIdx: number) => (
                     <span
                       key={tIdx}
-                      className="px-3 py-1 bg-white/5 border border-white/5 text-zinc-300 text-[10px] font-bold uppercase tracking-widest rounded-full"
+                      className="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-300 text-[10px] font-bold uppercase tracking-widest rounded-lg"
                     >
                       {tech}
                     </span>
@@ -165,7 +165,7 @@ const ProjectAccordion = ({
                   {proj.slug && (
                     <Link
                       href={`/projects/${proj.slug}`}
-                      className="px-6 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-3 hover:bg-zinc-200 transition-colors whitespace-nowrap shrink-0"
+                      className="px-6 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-zinc-200 transition-colors whitespace-nowrap shrink-0 shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
                     >
                       <span>Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -176,7 +176,7 @@ const ProjectAccordion = ({
                       href={proj.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-colors whitespace-nowrap shrink-0"
+                      className="px-6 py-3 bg-transparent border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-colors whitespace-nowrap shrink-0"
                     >
                       <span>Live Site</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -189,10 +189,22 @@ const ProjectAccordion = ({
               <div className="flex flex-col gap-6">
                 {proj.achievements.map((achievement: string, aIdx: number) => (
                   <div key={aIdx} className="flex items-start gap-5 group/item">
-                    <span className="text-base lg:text-xl font-mono mt-1 text-zinc-700 group-hover/item:text-zinc-300 transition-colors">
-                      {String(aIdx + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium group-hover/item:text-zinc-100 transition-colors">
+                    <div className="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/10 text-white shrink-0 border border-white/5">
+                      <svg
+                        className="w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth="3"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-base text-zinc-400 leading-relaxed font-medium group-hover/item:text-zinc-200 transition-colors">
                       {achievement}
                     </p>
                   </div>
@@ -206,7 +218,7 @@ const ProjectAccordion = ({
   );
 };
 
-const CompanyAccordion = ({
+const CompanyDropdown = ({
   exp,
   defaultOpen,
 }: {
@@ -216,30 +228,31 @@ const CompanyAccordion = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full flex flex-col border-b border-white/10 last:border-b-0 group bg-[#000000] transition-colors">
+    <div className="w-full flex flex-col border-b border-white/10 last:border-b-0 relative py-12 lg:py-16">
+      {/* Clickable Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 sm:px-12 py-8 sm:py-12 flex flex-col sm:flex-row sm:items-center justify-between outline-none cursor-pointer gap-6 hover:bg-white/[0.02] transition-colors"
+        className="w-full flex flex-row items-center justify-between group outline-none text-left cursor-pointer"
       >
-        <div className="flex flex-col gap-2 text-left mr-8">
-          <h3 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.1] group-hover:text-zinc-300 transition-colors">
             {exp.company}
           </h3>
-          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 font-bold">
+          <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-zinc-500 font-bold">
             {exp.role} • {exp.duration}
           </span>
         </div>
         <div
-          className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 sm:self-center self-start ${
+          className={`shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
             isOpen
-              ? "border-white bg-white text-black"
+              ? "border-white bg-white text-black shadow-[0_0_25px_rgba(255,255,255,0.4)]"
               : "border-white/10 text-zinc-500 group-hover:border-white group-hover:text-white"
           }`}
         >
           {isOpen ? (
-            <Minus className="w-5 h-5" />
+            <Minus className="w-6 h-6 sm:w-8 sm:h-8" />
           ) : (
-            <Plus className="w-5 h-5" />
+            <Plus className="w-6 h-6 sm:w-8 sm:h-8" />
           )}
         </div>
       </button>
@@ -250,32 +263,35 @@ const CompanyAccordion = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden w-full"
           >
-            <div className="flex flex-col border-t border-white/5 bg-[#030303]">
-              {/* Overview Block */}
-              <div className="p-6 sm:px-12 sm:pt-12 sm:pb-8">
-                <span className="text-sm uppercase tracking-widest text-zinc-500 font-bold block mb-4">
-                  Overview
-                </span>
-                <p className="text-lg md:text-2xl font-medium tracking-tight text-zinc-200 leading-snug">
+            <div className="w-full flex flex-col lg:flex-row gap-12 lg:gap-24 pt-12 pb-4">
+              {/* Left Column Overview */}
+              <div className="w-full lg:w-1/3 shrink-0 flex flex-col gap-8">
+                <div className="hidden lg:block w-16 h-[2px] bg-white/20"></div>
+                <p className="text-xl md:text-2xl font-medium tracking-tight text-zinc-300 leading-relaxed">
                   {exp.overview}
                 </p>
+                <span className="text-[10px] uppercase tracking-widest text-zinc-600 font-bold">
+                  📍 {exp.location}
+                </span>
               </div>
 
-              {/* Projects Ledger */}
-              <div className="flex flex-col px-6 sm:px-12 pb-12 gap-4">
-                <span className="text-sm uppercase tracking-widest text-zinc-500 font-bold block mb-2 mt-4">
+              {/* Right Column Projects */}
+              <div className="w-full lg:w-2/3 flex flex-col gap-8">
+                <span className="text-xs uppercase tracking-widest text-zinc-600 font-bold border-b border-white/10 pb-4">
                   Shipped Projects & Metrics
                 </span>
-                {exp.projects.map((proj: any, idx: number) => (
-                  <ProjectAccordion
-                    key={idx}
-                    proj={proj}
-                    defaultOpen={idx === 0}
-                  />
-                ))}
+                <div className="flex flex-col gap-6">
+                  {exp.projects.map((proj: any, idx: number) => (
+                    <ProjectGlassCard
+                      key={idx}
+                      proj={proj}
+                      defaultOpen={idx === 0}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -288,23 +304,101 @@ const CompanyAccordion = ({
 function WorkExperience() {
   return (
     <section
-      className="w-full bg-[#000000] border-b border-white/10"
+      className="w-full relative bg-[#020202] overflow-hidden"
       id="experience"
     >
-      {/* Header */}
-      <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
-        <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
-          Professional Journey
-        </span>
-        <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-white tracking-tighter">
-          Experience & Impact.
-        </h3>
+      {/* Wavy 3D Ribbon Structure Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* The SVG Wavy Ribbon */}
+        <svg
+          className="absolute w-full h-[120%] -top-[10%] left-0 opacity-60"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="rgba(79,70,229,0.8)" />
+              <stop offset="30%" stopColor="rgba(147,51,234,0.4)" />
+              <stop offset="70%" stopColor="rgba(225,29,72,0.6)" />
+              <stop offset="100%" stopColor="rgba(244,63,94,0)" />
+            </linearGradient>
+            <linearGradient id="ribbonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="rgba(79,70,229,0.4)" />
+              <stop offset="50%" stopColor="rgba(225,29,72,0.2)" />
+              <stop offset="100%" stopColor="rgba(244,63,94,0)" />
+            </linearGradient>
+            <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="20" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          {/* Core Ribbon */}
+          <path
+            d="M -200,0 C 800,200 900,400 500,550 C 100,700 200,800 1200,1000"
+            fill="none"
+            stroke="url(#ribbonGrad)"
+            strokeWidth="4"
+            filter="url(#neonGlow)"
+          />
+          {/* Outer Layer (creates a 3D edge thickness) */}
+          <path
+            d="M -220,-10 C 780,190 880,390 480,540 C 80,690 180,790 1180,990"
+            fill="none"
+            stroke="rgba(255,255,255,0.08)"
+            strokeWidth="2"
+          />
+          {/* Inner Layer */}
+          <path
+            d="M -180,10 C 820,210 920,410 520,560 C 120,710 220,810 1220,1010"
+            fill="none"
+            stroke="url(#ribbonGlow)"
+            strokeWidth="8"
+            filter="url(#neonGlow)"
+            opacity="0.5"
+          />
+          {/* Extra wide, diffuse glow behind it */}
+          <path
+            d="M -200,0 C 800,200 900,400 500,550 C 100,700 200,800 1200,1000"
+            fill="none"
+            stroke="rgba(225,29,72,0.15)"
+            strokeWidth="40"
+            filter="url(#neonGlow)"
+          />
+        </svg>
+
+        {/* Soft Ambient Field to highlight the curves */}
+        <div className="absolute top-[40%] left-[40%] w-[60vw] h-[60vw] rounded-full bg-rose-600/5 blur-[150px] mix-blend-screen"></div>
       </div>
 
-      <div className="w-full flex flex-col">
-        {ExperienceData.map((exp, index) => (
-          <CompanyAccordion key={index} exp={exp} defaultOpen={index === 0} />
-        ))}
+      <div className="relative z-10 w-full">
+        {/* Header with Sharp 3D Divider */}
+        <div className="relative p-8 sm:p-12 lg:py-24 bg-transparent overflow-hidden">
+          <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-6 block text-center relative z-10">
+            Professional Journey
+          </span>
+          <h3 className="text-center text-4xl sm:text-7xl lg:text-8xl uppercase font-black text-white tracking-tighter max-w-5xl mx-auto leading-[1.1] relative z-10 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+            Experience & Impact.
+          </h3>
+
+          {/* Sharp Cinematic Glowing Divider */}
+          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent z-20"></div>
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent blur-[2px] z-20"></div>
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/4 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent glow z-20 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
+        </div>
+
+        {/* Editorial Timeline container */}
+        <div className="w-full px-6 sm:px-12 max-w-[1600px] mx-auto z-10 relative">
+          <div className="flex flex-col border-t border-white/10 mt-8">
+            {ExperienceData.map((exp, index) => (
+              <CompanyDropdown
+                key={index}
+                exp={exp}
+                defaultOpen={index === 0}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
