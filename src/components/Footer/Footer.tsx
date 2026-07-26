@@ -26,11 +26,11 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#111111] text-white border-none pt-24 pb-8 px-8 sm:px-12 lg:px-16 overflow-hidden relative">
+    <footer className="w-full bg-[#000000] text-white border-none pt-24 pb-8 px-8 sm:px-12 lg:px-16 overflow-hidden relative">
       {/* Top Section: Links & Info */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col gap-4">
-          <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+          <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
             Navigation
           </span>
           <div className="flex flex-col gap-2">
@@ -39,7 +39,7 @@ function Footer() {
                 <Link
                   key={idx}
                   href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                  className="text-lg font-medium text-gray-300 hover:text-white transition-colors w-fit"
+                  className="text-lg font-medium text-zinc-400 hover:text-white transition-colors w-fit"
                 >
                   {link}
                 </Link>
@@ -49,7 +49,7 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+          <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
             Socials
           </span>
           <div className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ function Footer() {
               href="https://github.com/jdmkd"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-medium text-gray-300 hover:text-white transition-colors w-fit"
+              className="text-lg font-medium text-zinc-400 hover:text-white transition-colors w-fit"
             >
               GitHub
             </a>
@@ -65,7 +65,7 @@ function Footer() {
               href="https://www.linkedin.com/in/dj-kumar-9a2a2b236"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-medium text-gray-300 hover:text-white transition-colors w-fit"
+              className="text-lg font-medium text-zinc-400 hover:text-white transition-colors w-fit"
             >
               LinkedIn
             </a>
@@ -73,7 +73,7 @@ function Footer() {
               href="https://www.instagram.com/jd_mkd_09/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-medium text-gray-300 hover:text-white transition-colors w-fit"
+              className="text-lg font-medium text-zinc-400 hover:text-white transition-colors w-fit"
             >
               Instagram
             </a>
@@ -82,16 +82,16 @@ function Footer() {
 
         <div className="flex flex-col gap-8 md:text-right">
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold block mb-2">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
               Local Time
             </span>
-            <span className="text-lg font-medium text-gray-300">{time}</span>
+            <span className="text-lg font-medium text-zinc-400">{time}</span>
           </div>
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold block mb-2">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
               Location
             </span>
-            <span className="text-lg font-medium text-gray-300">
+            <span className="text-lg font-medium text-zinc-400">
               Ahmedabad, India
             </span>
           </div>
@@ -106,7 +106,7 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] lg:text-lg uppercase tracking-widest text-gray-500 font-bold max-w-7xl mx-auto w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] lg:text-lg uppercase tracking-widest text-zinc-500 font-bold max-w-7xl mx-auto w-full">
         <span>© {currentYear} ALL RIGHTS RESERVED.</span>
         <span>DESIGNED & ENGINEERED WITH PRECISION.</span>
       </div>

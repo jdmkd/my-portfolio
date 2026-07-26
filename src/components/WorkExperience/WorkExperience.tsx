@@ -111,21 +111,21 @@ const ProjectAccordion = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md">
+    <div className="w-full flex flex-col bg-black border border-white/10 rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 sm:px-8 sm:py-6 flex flex-row items-center justify-between outline-none cursor-pointer group"
       >
         <div className="flex flex-col gap-2 text-left mr-6">
-          <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111111] leading-tight">
+          <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
             {proj.name}
           </h4>
         </div>
         <div
           className={`shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
             isOpen
-              ? "border-[#111111] bg-[#111111] text-white"
-              : "border-gray-200 text-gray-400 group-hover:border-[#111111] group-hover:text-[#111111]"
+              ? "border-white bg-white text-black"
+              : "border-white/10 text-zinc-500 group-hover:border-white group-hover:text-white"
           }`}
         >
           {isOpen ? (
@@ -147,13 +147,13 @@ const ProjectAccordion = ({
           >
             <div className="px-6 sm:px-8 pb-6 sm:pb-8 flex flex-col gap-8">
               {/* Meta Top: Tech Stack & Action Links */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100 pb-8">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-8">
                 {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2">
                   {proj.techStack.map((tech: string, tIdx: number) => (
                     <span
                       key={tIdx}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-full"
+                      className="px-3 py-1 bg-white/5 border border-white/5 text-zinc-300 text-[10px] font-bold uppercase tracking-widest rounded-full"
                     >
                       {tech}
                     </span>
@@ -165,7 +165,7 @@ const ProjectAccordion = ({
                   {proj.slug && (
                     <Link
                       href={`/projects/${proj.slug}`}
-                      className="px-6 py-3 bg-[#111111] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-3 hover:bg-gray-800 transition-colors whitespace-nowrap shrink-0"
+                      className="px-6 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-3 hover:bg-zinc-200 transition-colors whitespace-nowrap shrink-0"
                     >
                       <span>Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -176,7 +176,7 @@ const ProjectAccordion = ({
                       href={proj.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 border border-gray-200 text-[#111111] text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-2 hover:border-[#111111] transition-colors whitespace-nowrap shrink-0"
+                      className="px-6 py-3 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-colors whitespace-nowrap shrink-0"
                     >
                       <span>Live Site</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -189,10 +189,10 @@ const ProjectAccordion = ({
               <div className="flex flex-col gap-6">
                 {proj.achievements.map((achievement: string, aIdx: number) => (
                   <div key={aIdx} className="flex items-start gap-5 group/item">
-                    <span className="text-base lg:text-xl font-mono mt-1 text-gray-300 group-hover/item:text-[#111111] transition-colors">
+                    <span className="text-base lg:text-xl font-mono mt-1 text-zinc-700 group-hover/item:text-zinc-300 transition-colors">
                       {String(aIdx + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium group-hover/item:text-[#111111] transition-colors">
+                    <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium group-hover/item:text-zinc-100 transition-colors">
                       {achievement}
                     </p>
                   </div>
@@ -216,24 +216,24 @@ const CompanyAccordion = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full flex flex-col border-b border-gray-200 last:border-b-0 group bg-white transition-colors">
+    <div className="w-full flex flex-col border-b border-white/10 last:border-b-0 group bg-[#000000] transition-colors">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 sm:px-12 py-8 sm:py-12 flex flex-col sm:flex-row sm:items-center justify-between outline-none cursor-pointer gap-6 hover:bg-[#FAFAFA] transition-colors"
+        className="w-full px-6 sm:px-12 py-8 sm:py-12 flex flex-col sm:flex-row sm:items-center justify-between outline-none cursor-pointer gap-6 hover:bg-white/[0.02] transition-colors"
       >
         <div className="flex flex-col gap-2 text-left mr-8">
-          <h3 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#111111] leading-tight">
+          <h3 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
             {exp.company}
           </h3>
-          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold">
+          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-zinc-500 font-bold">
             {exp.role} • {exp.duration}
           </span>
         </div>
         <div
           className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 sm:self-center self-start ${
             isOpen
-              ? "border-[#111111] bg-[#111111] text-white"
-              : "border-gray-300 text-gray-400 group-hover:border-[#111111] group-hover:text-[#111111]"
+              ? "border-white bg-white text-black"
+              : "border-white/10 text-zinc-500 group-hover:border-white group-hover:text-white"
           }`}
         >
           {isOpen ? (
@@ -253,20 +253,20 @@ const CompanyAccordion = ({
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden w-full"
           >
-            <div className="flex flex-col border-t border-gray-100 bg-[#F8F9FA]">
+            <div className="flex flex-col border-t border-white/5 bg-[#030303]">
               {/* Overview Block */}
               <div className="p-6 sm:px-12 sm:pt-12 sm:pb-8">
-                <span className="text-sm uppercase tracking-widest text-gray-400 font-bold block mb-4">
+                <span className="text-sm uppercase tracking-widest text-zinc-500 font-bold block mb-4">
                   Overview
                 </span>
-                <p className="text-lg md:text-2xl font-medium tracking-tight text-[#111111] leading-snug">
+                <p className="text-lg md:text-2xl font-medium tracking-tight text-zinc-200 leading-snug">
                   {exp.overview}
                 </p>
               </div>
 
               {/* Projects Ledger */}
               <div className="flex flex-col px-6 sm:px-12 pb-12 gap-4">
-                <span className="text-sm uppercase tracking-widest text-gray-400 font-bold block mb-2 mt-4">
+                <span className="text-sm uppercase tracking-widest text-zinc-500 font-bold block mb-2 mt-4">
                   Shipped Projects & Metrics
                 </span>
                 {exp.projects.map((proj: any, idx: number) => (
@@ -288,22 +288,17 @@ const CompanyAccordion = ({
 function WorkExperience() {
   return (
     <section
-      className="w-full bg-white border-b border-gray-200"
+      className="w-full bg-[#000000] border-b border-white/10"
       id="experience"
     >
-      {/* Premium Editorial Header */}
-      <div className="w-full border-b border-gray-200 px-6 sm:px-12 py-20 lg:py-32 bg-white flex flex-col lg:flex-row lg:items-end justify-between gap-12">
-        <h2 className="text-[15vw] sm:text-8xl leading-[0.9] font-black tracking-tighter text-[#111111] uppercase">
-          Experience
-          <br />
-          <span className="text-gray-300">& Impact</span>
-        </h2>
-        <div className="lg:w-1/3 pb-2">
-          <p className="text-xs sm:text-sm font-bold text-gray-400 leading-relaxed uppercase tracking-[0.2em] border-l-2 border-[#111111] pl-6">
-            A track record of building scalable, high-performance architecture
-            for the modern web.
-          </p>
-        </div>
+      {/* Header */}
+      <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
+        <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
+          Professional Journey
+        </span>
+        <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-white tracking-tighter">
+          Experience & Impact.
+        </h3>
       </div>
 
       <div className="w-full flex flex-col">

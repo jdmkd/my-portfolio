@@ -19,25 +19,25 @@ const EducationData = [
 
 const Table = () => {
   return (
-    <div className="w-full flex flex-col divide-y divide-gray-200">
+    <div className="w-full flex flex-col divide-y divide-white/10">
       {EducationData.map((edu, index) => (
         <div
           key={index}
-          className="w-full bg-white hover:bg-[#fcfcfc] px-8 sm:px-12 py-10 flex flex-col sm:flex-row gap-8 transition-colors group cursor-pointer"
+          className="w-full bg-[#030303] hover:bg-white/5 px-8 sm:px-12 py-10 flex flex-col sm:flex-row gap-8 transition-colors group cursor-pointer"
         >
           <div className="sm:w-[20%] flex flex-col">
-            <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-2">
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-2">
               Duration
             </span>
-            <span className="text-xl sm:text-2xl font-black text-[#111111]">
+            <span className="text-xl sm:text-2xl font-black text-white">
               {edu.admission_year} — {edu.passout_year}
             </span>
           </div>
           <div className="sm:w-[80%] flex flex-col text-left">
-            <h4 className="text-xl sm:text-2xl font-black text-[#111111] tracking-tight mb-2 group-hover:opacity-70 transition-opacity">
+            <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2 group-hover:opacity-70 transition-opacity">
               {edu.degree}
             </h4>
-            <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
+            <p className="text-sm font-bold uppercase tracking-widest text-zinc-500">
               {edu.university}
             </p>
           </div>

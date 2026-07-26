@@ -89,10 +89,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl text-lg md:text-xl lg:text-2xl text-zinc-400 font-light leading-relaxed mb-16 mx-auto"
+            className="max-w-3xl text-lg md:text-xl lg:text-2xl text-zinc-400 leading-relaxed mb-16 mx-auto"
           >
             I architect and build{" "}
-            <span className="text-white font-medium">
+            <span className="text-white font-semibold">
               high-performance systems
             </span>{" "}
             and digital experiences. Merging clean design with robust

@@ -13,7 +13,7 @@ const TechTags = ({ tags }) => (
       return (
         <span
           key={index}
-          className="flex items-center gap-3 px-5 py-3 border border-gray-300 bg-white text-xs font-medium uppercase tracking-[0.15em] text-[#111111] transition-all rounded-none hover:border-[#111111] hover:bg-[#FAFAFA]"
+          className="flex items-center gap-3 px-5 py-3 border border-white/10 bg-[#0a0a0a] text-xs font-medium uppercase tracking-[0.15em] text-white transition-all rounded-none hover:border-white hover:bg-white/10"
         >
           {imageUrl && (
             <div className="relative w-5 h-5 flex items-center justify-center">

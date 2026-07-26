@@ -91,54 +91,54 @@ function Contactus() {
       )}
 
       <section
-        className="w-full bg-white border-b border-gray-200"
+        className="w-full bg-[#030303] border-b border-white/10"
         id="contact"
       >
         {/* Header */}
-        <div className="border-b border-gray-200 p-8 sm:p-12 bg-[#fcfcfc]">
-          <span className="text-sm lg:text-base uppercase tracking-widest text-gray-500 font-bold mb-4 block text-center">
+        <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
+          <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
             Connect
           </span>
-          <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-[#111111] tracking-tighter">
+          <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-white tracking-tighter">
             Get In Touch.
           </h3>
         </div>
 
         {/* Content Grid */}
-        <div className="w-full flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
+        <div className="w-full flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10">
           {/* Left: Contact Info */}
-          <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-white">
-            <h4 className="text-2xl font-black text-[#111111] tracking-tight mb-8">
+          <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-[#030303]">
+            <h4 className="text-2xl font-black text-white tracking-tight mb-8">
               Let's build something extraordinary together.
             </h4>
 
             {/* Contact Info Text */}
             <div className="flex flex-col gap-12">
-              <div className="flex flex-col gap-8 w-full border-b border-gray-200 pb-12">
+              <div className="flex flex-col gap-8 w-full border-b border-white/10 pb-12">
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold block mb-2">
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
                     Email
                   </span>
                   <a
                     href="mailto:djkumarr9@gmail.com"
-                    className="text-xl font-medium text-[#111111] hover:text-blue-600 transition-colors break-all"
+                    className="text-xl font-medium text-white hover:text-blue-400 transition-colors break-all"
                   >
                     djkumarr9@gmail.com
                   </a>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold block mb-2">
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
                     Phone
                   </span>
                   <a
                     href="tel:+916376094539"
-                    className="text-xl font-medium text-[#111111] hover:text-blue-600 transition-colors"
+                    className="text-xl font-medium text-white hover:text-blue-400 transition-colors"
                   >
                     +91-6376094539
                   </a>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold block mb-2">
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
                     Social Profiles
                   </span>
                   <div className="flex flex-col gap-2 mt-2">
@@ -146,7 +146,7 @@ function Contactus() {
                       href="https://github.com/jdmkd"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-bold tracking-widest uppercase text-gray-600 hover:text-[#111111] transition-colors"
+                      className="text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors"
                     >
                       GitHub
                     </a>
@@ -154,7 +154,7 @@ function Contactus() {
                       href="https://www.linkedin.com/in/dinesh-kumar-x"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-bold tracking-widest uppercase text-gray-600 hover:text-[#0a66c2] transition-colors"
+                      className="text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-[#0a66c2] transition-colors"
                     >
                       LinkedIn
                     </a>
@@ -162,7 +162,7 @@ function Contactus() {
                       href="https://my-portfoliox.vercel.app"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm font-bold tracking-widest uppercase text-gray-600 hover:text-[#111111] transition-colors"
+                      className="text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors"
                     >
                       Portfolio
                     </a>
@@ -173,17 +173,17 @@ function Contactus() {
           </div>
 
           {/* Right: Form */}
-          <div className="flex-1 p-8 sm:p-12 lg:p-16 bg-[#fcfcfc]">
+          <div className="flex-1 p-8 sm:p-12 lg:p-16 bg-[#000000]">
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-6 w-full max-w-lg mx-auto"
             >
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
                   Name
                 </label>
                 <input
-                  className="w-full px-4 py-3 bg-white border border-gray-200 text-[#111111] font-medium outline-none focus:border-[#111111] transition-colors rounded-sm"
+                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm"
                   type="text"
                   name="name"
                   placeholder="John Doe"
@@ -194,11 +194,11 @@ function Contactus() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
                   Email
                 </label>
                 <input
-                  className="w-full px-4 py-3 bg-white border border-gray-200 text-[#111111] font-medium outline-none focus:border-[#111111] transition-colors rounded-sm"
+                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm"
                   type="email"
                   name="email"
                   placeholder="john@example.com"
@@ -209,11 +209,11 @@ function Contactus() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
                   Phone
                 </label>
                 <input
-                  className="w-full px-4 py-3 bg-white border border-gray-200 text-[#111111] font-medium outline-none focus:border-[#111111] transition-colors rounded-sm"
+                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm"
                   type="text"
                   name="phone"
                   placeholder="+91 00000 00000"
@@ -225,11 +225,11 @@ function Contactus() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
                   Message
                 </label>
                 <textarea
-                  className="w-full px-4 py-3 bg-white border border-gray-200 text-[#111111] font-medium outline-none focus:border-[#111111] transition-colors rounded-sm min-h-[120px] resize-y"
+                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm min-h-[120px] resize-y"
                   name="message"
                   placeholder="Tell me about your project..."
                   value={formData.message}
@@ -241,10 +241,10 @@ function Contactus() {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-4 w-full flex justify-center items-center gap-4 bg-[#111111] text-white px-8 py-4 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors disabled:opacity-70"
+                className="mt-4 w-full flex justify-center items-center gap-4 bg-white text-black px-8 py-4 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors disabled:opacity-70"
               >
                 {loading ? (
-                  <Spinner size="w-5 h-5" color="border-white" />
+                  <Spinner size="w-5 h-5" color="border-black" />
                 ) : (
                   "Send Message"
                 )}

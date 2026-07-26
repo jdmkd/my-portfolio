@@ -5,12 +5,15 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <section id="projects" className="w-full bg-white border-b border-gray-200">
-      <div className="border-b border-gray-200 p-8 sm:p-12 bg-[#fcfcfc]">
-        <span className="text-sm lg:text-base uppercase tracking-widest text-gray-400 font-bold mb-4 block text-center">
+    <section
+      id="projects"
+      className="w-full bg-[#030303] border-b border-white/10"
+    >
+      <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
+        <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
           Portfolio
         </span>
-        <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-[#111111] tracking-tighter">
+        <h3 className="text-center text-4xl sm:text-8xl uppercase font-black text-white tracking-tighter">
           Featured Works.
         </h3>
       </div>
@@ -21,7 +24,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10"
         >
           {projectData.map((item, index) => (
             <motion.div
