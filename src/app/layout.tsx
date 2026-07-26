@@ -30,10 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`${inter.variable} font-sans bg-[#FAFAFA] text-[#111111] antialiased selection:bg-[#111111] selection:text-white`}>
+      <body className={`${inter.variable} font-sans bg-black text-white antialiased selection:bg-[#111111] selection:text-white`}>
         
         {/* Main Grid Wrapper - Strict Editorial Border */}
-        <div className="w-full max-w-[1400px] mx-auto bg-white min-h-screen flex flex-col">
+        <div className="w-full max-w-[1600px] mx-auto min-h-screen flex flex-col">
           <Navbar />
           <RouteProgress />
 
