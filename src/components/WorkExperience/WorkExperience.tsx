@@ -28,7 +28,7 @@ const ExperienceData = [
           "React.js",
           "TypeScript",
           "TanStack Query",
-          "DRF",
+          "Django REST Framework",
           "PostgreSQL",
           "Redis",
           "Cloudinary",
@@ -46,10 +46,11 @@ const ExperienceData = [
           "Built a global configurable pagination system with dynamic page size override, eliminating frontend pagination business logic.",
         ],
         techStack: [
+          "Next.js",
           "React.js",
           "TypeScript",
           "TanStack Query",
-          "DRF",
+          "Django REST Framework",
           "PostgreSQL",
           "Redis",
           "Cloudinary",
@@ -81,7 +82,7 @@ const ExperienceData = [
   {
     company: "InfoLabz",
     role: "Python Developer (Intern)",
-    duration: "Jul 2021 — Dec 2021",
+    duration: "May 2021 — Dec 2021",
     location: "Ahmedabad, Gujarat",
     overview:
       "Completed an intensive internship focusing on backend software engineering, API design, and web development using Python and the Django framework.",
@@ -373,23 +374,18 @@ function WorkExperience() {
 
       <div className="relative z-10 w-full">
         {/* Header with Sharp 3D Divider */}
-        <div className="relative p-8 sm:p-12 lg:py-24 bg-transparent overflow-hidden">
+        <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000] overflow-hidden">
           <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-6 block text-center relative z-10">
             Professional Journey
           </span>
           <h3 className="text-center text-4xl sm:text-7xl lg:text-8xl uppercase font-black text-white tracking-tighter max-w-5xl mx-auto leading-[1.1] relative z-10 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
             Experience & Impact.
           </h3>
-
-          {/* Sharp Cinematic Glowing Divider */}
-          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent z-20"></div>
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent blur-[2px] z-20"></div>
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/4 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent glow z-20 shadow-[0_0_15px_rgba(255,255,255,0.8)]"></div>
         </div>
 
         {/* Editorial Timeline container */}
         <div className="w-full px-6 sm:px-12 max-w-[1600px] mx-auto z-10 relative">
-          <div className="flex flex-col border-t border-white/10 mt-8">
+          <div className="flex flex-col border-b border-white/10">
             {ExperienceData.map((exp, index) => (
               <CompanyDropdown
                 key={index}
