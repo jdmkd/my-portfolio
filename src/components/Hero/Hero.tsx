@@ -59,7 +59,7 @@ const Hero = () => {
         <div className="flex flex-col items-center w-full">
           {/* 3D Character Reveal Name */}
           <motion.h1
-            className="text-[16vw] md:text-[14vw] lg:text-[10rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden"
+            className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[10rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12"
             initial="hidden"
             animate="visible"
             variants={{
@@ -68,19 +68,19 @@ const Hero = () => {
               },
             }}
           >
-            {name.split("").map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                transition={{ type: "spring", damping: 12, stiffness: 100 }}
-                className={
-                  char === " "
-                    ? "w-[4vw] lg:w-12"
-                    : "inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300"
-                }
-              >
-                {char}
-              </motion.span>
+            {name.split(" ").map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block whitespace-nowrap">
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={charIndex}
+                    variants={letterVariants}
+                    transition={{ type: "spring", damping: 12, stiffness: 100 }}
+                    className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
             ))}
           </motion.h1>
 

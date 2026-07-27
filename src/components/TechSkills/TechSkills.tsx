@@ -72,7 +72,7 @@ const Tech = () => {
                 onClick={() => toggleCategory(category)}
                 className="w-full p-6 sm:p-8 bg-[#050505] hover:bg-white/5 transition-colors flex items-center justify-between cursor-pointer group outline-none"
               >
-                <h4 className="text-base lg:text-lg font-black tracking-widest text-white uppercase">
+                <h4 className="text-base lg:text-lg font-black text-left tracking-widest text-white uppercase">
                   {category}
                 </h4>
                 <div
@@ -100,11 +100,11 @@ const Tech = () => {
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className="w-full overflow-hidden border-t border-white/10"
                   >
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 bg-[#030303]">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 bg-[#030303]">
                       {items.map((item, index) => (
                         <div
                           key={index}
-                          className="aspect-square flex flex-col items-center justify-center gap-4 border-r border-b border-white/10 bg-[#030303] hover:bg-white/5 transition-colors group cursor-pointer p-6"
+                          className="aspect-square flex flex-col items-center justify-center gap-4 border-r border-b border-white/10 bg-[#030303] hover:bg-white/5 transition-colors group cursor-pointer p-0"
                         >
                           <div className="relative w-12 h-12 sm:w-16 sm:h-16 group-hover:scale-110 transition-transform duration-300">
                             <Image
