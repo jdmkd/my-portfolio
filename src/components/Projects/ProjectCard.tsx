@@ -18,39 +18,98 @@ const ProjectCard = ({ item }) => {
   return (
     <div className="flex flex-col h-full w-full bg-[#030303] group hover:bg-[#0a0a0a] transition-colors duration-500">
       {/* Clickable Image Container */}
-      <Link
-        href={`/projects/${item.slug}`}
-        onClick={handleNavigate}
-        className="block relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden bg-[#000000] cursor-pointer"
-      >
+      <div className="px-8 sm:px-12 pt-8 sm:pt-12">
         {item.images?.length > 0 ? (
-          <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            loop
-            modules={[Navigation, Pagination]}
-            className="w-full h-full [&_.swiper-button-next]:text-white [&_.swiper-button-prev]:text-white [&_.swiper-pagination-bullet-active]:bg-white"
-          >
-            {item.images.map((image, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={image.src}
-                  alt={`Project ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden bg-[#000000] group/slider">
+            <Swiper
+              spaceBetween={0}
+              slidesPerView={1}
+              navigation={{
+                nextEl: `.swiper-next-${item.slug}`,
+                prevEl: `.swiper-prev-${item.slug}`,
+              }}
+              pagination={{ clickable: true }}
+              loop
+              modules={[Navigation, Pagination]}
+              className="w-full h-full"
+              style={
+                {
+                  "--swiper-pagination-color": "#ffffff",
+                  "--swiper-pagination-bullet-inactive-color": "#aaaaaa",
+                  "--swiper-pagination-bullet-inactive-opacity": "0.5",
+                } as React.CSSProperties
+              }
+            >
+              {item.images.map((image, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="relative w-full h-full overflow-hidden"
+                >
+                  <Link
+                    href={`/projects/${item.slug}`}
+                    onClick={handleNavigate}
+                    className="block w-full h-full"
+                  >
+                    <img
+                      src={image.src}
+                      alt={`Project ${index + 1}`}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Custom Navigation Overlays */}
+            <div
+              className={`swiper-prev-${item.slug} absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black/60 to-transparent z-10 flex items-center justify-start pl-4 cursor-pointer text-white`}
+            >
+              <svg
+                className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-[#050505] group-hover:bg-white/5 transition-colors duration-500">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-600 font-bold">
-              No Preview Available
-            </span>
+              </svg>
+            </div>
+            <div
+              className={`swiper-next-${item.slug} absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black/60 to-transparent z-10 flex items-center justify-end pr-4 cursor-pointer text-white`}
+            >
+              <svg
+                className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
           </div>
+        ) : (
+          <Link
+            href={`/projects/${item.slug}`}
+            onClick={handleNavigate}
+            className="block relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden bg-[#000000] cursor-pointer"
+          >
+            <div className="w-full h-full flex items-center justify-center bg-[#050505] group-hover:bg-white/5 transition-colors duration-500">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-600 font-bold">
+                No Preview Available
+              </span>
+            </div>
+          </Link>
         )}
-      </Link>
+      </div>
 
       {/* Content Container */}
       <div className="p-8 sm:p-12 flex flex-col flex-grow">
