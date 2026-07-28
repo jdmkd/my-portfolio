@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { TECH_STACK } from "../../config/tech-stack";
 
-const TechTags = ({ tags }) => (
-  <div className="flex flex-wrap gap-2 sm:gap-3 items-center mt-6">
+const TechTags = ({ tags, className = "mt-6" }) => (
+  <div className={`flex flex-wrap gap-2 sm:gap-3 items-center ${className}`}>
     {tags.map((tag, index) => {
       // Direct dictionary lookup - perfectly scalable
       const tech = TECH_STACK[tag];

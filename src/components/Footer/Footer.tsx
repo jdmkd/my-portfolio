@@ -26,7 +26,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#000000] text-white border-none pt-24 pb-8 px-8 sm:px-12 lg:px-16 overflow-hidden relative">
+    <footer className="w-full bg-[#000000] text-white border-t border-white/20 pt-24 pb-8 px-8 sm:px-12 lg:px-16 overflow-hidden relative">
       {/* Top Section: Links & Info */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col gap-4">

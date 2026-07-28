@@ -43,7 +43,7 @@ export const projectData: ProjectData[] = [
       "REST APIs",
       "TypeScript"
     ],
-    "live_demo": "https://iinvops.vercel.app",
+    "live_demo": "https://invops.vercel.app",
     "code": null,
     "about": "A powerful multi-tenant SaaS point-of-sale and inventory management system.",
     "features": [
@@ -54,7 +54,7 @@ export const projectData: ProjectData[] = [
       "Implemented RBAC enforcement across 40+ protected API routes and multi-role administrative workflows.",
       "Designed transactional inventory update mechanisms to maintain stock consistency and prevent overselling across billing, purchase, and order operations."
     ],
-    "isClientProject": true,
+    "isClientProject": false,
     "clientMessage": "SaaS Platform currently in production",
     "images": [
       inventoryops_image_1,
