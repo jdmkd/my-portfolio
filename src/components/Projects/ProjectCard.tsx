@@ -32,14 +32,57 @@ const ProjectCard = ({ item }) => {
               loop
               modules={[Navigation, Pagination]}
               className="w-full h-full"
-              style={
-                {
-                  "--swiper-pagination-color": "#ffffff",
-                  "--swiper-pagination-bullet-inactive-color": "#aaaaaa",
-                  "--swiper-pagination-bullet-inactive-opacity": "0.5",
-                } as React.CSSProperties
-              }
             >
+              <style>{`
+                  .group\\/slider .swiper-pagination {
+                      background: rgba(0, 0, 0, 0.6);
+                      backdrop-filter: blur(12px);
+                      -webkit-backdrop-filter: blur(12px);
+                      border: 1px solid rgba(255, 255, 255, 0.1);
+                      border-radius: 9999px;
+                      padding: 6px 12px;
+                      width: max-content !important;
+                      max-width: 90%;
+                      left: 50% !important;
+                      transform: translateX(-50%) !important;
+                      bottom: 12px !important;
+                      display: flex !important;
+                      align-items: center;
+                      gap: 6px;
+                      overflow-x: auto;
+                      overflow-y: hidden;
+                  }
+                  .group\\/slider .swiper-pagination::-webkit-scrollbar {
+                      display: none;
+                  }
+                  .group\\/slider .swiper-pagination-bullet {
+                      margin: 0 !important;
+                      background: #ffffff !important;
+                      opacity: 0.4;
+                      width: 6px;
+                      height: 6px;
+                      flex-shrink: 0;
+                      transition: all 0.3s ease;
+                  }
+                  .group\\/slider .swiper-pagination-bullet-active {
+                      opacity: 1;
+                      width: 16px;
+                      border-radius: 9999px;
+                  }
+                  @media (min-width: 640px) {
+                      .group\\/slider .swiper-pagination {
+                          padding: 10px 20px;
+                          gap: 10px;
+                      }
+                      .group\\/slider .swiper-pagination-bullet {
+                          width: 8px;
+                          height: 8px;
+                      }
+                      .group\\/slider .swiper-pagination-bullet-active {
+                          width: 24px;
+                      }
+                  }
+              `}</style>
               {item.images.map((image, index) => (
                 <SwiperSlide
                   key={index}
@@ -53,7 +96,7 @@ const ProjectCard = ({ item }) => {
                     <img
                       src={image.src}
                       alt={`Project ${index + 1}`}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                   </Link>
                 </SwiperSlide>
@@ -62,10 +105,10 @@ const ProjectCard = ({ item }) => {
 
             {/* Custom Navigation Overlays */}
             <div
-              className={`swiper-prev-${item.slug} absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black/60 to-transparent z-10 flex items-center justify-start pl-4 cursor-pointer text-white`}
+              className={`swiper-prev-${item.slug} absolute inset-y-0 left-0 w-12 sm:w-16 lg:w-24 bg-gradient-to-r from-black/60 to-transparent z-10 flex items-center justify-start pl-2 sm:pl-4 cursor-pointer text-white`}
             >
               <svg
-                className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity"
+                className="w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 opacity-70 hover:opacity-100 transition-opacity"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -79,10 +122,10 @@ const ProjectCard = ({ item }) => {
               </svg>
             </div>
             <div
-              className={`swiper-next-${item.slug} absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black/60 to-transparent z-10 flex items-center justify-end pr-4 cursor-pointer text-white`}
+              className={`swiper-next-${item.slug} absolute inset-y-0 right-0 w-12 sm:w-16 lg:w-24 bg-gradient-to-l from-black/60 to-transparent z-10 flex items-center justify-end pr-2 sm:pr-4 cursor-pointer text-white`}
             >
               <svg
-                className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity"
+                className="w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 opacity-70 hover:opacity-100 transition-opacity"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
