@@ -26,14 +26,14 @@ export default function ProjectDetail({ params }) {
             <div className="max-w-[1400px] mx-auto">
                 
                 {/* Header Section */}
-                <div className="mb-12 flex">
+                <div className="mb-6 sm:mb-8 flex">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-white leading-[1.1]">
                         {project.title}
                     </h1>
                 </div>
 
                 {/* Main Layout Grid */}
-                <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 mb-20 pt-8 border-t border-white/10">
+                <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 mb-10 md:mb-14 pt-8 border-t border-white/10">
                     
                     {/* Left Column: Image Slider */}
                     <div className="flex-1 min-w-0">
@@ -56,7 +56,7 @@ export default function ProjectDetail({ params }) {
                                         loop={true}
                                         modules={[Navigation, Pagination]} 
                                         autoplay={{ delay: 4500 }}
-                                        className="w-full h-[300px] sm:h-[350px] lg:h-[450px]"
+                                        className="w-full aspect-video sm:aspect-auto sm:h-[350px] lg:h-[450px]"
                                     >
                                         <style>{`
                                             .group\\/slider .swiper-pagination {
@@ -65,27 +65,47 @@ export default function ProjectDetail({ params }) {
                                                 -webkit-backdrop-filter: blur(12px);
                                                 border: 1px solid rgba(255, 255, 255, 0.1);
                                                 border-radius: 9999px;
-                                                padding: 10px 20px;
-                                                width: auto !important;
+                                                padding: 6px 12px;
+                                                width: max-content !important;
+                                                max-width: 90%;
                                                 left: 50% !important;
                                                 transform: translateX(-50%) !important;
-                                                bottom: 24px !important;
+                                                bottom: 12px !important;
                                                 display: flex !important;
                                                 align-items: center;
-                                                gap: 10px;
+                                                gap: 6px;
+                                                overflow-x: auto;
+                                                overflow-y: hidden;
+                                            }
+                                            .group\\/slider .swiper-pagination::-webkit-scrollbar {
+                                                display: none;
                                             }
                                             .group\\/slider .swiper-pagination-bullet {
                                                 margin: 0 !important;
                                                 background: #ffffff !important;
                                                 opacity: 0.4;
-                                                width: 10px;
-                                                height: 10px;
+                                                width: 6px;
+                                                height: 6px;
+                                                flex-shrink: 0;
                                                 transition: all 0.3s ease;
                                             }
                                             .group\\/slider .swiper-pagination-bullet-active {
                                                 opacity: 1;
-                                                width: 28px;
+                                                width: 16px;
                                                 border-radius: 9999px;
+                                            }
+                                            @media (min-width: 640px) {
+                                                .group\\/slider .swiper-pagination {
+                                                    padding: 10px 20px;
+                                                    gap: 10px;
+                                                }
+                                                .group\\/slider .swiper-pagination-bullet {
+                                                    width: 10px;
+                                                    height: 10px;
+                                                }
+                                                .group\\/slider .swiper-pagination-bullet-active {
+                                                    width: 28px;
+                                                }
                                             }
                                         `}</style>
                                         {project.images.map((image, index) => (
@@ -100,13 +120,13 @@ export default function ProjectDetail({ params }) {
                                     </Swiper>
 
                                     {/* Custom Navigation Overlays */}
-                                    <div className={`swiper-prev-${project.slug} absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black/60 to-transparent z-10 flex items-center justify-start pl-4 cursor-pointer text-white`}>
-                                        <svg className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div className={`swiper-prev-${project.slug} absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black/60 to-transparent z-10 flex items-center justify-start pl-2 sm:pl-4 cursor-pointer text-white`}>
+                                        <svg className="w-6 h-6 sm:w-12 sm:h-12 opacity-70 hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                         </svg>
                                     </div>
-                                    <div className={`swiper-next-${project.slug} absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black/60 to-transparent z-10 flex items-center justify-end pr-4 cursor-pointer text-white`}>
-                                        <svg className="w-12 h-12 opacity-70 hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div className={`swiper-next-${project.slug} absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black/60 to-transparent z-10 flex items-center justify-end pr-2 sm:pr-4 cursor-pointer text-white`}>
+                                        <svg className="w-6 h-6 sm:w-12 sm:h-12 opacity-70 hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                         </svg>
                                     </div>
@@ -163,7 +183,7 @@ export default function ProjectDetail({ params }) {
                 </div>
 
                 {/* Content Section */}
-                <div className="mx-auto flex flex-col gap-16">
+                <div className="mx-auto flex flex-col gap-8 md:gap-16">
                     
                     {/* About Section */}
                     <div className="flex flex-col gap-6">
@@ -177,7 +197,7 @@ export default function ProjectDetail({ params }) {
 
                     {/* Features / Resume Points */}
                     {project.features && project.features.length > 0 && (
-                        <div className="flex flex-col gap-8 bg-[#050505] p-8 sm:p-10 border border-white/10 shadow-sm">
+                        <div className="flex flex-col gap-8 bg-[#050505] p-6 sm:p-10 border border-white/10 shadow-sm">
                             <h3 className="text-2xl font-black tracking-tight text-white">
                                 Key Impact & Engineering
                             </h3>
@@ -189,7 +209,7 @@ export default function ProjectDetail({ params }) {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
-                                        <span className="text-lg text-zinc-400 leading-[1.7] font-medium">{feature}</span>
+                                        <span className="text-base md:text-lg text-zinc-400 leading-[1.7] font-medium">{feature}</span>
                                     </li>
                                 ))}
                             </ul>

@@ -16,7 +16,7 @@ const ExperienceData = [
       {
         name: "paramdivya.com — B2B Premium Timber Import & Custom Woodwork Platform",
         slug: "param-divya-agency",
-        liveLink: "https://paramdivya.com",
+        liveLink: "https://www.paramdivya.com",
         achievements: [
           "Reduced product search API latency from 4.2s to 400–620ms by introducing Redis caching, PostgreSQL GIN index, query prefetching, and eliminating N+1 ORM queries.",
           "Optimized frontend delivery using route-level code splitting, lazy loading, and WebP media optimization, reducing total network payload from 60.8MB to 9.7MB (84% reduction).",
@@ -37,7 +37,7 @@ const ExperienceData = [
       {
         name: "housingwaala.com — Real Estate Platform",
         slug: "housingwalaa",
-        liveLink: "https://housingwaala.com",
+        liveLink: "https://www.housingwaala.com",
         achievements: [
           "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
           "Optimized multi-table property detail queries from 9s–12s to 800ms–1.5s using prefetch_related, select_related, and indexing across relationships.",
@@ -115,10 +115,10 @@ const ProjectGlassCard = ({
     <div className="w-full flex flex-col bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden shadow-lg backdrop-blur-md transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 sm:px-10 py-6 sm:py-8 flex flex-row items-center justify-between outline-none cursor-pointer group"
+        className="w-full px-4 sm:px-10 py-5 sm:py-8 flex flex-row items-center justify-between outline-none cursor-pointer group"
       >
-        <div className="flex flex-col gap-2 text-left mr-6">
-          <h4 className="text-xl sm:text-2xl font-semibold tracking-tight text-white leading-tight">
+        <div className="flex flex-col gap-2 text-left mr-4 sm:mr-6 min-w-0">
+          <h4 className="text-lg sm:text-2xl font-semibold tracking-tight text-white leading-tight break-words">
             {proj.name}
           </h4>
         </div>
@@ -146,9 +146,13 @@ const ProjectGlassCard = ({
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden w-full"
           >
-            <div className="px-6 sm:px-10 pb-8 sm:pb-10 flex flex-col gap-10">
+            <div
+              className={`px-4 sm:px-10 pb-6 sm:pb-10 flex flex-col ${!proj.slug ? "gap-8 sm:gap-10" : "gap-4"}`}
+            >
               {/* Meta Top: Tech Stack & Action Links */}
-              <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 border-b border-white/5 pb-8">
+              <div
+                className={`flex flex-col xl:flex-row xl:items-center justify-between gap-6 ${!proj.slug && proj.achievements && proj.achievements.length > 0 ? "border-b border-white/5 pb-8" : ""}`}
+              >
                 {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2">
                   {proj.techStack.map((tech: string, tIdx: number) => (
@@ -162,11 +166,11 @@ const ProjectGlassCard = ({
                 </div>
 
                 {/* Action Links */}
-                <div className="flex items-center gap-4 shrink-0">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0 mt-4 xl:mt-0">
                   {proj.slug && (
                     <Link
                       href={`/projects/${proj.slug}`}
-                      className="px-6 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-zinc-200 transition-colors whitespace-nowrap shrink-0 shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
+                      className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-zinc-200 transition-colors whitespace-nowrap shrink-0 shadow-[0_5px_15px_rgba(255,255,255,0.1)]"
                     >
                       <span>Case Study</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -177,7 +181,7 @@ const ProjectGlassCard = ({
                       href={proj.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 bg-transparent border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-colors whitespace-nowrap shrink-0"
+                      className="px-5 sm:px-6 py-2.5 sm:py-3 bg-transparent border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg flex items-center gap-2 hover:bg-white/10 hover:border-white/40 transition-colors whitespace-nowrap shrink-0"
                     >
                       <span>Live Site</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -187,30 +191,39 @@ const ProjectGlassCard = ({
               </div>
 
               {/* Achievements List */}
-              <div className="flex flex-col gap-6">
-                {proj.achievements.map((achievement: string, aIdx: number) => (
-                  <div key={aIdx} className="flex items-start gap-5 group/item">
-                    <div className="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/10 text-white shrink-0 border border-white/5">
-                      <svg
-                        className="w-3 h-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth="3"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-base text-zinc-400 leading-relaxed font-medium group-hover/item:text-zinc-200 transition-colors">
-                      {achievement}
-                    </p>
+              {!proj.slug &&
+                proj.achievements &&
+                proj.achievements.length > 0 && (
+                  <div className="flex flex-col gap-6">
+                    {proj.achievements.map(
+                      (achievement: string, aIdx: number) => (
+                        <div
+                          key={aIdx}
+                          className="flex items-start gap-5 group/item"
+                        >
+                          <div className="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/10 text-white shrink-0 border border-white/5">
+                            <svg
+                              className="w-3 h-3"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              strokeWidth="3"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-base text-zinc-400 leading-relaxed font-medium group-hover/item:text-zinc-200 transition-colors">
+                            {achievement}
+                          </p>
+                        </div>
+                      ),
+                    )}
                   </div>
-                ))}
-              </div>
+                )}
             </div>
           </motion.div>
         )}
@@ -229,14 +242,14 @@ const CompanyDropdown = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="w-full flex flex-col border-b border-white/10 last:border-b-0 relative py-12 lg:py-16">
+    <div className="w-full flex flex-col border-b border-white/10 last:border-b-0 relative py-6 md:py-8">
       {/* Clickable Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex flex-row items-center justify-between group outline-none text-left cursor-pointer"
       >
         <div className="flex flex-col gap-4">
-          <h3 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.1] group-hover:text-zinc-300 transition-colors">
+          <h3 className="text-2xl sm:text-4xl font-black tracking-tighter text-white leading-[1.1] group-hover:text-zinc-300 transition-colors">
             {exp.company}
           </h3>
           <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-zinc-500 font-bold">
@@ -267,31 +280,53 @@ const CompanyDropdown = ({
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden w-full"
           >
-            <div className="w-full flex flex-col lg:flex-row gap-12 lg:gap-24 pt-12 pb-4">
-              {/* Left Column Overview */}
-              <div className="w-full lg:w-1/3 shrink-0 flex flex-col gap-8">
-                <div className="hidden lg:block w-16 h-[2px] bg-white/20"></div>
-                <p className="text-xl md:text-2xl font-medium tracking-tight text-zinc-300 leading-relaxed">
-                  {exp.overview}
-                </p>
-                <span className="text-[10px] text-base uppercase tracking-widest text-zinc-600 font-bold">
-                  {exp.location}
-                </span>
-              </div>
+            <div className="relative pl-4 sm:pl-8 ml-1 sm:ml-4 mt-6 sm:mt-8">
+              {/* Overarching Animated Company Tree Bar */}
+              <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-white/20 to-white/10"></div>
 
-              {/* Right Column Projects */}
-              <div className="w-full lg:w-2/3 flex flex-col gap-8">
-                <span className="text-xs uppercase tracking-widest text-zinc-600 font-bold border-b border-white/10 pb-4">
-                  Shipped Projects & Metrics
-                </span>
-                <div className="flex flex-col gap-6">
-                  {exp.projects.map((proj: any, idx: number) => (
-                    <ProjectGlassCard
-                      key={idx}
-                      proj={proj}
-                      defaultOpen={idx === 0}
-                    />
-                  ))}
+              <div className="w-full flex flex-col gap-8 sm:gap-12 pb-4">
+                {/* Overview Section */}
+                <div className="w-full flex flex-col gap-4 sm:gap-6">
+                  <span className="text-[10px] text-base uppercase tracking-widest text-zinc-600 font-bold">
+                    {exp.location}
+                  </span>
+                  <p className="text-base md:text-xl font-medium tracking-tight text-zinc-300 leading-relaxed max-w-4xl">
+                    {exp.overview}
+                  </p>
+                </div>
+
+                {/* Projects Section */}
+                <div className="w-full flex flex-col gap-8">
+                  <span className="text-xs uppercase tracking-widest text-zinc-600 font-bold border-b border-white/10 pb-4">
+                    Shipped Projects & Metrics
+                  </span>
+                  <div className="flex flex-col gap-6">
+                    {exp.projects.map((proj: any, idx: number) => (
+                      <div key={idx} className="relative z-10">
+                        {/* Perfect SVG Bezier S-Curve */}
+                        <div className="absolute top-[10px] sm:top-[14px] -left-4 sm:-left-8 w-4 sm:w-8 h-[24px] pointer-events-none">
+                          <svg
+                            width="100%"
+                            height="100%"
+                            preserveAspectRatio="none"
+                            viewBox="0 0 100 100"
+                          >
+                            <path
+                              d="M 0,0 C 0,50 100,50 100,100"
+                              fill="none"
+                              stroke="rgba(255,255,255,0.2)"
+                              strokeWidth="2"
+                              vectorEffect="non-scaling-stroke"
+                            />
+                          </svg>
+                        </div>
+                        {/* Sleek Glowing Node */}
+                        <div className="absolute top-[34px] sm:top-[38px] left-0 w-2 h-2 rounded-full bg-white transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_12px_rgba(255,255,255,1)] z-10"></div>
+
+                        <ProjectGlassCard proj={proj} defaultOpen={idx === 0} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -310,7 +345,6 @@ function WorkExperience() {
     >
       {/* Wavy 3D Ribbon Structure Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* The SVG Wavy Ribbon */}
         <svg
           className="absolute w-full h-[120%] -top-[10%] left-0 opacity-60"
           viewBox="0 0 1000 1000"
@@ -334,7 +368,6 @@ function WorkExperience() {
             </filter>
           </defs>
 
-          {/* Core Ribbon */}
           <path
             d="M -200,0 C 800,200 900,400 500,550 C 100,700 200,800 1200,1000"
             fill="none"
@@ -342,14 +375,12 @@ function WorkExperience() {
             strokeWidth="4"
             filter="url(#neonGlow)"
           />
-          {/* Outer Layer (creates a 3D edge thickness) */}
           <path
             d="M -220,-10 C 780,190 880,390 480,540 C 80,690 180,790 1180,990"
             fill="none"
             stroke="rgba(255,255,255,0.08)"
             strokeWidth="2"
           />
-          {/* Inner Layer */}
           <path
             d="M -180,10 C 820,210 920,410 520,560 C 120,710 220,810 1220,1010"
             fill="none"
@@ -358,7 +389,6 @@ function WorkExperience() {
             filter="url(#neonGlow)"
             opacity="0.5"
           />
-          {/* Extra wide, diffuse glow behind it */}
           <path
             d="M -200,0 C 800,200 900,400 500,550 C 100,700 200,800 1200,1000"
             fill="none"
@@ -368,7 +398,6 @@ function WorkExperience() {
           />
         </svg>
 
-        {/* Soft Ambient Field to highlight the curves */}
         <div className="absolute top-[40%] left-[40%] w-[60vw] h-[60vw] rounded-full bg-rose-600/5 blur-[150px] mix-blend-screen"></div>
       </div>
 

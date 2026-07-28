@@ -29,7 +29,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative bg-[#030303] overflow-hidden font-sans pt-[100px] lg:pt-[120px] min-h-screen">
+    <div className="relative bg-[#030303] overflow-hidden font-sans pt-[100px] lg:pt-[120px] min-h-screen border-b border-white/20">
       {/* Interactive Mouse Spotlight */}
       <motion.div
         className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-screen"
