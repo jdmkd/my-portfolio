@@ -17,7 +17,12 @@ const TechTags = ({ tags, className = "mt-6" }) => (
         >
           {imageUrl && (
             <div className="relative w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center">
-              <Image src={imageUrl} alt={tag} fill className="object-contain" />
+              <Image
+                src={imageUrl}
+                alt={tag}
+                fill
+                className={`object-contain filter ${tech?.invertIcon ? "invert" : ""}`}
+              />
             </div>
           )}
           {tag}

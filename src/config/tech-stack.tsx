@@ -10,6 +10,7 @@ export interface TechItem {
   name: string;
   imageUrl: any;
   category: TechCategory;
+  invertIcon?: boolean;
 }
 
 export const TECH_STACK: Record<string, TechItem> = {
@@ -55,6 +56,7 @@ export const TECH_STACK: Record<string, TechItem> = {
     name: "Next.js",
     imageUrl: "/assets/tech_skill_Icon/Nextjs.svg",
     category: "Frontend",
+    invertIcon: true,
   },
   Redux: {
     name: "Redux",
@@ -97,6 +99,7 @@ export const TECH_STACK: Record<string, TechItem> = {
     name: "Express.js",
     imageUrl: "/assets/tech_skill_Icon/Express.svg",
     category: "Backend",
+    invertIcon: true,
   },
   Django: {
     name: "Django",
@@ -173,11 +176,13 @@ export const TECH_STACK: Record<string, TechItem> = {
     name: "Render",
     imageUrl: "/assets/tech_skill_Icon/Render-logo-Black.svg",
     category: "DevOps & Cloud",
+    invertIcon: true,
   },
   Vercel: {
     name: "Vercel",
     imageUrl: "/assets/tech_skill_Icon/Vercel.svg",
     category: "DevOps & Cloud",
+    invertIcon: true,
   },
 
   // Tools
@@ -190,6 +195,7 @@ export const TECH_STACK: Record<string, TechItem> = {
     name: "GitHub",
     imageUrl: "/assets/tech_skill_Icon/GitHub.svg",
     category: "Tools",
+    invertIcon: true,
   },
   "GitHub Actions": {
     name: "GitHub Actions",

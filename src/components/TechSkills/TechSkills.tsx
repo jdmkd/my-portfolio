@@ -111,7 +111,9 @@ const Tech = () => {
                               src={item.imageUrl}
                               alt={item.name}
                               fill
-                              className="object-contain filter group-hover:brightness-110 transition-all"
+                              className={`object-contain filter transition-all ${
+                                item.invertIcon ? "invert group-hover:brightness-125" : "group-hover:brightness-110"
+                              }`}
                             />
                           </div>
                           <span className="text-[10px] sm:text-xs font-black text-zinc-500 uppercase tracking-widest text-center group-hover:text-white transition-colors">
