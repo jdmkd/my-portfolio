@@ -1,16 +1,4 @@
-import {
-  meneIcon,
-  closeIcon,
-} from "../../public/assets";
-
 import { EducationItem } from "../types";
-
-export const OpenCloseIcons =[
-  {
-    meneIcon,
-    closeIcon,
-  }
-]
 
 export const educationDetails: EducationItem[] =[
   {
