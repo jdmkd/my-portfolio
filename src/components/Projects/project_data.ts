@@ -1,29 +1,4 @@
-import {
-  inventoryops_image_1,
-  inventoryops_image_2,
-  inventoryops_image_3,
-  inventoryops_image_4,
-  inventoryops_image_5,
-  inventoryops_image_6,
-  inventoryops_image_7,
-  inventoryops_image_8,
-  inventoryops_image_9,
-  inventoryops_image_10,
-  inventoryops_image_11,
-  inventoryops_image_12,
-  inventoryops_image_13,
 
-  Rental_vehicle_customer_side1,
-  Rental_vehicle_customer_side2,
-  Rental_vehicle_customer_side3,
-  Rental_vehicle_customer_side4,
-  Rental_vehicle_customer_side5,
-  Rental_vehicle_customer_side6,
-  Rental_vehicle_customer_side7,
-  Rental_vehicle_customer_side8,
-  Rental_vehicle_vendor_side1,
-  Rental_vehicle_vendor_side2
-} from "../../assets/index";
 
 import { ProjectData } from "../../types";
 
@@ -57,19 +32,20 @@ export const projectData: ProjectData[] = [
     "isClientProject": false,
     "clientMessage": "SaaS Platform currently in production",
     "images": [
-      inventoryops_image_1,
-      inventoryops_image_2,
-      inventoryops_image_3,
-      inventoryops_image_4,
-      inventoryops_image_5,
-      inventoryops_image_6,
-      inventoryops_image_7,
-      inventoryops_image_8,
-      inventoryops_image_9,
-      inventoryops_image_10,
-      inventoryops_image_11,
-      inventoryops_image_12,
-      inventoryops_image_13,
+      "/assets/project_images/inventoryops/inventoryops_image_14.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_1.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_2.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_3.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_4.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_5.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_6.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_7.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_8.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_9.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_10.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_11.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_12.webp",
+      "/assets/project_images/inventoryops/inventoryops_image_13.webp",
     ]
   },
   {
@@ -101,9 +77,53 @@ export const projectData: ProjectData[] = [
     "isClientProject": true,
     "clientMessage": "Code repository restricted due to client confidentiality"
   },
-  
   {
     "id": 3,
+    "slug": "housingwaala",
+    "title": "HousingWaala - Real Estate Platform",
+    "tech_stack": [
+      "React.js",
+      "Tailwind CSS",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Redis",
+      "TanStack Query",
+      "REST API",
+      "Cloudinary"
+    ],
+    "images": [
+      "/assets/project_images/housingwaala/housingwaala_image_1.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_14.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_15.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_2.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_3.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_4.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_5.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_6.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_7.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_8.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_9.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_10.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_11.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_12.webp",
+      "/assets/project_images/housingwaala/housingwaala_image_13.webp",
+    ],
+    "live_demo": "https://www.housingwaala.com",
+    "code": null,
+    "about": "A comprehensive real estate platform enabling high-performance property searches and filtering.",
+    "features": [
+      "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
+      "Optimized multi-table property detail queries from 9s–12s to 800ms–1.5s using prefetch_related, select_related, PostgreSQL index across images, amenities, pricing, location, and specification relationships.",
+      "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to under 20ms with event-driven invalidation across listing, detail, and search endpoints.",
+      "Optimized property search using PostgreSQL vector search, Q objects, and GIN index across multi-table relational data.",
+      "Built a global configurable pagination system with dynamic page size override and next/previous links in the response, eliminating frontend pagination business logic."
+    ],
+    "isClientProject": true,
+    "clientMessage": "Code repository restricted due to client confidentiality"
+  },
+  {
+    "id": 4,
     "slug": "greenmendbio",
     "title": "GreenmendBio – Global Export Platform",
     "tech_stack": [
@@ -121,35 +141,17 @@ export const projectData: ProjectData[] = [
       "Optimized loading speed with 0.5s FCP and 0.9s LCP through Next.js SSG, WebP image optimization, and route-level code splitting."
     ],
     "isClientProject": true,
-    "clientMessage": "Code repository restricted due to client confidentiality"
-  },
-  {
-    "id": 4,
-    "slug": "housingwalaa",
-    "title": "HousingWalaa - Real Estate Platform",
-    "tech_stack": [
-      "React.js",
-      "Tailwind CSS",
-      "Django",
-      "Django REST Framework",
-      "PostgreSQL",
-      "Redis",
-      "TanStack Query",
-      "REST API",
-      "Cloudinary"
-    ],
-    "live_demo": "https://www.housingwaala.com",
-    "code": null,
-    "about": "A comprehensive real estate platform enabling high-performance property searches and filtering.",
-    "features": [
-      "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
-      "Optimized multi-table property detail queries from 9s–12s to 800ms–1.5s using prefetch_related, select_related, PostgreSQL index across images, amenities, pricing, location, and specification relationships.",
-      "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to under 20ms with event-driven invalidation across listing, detail, and search endpoints.",
-      "Optimized property search using PostgreSQL vector search, Q objects, and GIN index across multi-table relational data.",
-      "Built a global configurable pagination system with dynamic page size override and next/previous links in the response, eliminating frontend pagination business logic."
-    ],
-    "isClientProject": true,
-    "clientMessage": "Code repository restricted due to client confidentiality"
+    "clientMessage": "Code repository restricted due to client confidentiality",
+    "images": [
+      "/assets/project_images/greenmendbio/greenmendbio_image_1.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_2.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_3.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_4.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_5.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_6.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_7.webp",
+      "/assets/project_images/greenmendbio/greenmendbio_image_8.webp"
+    ]
   },
   {
     "id": 5,
@@ -191,16 +193,16 @@ export const projectData: ProjectData[] = [
     "live_demo": "https://starlettex.pythonanywhere.com",
     "code": "https://github.com/jdmkd/Starlettecars",
     "images": [
-      Rental_vehicle_customer_side1,
-      Rental_vehicle_customer_side2,
-      Rental_vehicle_customer_side3,
-      Rental_vehicle_customer_side4,
-      Rental_vehicle_customer_side5,
-      Rental_vehicle_customer_side6,
-      Rental_vehicle_customer_side7,
-      Rental_vehicle_customer_side8,
-      Rental_vehicle_vendor_side1,
-      Rental_vehicle_vendor_side2,
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side1.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side2.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side3.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side4.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side5.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side6.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side7.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_customer_side8.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_vendor_side1.webp",
+      "/assets/project_images/starlettecars/Rental_vehicle_vendor_side2.webp",
     ],
     "about": "A complete B2B/B2C vehicle rental ecosystem handling complex booking scheduling and conflict resolution.",
     "features": [

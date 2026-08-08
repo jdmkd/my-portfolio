@@ -1,7 +1,7 @@
 import {
   meneIcon,
   closeIcon,
-} from "../assets";
+} from "../../public/assets";
 
 import { EducationItem } from "../types";
 

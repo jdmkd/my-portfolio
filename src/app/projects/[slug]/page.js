@@ -111,7 +111,7 @@ export default function ProjectDetail({ params }) {
                                         {project.images.map((image, index) => (
                                             <SwiperSlide key={index} className="relative w-full h-full overflow-hidden">
                                                 <img
-                                                    src={image.src}
+                                                    src={typeof image === "string" ? image : image?.src}
                                                     alt={`Project screenshot ${index + 1}`}
                                                     className="w-full h-full object-contain"
                                                 />

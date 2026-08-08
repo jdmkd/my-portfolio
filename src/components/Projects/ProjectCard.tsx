@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
+import Image from "next/image";
 
 const ProjectCard = ({ item }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -94,7 +95,7 @@ const ProjectCard = ({ item }) => {
                     className="block w-full h-full"
                   >
                     <img
-                      src={image.src}
+                      src={image}
                       alt={`Project ${index + 1}`}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                     />

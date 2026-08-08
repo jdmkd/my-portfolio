@@ -36,7 +36,7 @@ const ExperienceData = [
       },
       {
         name: "housingwaala.com — Real Estate Platform",
-        slug: "housingwalaa",
+        slug: "housingwaala",
         liveLink: "https://www.housingwaala.com",
         achievements: [
           "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
