@@ -169,9 +169,8 @@ const ProjectCard = ({ item }) => {
         {/* Minimal Tech Stack */}
         {item.tech_stack && item.tech_stack.length > 0 && (
           <div className="mb-6">
-            <p className="text-[10px] uppercase tracking-widest font-bold text-zinc-500">
-              {item.tech_stack.slice(0, 5).join(" • ")}
-              {item.tech_stack.length > 5 && " • +"}
+            <p className="text-[12px] sm:text-sm uppercase tracking-widest font-bold text-zinc-500">
+              {item.tech_stack.slice(0, item.tech_stack.length).join(" • ")}
             </p>
           </div>
         )}
@@ -189,7 +188,7 @@ const ProjectCard = ({ item }) => {
             href={`/projects/${item.slug}`}
             prefetch={true}
             onClick={handleNavigate}
-            className="text-[10px] font-black uppercase tracking-[0.2em] text-white flex items-center gap-4 group/btn cursor-pointer"
+            className="text-[12px] sm:text-base font-black uppercase tracking-[0.1em] text-white flex items-center gap-4 group/btn cursor-pointer"
           >
             <span>Explore Project</span>
             <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:border-white group-hover/btn:text-black transition-all duration-300 overflow-hidden relative">

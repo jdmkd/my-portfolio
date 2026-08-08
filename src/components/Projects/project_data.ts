@@ -64,6 +64,11 @@ export const projectData: ProjectData[] = [
       "Tailwind CSS",
       "Cloudinary"
     ],
+    "images": [
+      "/assets/project_images/paramdivya/paramdivya_image_1.webp",
+      "/assets/project_images/paramdivya/paramdivya_image_2.webp",
+      "/assets/project_images/paramdivya/paramdivya_image_3.webp",
+    ],
     "live_demo": "https://www.paramdivya.com",
     "code": null,
     "about": "A specialized B2B Premium Timber Import & Custom Woodwork Platform.",
@@ -82,6 +87,8 @@ export const projectData: ProjectData[] = [
     "slug": "housingwaala",
     "title": "HousingWaala - Real Estate Platform",
     "tech_stack": [
+      "Next.js",
+      "TypeScript",
       "React.js",
       "Tailwind CSS",
       "Django",
@@ -130,7 +137,6 @@ export const projectData: ProjectData[] = [
       "Next.js",
       "React.js",
       "Tailwind CSS",
-      "Vercel"
     ],
     "live_demo": "https://www.greenmendbio.com",
     "code": null,
