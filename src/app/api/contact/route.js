@@ -71,18 +71,18 @@ export async function POST(req) {
 
     // 6. Send Email
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: process.env.SMTP_PORT || 465,
+      host: process.env.SMTP_EMAIL_HOST || "smtp.gmail.com",
+      port: process.env.SMTP_EMAIL_PORT || 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.SMTP_EMAIL_USER,
+        pass: process.env.SMTP_EMAIL_PASS,
       }
     });
 
     // Auto-Reply (sent to the user)
     const userMailOptions = {
-      from: process.env.SMTP_USER,
+      from: process.env.SMTP_EMAIL_USER,
       to: email, // Sending to the visitor's email address
       subject: `Thank you for reaching out, ${name}!`,
       html: `
