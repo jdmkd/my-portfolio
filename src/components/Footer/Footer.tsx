@@ -12,16 +12,25 @@ function Footer() {
     // Simple clock for the "Local Time" feature common in premium portfolios
     const updateTime = () => {
       const now = new Date();
-      setTime(
-        now.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          timeZone: "Asia/Kolkata",
-        }) + " IST",
-      );
+
+      const formattedDate = now.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "Asia/Kolkata",
+      });
+
+      const formattedTime = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        timeZone: "Asia/Kolkata",
+      });
+
+      setTime(`${formattedDate} • ${formattedTime} IST`);
     };
     updateTime();
-    const interval = setInterval(updateTime, 10000);
+    const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +39,7 @@ function Footer() {
       {/* Top Section: Links & Info */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col gap-4">
-          <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
+          <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold">
             Navigation
           </span>
           <div className="flex flex-col gap-2">
@@ -49,7 +58,7 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
+          <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold">
             Socials
           </span>
           <div className="flex flex-col gap-2">
@@ -82,13 +91,22 @@ function Footer() {
 
         <div className="flex flex-col gap-8 md:text-right">
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
+            <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold block mb-2">
               Local Time
             </span>
-            <span className="text-lg font-medium text-zinc-400">{time}</span>
+            <div className="flex items-center md:justify-end gap-3 group cursor-pointer">
+              {/* Live Pulsing Dot */}
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-100 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-zinc-300 group-hover:bg-white transition-colors"></span>
+              </div>
+              <span className="text-lg lg:text-xl font-medium text-zinc-400 group-hover:text-white transition-colors tabular-nums">
+                {time || "Loading..."}
+              </span>
+            </div>
           </div>
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block mb-2">
+            <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold block mb-2">
               Location
             </span>
             <span className="text-lg font-medium text-zinc-400">
@@ -106,7 +124,7 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] lg:text-lg uppercase tracking-widest text-zinc-500 font-bold max-w-7xl mx-auto w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] md:text-sm lg:text-base lg:text-lg uppercase tracking-widest text-zinc-500 font-bold max-w-7xl mx-auto w-full">
         <span>© {currentYear} ALL RIGHTS RESERVED.</span>
         <span>DESIGNED & ENGINEERED WITH PRECISION.</span>
       </div>

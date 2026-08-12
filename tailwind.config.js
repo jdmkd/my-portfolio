@@ -23,7 +23,7 @@ module.exports = {
         slideIn: "slideIn 0.5s ease-out forwards",
         fadeIn: "fadeIn 0.5s ease-in forwards",
         blob: "blob 7s infinite",
-        scroll: "scroll 30s linear infinite",
+        scroll: "scroll 120s linear infinite",
       },
       keyframes: {
         typewriter: {

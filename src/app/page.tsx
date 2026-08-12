@@ -4,6 +4,7 @@ import Contactus from "@/components/Contactus/Contactus";
 import Education from "@/components/Education/Education";
 import Projects from "@/components/Projects/Projects";
 import WorkExperience from "@/components/WorkExperience/WorkExperience";
+import Marquee from "@/components/Marquee/Marquee";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Education />
       <Tech />
       <Projects />
+      <Marquee />
       <Contactus />
     </>
   );
