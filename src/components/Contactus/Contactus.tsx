@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import emailjs from "@emailjs/browser";
 import Spinner from "../Spinner/Spinner";
 import Message from "./Message";
 
@@ -10,13 +9,16 @@ function Contactus() {
     email: "",
     phone: "",
     message: "",
+    website: "", // Honeypot field for bot detection
   });
 
   const [successMessage, setSuccessMessage] = useState({ type: "", text: "" });
   const [loading, setLoading] = useState(false);
+  const [timestamp, setTimestamp] = useState(0);
   const [quote, setQuote] = useState({});
 
   useEffect(() => {
+    setTimestamp(Date.now()); // Record when the component was loaded
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -32,50 +34,37 @@ function Contactus() {
     e.preventDefault();
     setLoading(true);
     try {
-      const Data = {
-        to_name: formData.name,
-        to_email: formData.email,
-        message: formData.message,
-        phone: formData.phone,
-      };
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const payload = { ...formData, timestamp };
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-
-      const userId = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-      emailjs.send(serviceId, templateId, Data, userId).then(
-        (response) => {
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-          setSuccessMessage({
-            type: "success",
-            text: "Message sent successfully!",
-          });
-          setLoading(false);
-          setTimeout(() => {
-            setSuccessMessage({ type: "", text: "" });
-          }, 6000); // Remove success message after 10 seconds
-        },
-        (error) => {
-          setSuccessMessage({
-            type: "error",
-            text: "Failed to send message. Please try again.",
-          });
-          setLoading(false);
-          setTimeout(() => {
-            setSuccessMessage({ type: "", text: "" });
-          }, 3000);
-        },
-      );
+      if (response.ok) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          website: "",
+        });
+        setSuccessMessage({
+          type: "success",
+          text: "Message sent successfully!",
+        });
+        setLoading(false);
+        setTimeout(() => {
+          setSuccessMessage({ type: "", text: "" });
+        }, 6000);
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send message");
+      }
     } catch (error) {
       setSuccessMessage({
         type: "error",
-        text: "Failed to send message. Please try again.",
+        text: error.message || "Failed to send message. Please try again.",
       });
       setLoading(false);
       setTimeout(() => {
@@ -151,7 +140,7 @@ function Contactus() {
                       GitHub
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/dinesh-kumar-x"
+                      href="https://www.linkedin.com/in/dineshkumarx"
                       target="_blank"
                       rel="noreferrer"
                       className="text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-[#0a66c2] transition-colors"
@@ -178,6 +167,22 @@ function Contactus() {
               onSubmit={handleSubmit}
               className="flex flex-col gap-6 w-full max-w-lg mx-auto"
             >
+              {/* Honeypot Field - Hidden from humans, but bots will fill it */}
+              <div
+                className="absolute opacity-0 -z-50 select-none overflow-hidden h-0 w-0"
+                aria-hidden="true"
+              >
+                <label>Website</label>
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={handleChange}
+                />
+              </div>
+
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
                   Name
@@ -186,7 +191,7 @@ function Contactus() {
                   className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm"
                   type="text"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Don Lee"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -201,7 +206,7 @@ function Contactus() {
                   className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 text-white font-medium outline-none focus:border-white transition-colors rounded-sm"
                   type="email"
                   name="email"
-                  placeholder="john@example.com"
+                  placeholder="donlee@example.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
