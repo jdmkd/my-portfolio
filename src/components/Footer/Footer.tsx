@@ -35,9 +35,9 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#000000] text-white border-t border-white/20 pt-24 pb-8 px-8 sm:px-12 lg:px-16 overflow-hidden relative">
+    <footer className="w-full bg-[#000000] text-white border-t border-white/20 pt-24 pb-8 px-6 sm:px-12 lg:px-16 overflow-hidden relative">
       {/* Top Section: Links & Info */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-24 max-w-7xl mx-auto w-full">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-16 w-full">
         <div className="flex flex-col gap-4">
           <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold">
             Navigation
@@ -118,13 +118,13 @@ function Footer() {
 
       {/* Massive Typography Name */}
       <div className="w-full flex justify-center items-center border-t border-white/10 pt-16 pb-8">
-        <h1 className="text-[12vw] sm:text-[10vw] font-black tracking-tighter leading-none text-white text-center whitespace-nowrap opacity-90">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none text-white text-center opacity-90 w-full px-4 break-words">
           DINESH KUMAR.
         </h1>
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] md:text-sm lg:text-base lg:text-lg uppercase tracking-widest text-zinc-500 font-bold max-w-7xl mx-auto w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 text-[10px] md:text-sm lg:text-base lg:text-lg uppercase tracking-widest text-zinc-500 font-bold w-full">
         <span>© {currentYear} ALL RIGHTS RESERVED.</span>
         <span>DESIGNED & ENGINEERED WITH PRECISION.</span>
       </div>

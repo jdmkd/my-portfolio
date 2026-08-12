@@ -23,7 +23,7 @@ const Table = () => {
       {EducationData.map((edu, index) => (
         <div
           key={index}
-          className="w-full bg-[#030303] hover:bg-white/5 px-8 sm:px-12 py-10 flex flex-col sm:flex-row gap-8 transition-colors group cursor-pointer"
+          className="w-full bg-[#030303] hover:bg-white/5 px-6 sm:px-12 py-10 flex flex-col sm:flex-row gap-8 transition-colors group cursor-pointer"
         >
           <div className="sm:w-[20%] flex flex-col">
             <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-2">

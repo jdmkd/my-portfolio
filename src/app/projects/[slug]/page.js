@@ -22,8 +22,7 @@ export default function ProjectDetail({ params }) {
     if (!project) return <div className="min-h-screen flex items-center justify-center text-white bg-[#000000]">Project not found</div>;
 
     return (
-        <section className="min-h-screen bg-[#000000] text-white pt-24 lg:pt-32 pb-[6rem] px-6 font-sans selection:bg-white/20 ">
-            <div className="max-w-[1400px] mx-auto">
+        <section className="min-h-screen bg-[#000000] text-white pt-24 lg:pt-32 pb-[6rem] px-6 sm:px-12 font-sans selection:bg-white/20 ">
                 
                 {/* Header Section */}
                 <div className="mb-6 sm:mb-8 flex">
@@ -229,7 +228,6 @@ export default function ProjectDetail({ params }) {
                     )}
 
                 </div>
-            </div>
         </section>
     );
 }

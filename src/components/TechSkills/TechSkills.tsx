@@ -70,7 +70,7 @@ const Tech = () => {
               {/* Category Title Toggle */}
               <button
                 onClick={() => toggleCategory(category)}
-                className="w-full p-6 sm:p-8 bg-[#050505] hover:bg-white/5 transition-colors flex items-center justify-between cursor-pointer group outline-none"
+                className="w-full px-6 sm:px-12 py-6 sm:py-8 bg-[#050505] hover:bg-white/5 transition-colors flex items-center justify-between cursor-pointer group outline-none"
               >
                 <h4 className="text-base lg:text-lg font-black text-left tracking-widest text-white uppercase">
                   {category}

@@ -29,7 +29,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative bg-[#030303] overflow-hidden font-sans pt-[100px] lg:pt-[120px] min-h-screen border-b border-white/20">
+    <div className="relative bg-[#030303] overflow-hidden font-sans pt-[80px] min-h-screen flex flex-col justify-center items-center border-b border-white/20">
       {/* Interactive Mouse Spotlight */}
       <motion.div
         className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-screen"
@@ -57,6 +57,20 @@ const Hero = () => {
 
       <section className="relative z-20 w-full flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto py-20 lg:py-32">
         <div className="flex flex-col items-center w-full">
+          {/* Eyebrow / Overline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-8 flex items-center gap-3 sm:gap-4 text-[10px] sm:text-sm lg:text-xl tracking-[0.04em] uppercase text-zinc-500 font-bold"
+          >
+            <span>Accuracy</span>
+            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-zinc-700"></span>
+            <span>Precision</span>
+            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-zinc-700"></span>
+            <span className="text-zinc-300">Perfection</span>
+          </motion.div>
+
           {/* 3D Character Reveal Name */}
           <motion.h1
             className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[10rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12"
