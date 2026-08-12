@@ -147,9 +147,11 @@ const ProjectCard = ({ item }) => {
             className="block relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden bg-[#000000] cursor-pointer"
           >
             <div className="w-full h-full flex items-center justify-center bg-[#050505] group-hover:bg-white/5 transition-colors duration-500">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-600 font-bold">
-                No Preview Available
-              </span>
+              <img
+                src="/assets/images/wolf_placeholder.png"
+                alt="Placeholder Preview"
+                className="w-full h-full object-contain opacity-50 invert mix-blend-screen group-hover:scale-110 group-hover:opacity-80 transition-all duration-700 ease-out"
+              />
             </div>
           </Link>
         )}
