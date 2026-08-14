@@ -20,6 +20,7 @@ export interface ProjectData {
   images?: any[];
   about: string;
   features?: string[];
+  additional_details?: string;
   isClientProject: boolean;
   clientMessage?: string;
 }

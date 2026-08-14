@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     // 4. Strict Validation with Zod
     const validationResult = contactSchema.safeParse(body);
     if (!validationResult.success) {
-      return Response.json({ error: validationResult.error.errors[0].message }, { status: 400 });
+      return Response.json({ error: validationResult.error.issues[0].message }, { status: 400 });
     }
 
     // 5. Sanitization against XSS
