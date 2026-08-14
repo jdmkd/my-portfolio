@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero/Hero";
+import About from "@/components/About/About";
 import Tech from "@/components/TechSkills/TechSkills";
 import Contactus from "@/components/Contactus/Contactus";
 import Education from "@/components/Education/Education";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <WorkExperience />
       <Education />
       <Tech />
