@@ -33,14 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <body
-        className={`${inter.variable} font-sans bg-white text-white antialiased selection:bg-[#111111] selection:text-white`}
+        className={`${inter.variable} font-sans bg-black text-white antialiased selection:bg-[#111111] selection:text-white`}
       >
         {/* Main Grid Wrapper - Strict Editorial Border */}
-        <div className="w-full max-w-[1600px] mx-auto min-h-screen flex flex-col relative">
+        <div className="w-full max-w-[1600px] mx-auto flex flex-col relative">
           <Navbar />
           <RouteProgress />
 
-          <main className="flex-1 w-full flex flex-col">{children}</main>
+          <main className="w-full flex flex-col min-h-screen">{children}</main>
 
           <Footer />
           <FloatingSocials />

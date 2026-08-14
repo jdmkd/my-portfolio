@@ -29,7 +29,9 @@ const Tech = () => {
   ];
 
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
-    {},
+    {
+      "Programming Languages": true,
+    },
   );
 
   const toggleCategory = (category: string) => {
@@ -45,7 +47,7 @@ const Tech = () => {
       id="skills"
     >
       {/* Heading */}
-      <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
+      <div className="mt-20 border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
         <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
           Technical Arsenal
         </span>
@@ -112,7 +114,9 @@ const Tech = () => {
                               alt={item.name}
                               fill
                               className={`object-contain filter transition-all ${
-                                item.invertIcon ? "invert group-hover:brightness-125" : "group-hover:brightness-110"
+                                item.invertIcon
+                                  ? "invert group-hover:brightness-125"
+                                  : "group-hover:brightness-110"
                               }`}
                             />
                           </div>

@@ -7,7 +7,7 @@ const Education = () => {
       className="w-full bg-[#030303] border-b border-white/10"
       id="education"
     >
-      <div className="border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
+      <div className="mt-20 border-b border-white/10 p-8 sm:p-12 bg-[#000000]">
         <span className="text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold mb-4 block text-center">
           Academic Background
         </span>

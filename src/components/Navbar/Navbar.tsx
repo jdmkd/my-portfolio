@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav
           className={`flex items-center justify-between px-2 py-2 rounded-full transition-all duration-500 ${
             scrolled
-              ? "bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-[800px]"
+              ? "bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-[1000px]"
               : "bg-black/10 backdrop-blur-lg border border-white/5 w-full max-w-[1200px]"
           }`}
         >

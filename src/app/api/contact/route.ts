@@ -17,7 +17,7 @@ const contactSchema = z.object({
   timestamp: z.number().optional(), // Bot detection
 });
 
-export async function POST(req) {
+export async function POST(req: Request) {
   try {
     // 1. IP-based Rate Limiting
     const ip = req.headers.get("x-forwarded-for") || "unknown_ip";
