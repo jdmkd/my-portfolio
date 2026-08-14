@@ -57,7 +57,7 @@ const Navbar = () => {
                 href={link.href}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="relative px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors z-10"
+                className="relative px-5 py-2.5 rounded-full text-sm xl:text-base font-semibold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors z-10"
               >
                 <span className="relative z-10">{link.label}</span>
                 {hoveredIndex === idx && (
@@ -115,12 +115,12 @@ const Navbar = () => {
             <div className="flex justify-end">
               <button
                 onClick={() => setIsNavOpen(false)}
-                className="p-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+                className="p-2 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <div className="flex flex-col gap-6 mt-12 px-4">
+            <div className="flex flex-col gap-6 mt-8">
               {NAV_LINKS.map((link, idx) => (
                 <motion.div
                   key={idx}
@@ -131,7 +131,7 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsNavOpen(false)}
-                    className="text-4xl sm:text-5xl font-black tracking-tighter text-zinc-400 hover:text-white uppercase transition-colors"
+                    className="text-lg sm:text-xl lg:text-3xl font-black tracking-tighter text-zinc-400 hover:text-white uppercase transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -146,7 +146,7 @@ const Navbar = () => {
                   href="/Dinesh_kumar_resume.pdf"
                   target="_blank"
                   onClick={() => setIsNavOpen(false)}
-                  className="mt-8 inline-flex items-center gap-4 text-xl font-bold tracking-tight text-black bg-white px-8 py-4 rounded-full uppercase hover:scale-105 active:scale-95 transition-all"
+                  className="mt-8 inline-flex items-center gap-3 text-sm font-bold tracking-widest text-black bg-white px-6 py-3 rounded-full uppercase hover:scale-105 active:scale-95 transition-all"
                 >
                   Download Resume <ArrowUpRight className="w-6 h-6" />
                 </Link>

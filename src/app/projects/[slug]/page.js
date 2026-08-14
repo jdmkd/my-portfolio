@@ -189,7 +189,7 @@ export default function ProjectDetail({ params }) {
                         <h2 className="text-3xl font-black tracking-tight text-white flex items-center gap-4">
                             About the Project
                         </h2>
-                        <p className="text-lg text-zinc-400 leading-[1.8] font-medium">
+                        <p className="text-lg text-zinc-200 leading-[1.8] font-medium">
                             {project.about}
                         </p>
                     </div>
@@ -208,7 +208,7 @@ export default function ProjectDetail({ params }) {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
-                                        <span className="text-base md:text-lg text-zinc-400 leading-[1.7] font-medium">{feature}</span>
+                                        <span className="text-base md:text-lg text-zinc-200 leading-[1.7] font-medium">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -221,7 +221,7 @@ export default function ProjectDetail({ params }) {
                             <h3 className="text-2xl font-black tracking-tight text-white flex items-center gap-4">
                                 Technical Deep Dive
                             </h3>
-                            <p className="text-lg text-zinc-400 leading-[1.8] font-medium">
+                            <p className="text-lg text-zinc-200 leading-[1.8] font-medium">
                                 {project.additional_details}
                             </p>
                         </div>

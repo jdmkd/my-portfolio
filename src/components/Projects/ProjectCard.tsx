@@ -171,7 +171,7 @@ const ProjectCard = ({ item }) => {
         {/* Minimal Tech Stack */}
         {item.tech_stack && item.tech_stack.length > 0 && (
           <div className="mb-6">
-            <p className="text-[12px] sm:text-sm uppercase tracking-widest font-bold text-zinc-500">
+            <p className="text-[12px] sm:text-sm uppercase font-bold text-zinc-500">
               {item.tech_stack.slice(0, item.tech_stack.length).join(" • ")}
             </p>
           </div>

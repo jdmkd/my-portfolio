@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { FaArrowRight, FaReact, FaNodeJs, FaAws } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript } from "react-icons/si";
+import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -64,20 +63,22 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8 flex items-center gap-3 sm:gap-4 text-[10px] sm:text-sm lg:text-xl tracking-[0.04em] uppercase text-zinc-500 font-bold"
           >
-            <span>Accuracy</span>
+            <span className="text-zinc-300">Accuracy</span>
             <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-zinc-700"></span>
-            <span>Precision</span>
+            <span className="text-zinc-300">Precision</span>
             <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-zinc-700"></span>
             <span className="text-zinc-300">Perfection</span>
           </motion.div>
 
           {/* 3D Character Reveal Name */}
           <motion.h1
-            className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[10rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12"
+            className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[9rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12"
             initial="hidden"
             animate="visible"
             variants={{
+              hidden: { opacity: 1 },
               visible: {
+                opacity: 1,
                 transition: { staggerChildren: 0.05, delayChildren: 0.2 },
               },
             }}
@@ -89,7 +90,7 @@ const Hero = () => {
                     key={charIndex}
                     variants={letterVariants}
                     transition={{ type: "spring", damping: 12, stiffness: 100 }}
-                    className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300"
+                    className="inline-block capitalize text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300"
                   >
                     {char}
                   </motion.span>

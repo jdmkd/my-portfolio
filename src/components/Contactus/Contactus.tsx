@@ -259,9 +259,9 @@ function Contactus() {
         </div>
 
         {/* Brutalist Footer Sign-Off */}
-        <div className="w-full bg-[#000000] border-t border-white/10 pt-24 pb-24 px-6 flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="w-full bg-[#000000] border-t border-white/10 pt-12 pb-12 px-6 flex flex-col items-center justify-center relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-[100px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 text-center uppercase tracking-[-0.03em] z-10 w-full px-4">
+          <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 text-center uppercase tracking-[-0.03em] z-10 w-full px-4">
             CRAFTING<br />DIGITAL<br />
             <span className="text-zinc-600">EXPERIENCES.</span>
           </h1>

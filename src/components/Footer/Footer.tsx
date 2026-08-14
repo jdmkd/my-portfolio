@@ -35,9 +35,9 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-[#000000] text-white border-t border-white/20 pt-24 pb-8 px-6 sm:px-12 lg:px-16 overflow-hidden relative">
+    <footer className="w-full bg-[#000000] text-white border-t border-white/20 pt-12 pb-8 px-6 sm:px-12 lg:px-16 overflow-hidden relative">
       {/* Top Section: Links & Info */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-16 w-full">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full">
         <div className="flex flex-col gap-4">
           <span className="text-[10px] md:text-sm lg:text-base uppercase tracking-widest text-zinc-500 font-bold">
             Navigation
@@ -117,7 +117,7 @@ function Footer() {
       </div>
 
       {/* Massive Typography Name */}
-      <div className="w-full flex justify-center items-center border-t border-white/10 pt-16 pb-8">
+      <div className="w-full flex justify-center items-center border-t border-white/10 mt-12 pt-8 pb-8">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none text-white text-center opacity-90 w-full px-4 break-words">
           DINESH KUMAR.
         </h1>
