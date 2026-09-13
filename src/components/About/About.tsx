@@ -34,10 +34,7 @@ const About = () => {
               more reliable, and scalable under real-world usage.
             </p>
             <p>
-              I’ve taken search APIs from 4.2s to 620ms on cache misses, with
-              cache hits responding in 1–2ms. I’ve reduced frontend payloads by
-              84% and improved inventory APIs from around 9s to 300–700ms on
-              cache misses, with cache hits responding in 1–4ms.
+              I’ve reduced backend API response times from 7–9s down to 300–800ms on cache misses, with repeat lookups responding in 1–20ms (and sub-millisecond L1 LRU cache hits). I’ve also optimized frontend payloads by 84% and built enterprise RBAC engines across 50+ protected REST API routes.
             </p>
             <p>
               I care about the details behind a fast product: efficient database
