@@ -3,104 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const ExperienceData = [
-  {
-    company: "Param Divya",
-    role: "Full Stack Developer",
-    duration: "Jul 2025 — Present",
-    location: "Gandhinagar, Gujarat",
-    overview:
-      "Core engineering team building high-performance B2B, SaaS, and ecommerce systems in production. Focused on massive latency reductions and architectural scaling.",
-    projects: [
-      {
-        name: "paramdivya.com — B2B Premium Timber Import & Custom Woodwork Platform",
-        slug: "param-divya-agency",
-        liveLink: "https://www.paramdivya.com",
-        achievements: [
-          "Reduced product search API latency from 4.2s to 400–620ms by introducing Redis caching, PostgreSQL GIN index, query prefetching, and eliminating N+1 ORM queries.",
-          "Optimized frontend delivery using route-level code splitting, lazy loading, and WebP media optimization, reducing total network payload from 60.8MB to 9.7MB (84% reduction).",
-          "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to 1ms–20ms with tag-based invalidation ensuring catalog stays fresh.",
-          "Optimized global and product search using PostgreSQL vector search, GIN index, and trigram fuzzy matching for partial and misspelled query support.",
-          "Implemented react-snap SSG with dynamic sitemap ensuring 100% SEO indexability across product and blog pages.",
-        ],
-        techStack: [
-          "React.js",
-          "TypeScript",
-          "TanStack Query",
-          "Django REST Framework",
-          "PostgreSQL",
-          "Redis",
-          "Cloudinary",
-        ],
-      },
-      {
-        name: "housingwaala.com — Real Estate Platform",
-        slug: "housingwaala",
-        liveLink: "https://www.housingwaala.com",
-        achievements: [
-          "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
-          "Optimized multi-table property detail queries from 9s–12s to 800ms–1.5s using prefetch_related, select_related, and indexing across relationships.",
-          "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to under 20ms with event-driven invalidation.",
-          "Optimized property search using PostgreSQL vector search, Q objects, and GIN index across multi-table relational data.",
-          "Built a global configurable pagination system with dynamic page size override, eliminating frontend pagination business logic.",
-        ],
-        techStack: [
-          "Next.js",
-          "React.js",
-          "TypeScript",
-          "TanStack Query",
-          "Django REST Framework",
-          "PostgreSQL",
-          "Redis",
-          "Cloudinary",
-        ],
-      },
-    ],
-  },
-  {
-    company: "Freelance / Independent",
-    role: "Full Stack Developer",
-    duration: "2023 — 2025",
-    location: "Remote",
-    overview:
-      "Architected and deployed multiple full-stack applications while pursuing my MCA. Focused heavily on mastering production-level system design, authentication flows, and relational database architecture.",
-    projects: [
-      {
-        name: "Independent Projects (StarletteCars & Ecotte)",
-        slug: "",
-        liveLink: "",
-        achievements: [
-          "Developed StarletteCars, a comprehensive vehicle rental platform built with Django and PostgreSQL.",
-          "Architected Ecotte, a scalable e-commerce backend API using Node.js and Stripe for secure payment processing.",
-          "Designed robust relational database schemas and implemented secure authentication and authorization systems.",
-        ],
-        techStack: ["Django", "PostgreSQL", "Node.js", "Stripe", "React.js"],
-      },
-    ],
-  },
-  {
-    company: "InfoLabz",
-    role: "Python Developer (Intern)",
-    duration: "May 2021 — Dec 2021",
-    location: "Ahmedabad, Gujarat",
-    overview:
-      "Completed an intensive internship focusing on backend software engineering, API design, and web development using Python and the Django framework.",
-    projects: [
-      {
-        name: "Backend Engineering Internship",
-        slug: "",
-        liveLink: "",
-        achievements: [
-          "Developed core backend logic and RESTful APIs using Python and Django.",
-          "Gained hands-on experience with relational database modeling and integrating with Django's ORM.",
-          "Collaborated on codebase management, learning industry-standard version control and deployment practices.",
-        ],
-        techStack: ["Python", "Django", "SQL", "REST APIs", "Git"],
-      },
-    ],
-  },
-];
+import { experienceData } from "../Projects/project_data";
 
 const ProjectGlassCard = ({
   proj,
@@ -147,7 +50,7 @@ const ProjectGlassCard = ({
             className="overflow-hidden w-full"
           >
             <div
-              className={`px-4 sm:px-10 pb-6 sm:pb-10 flex flex-col ${!proj.slug ? "gap-8 sm:gap-10" : "gap-4"}`}
+              className={`px-4 sm:px-10 pb-6 sm:pb-10 flex flex-col ${!proj.slug && proj.achievements && proj.achievements.length > 0 ? "gap-8 sm:gap-10" : "gap-4"}`}
             >
               {/* Meta Top: Tech Stack & Action Links */}
               <div
@@ -190,7 +93,7 @@ const ProjectGlassCard = ({
                 </div>
               </div>
 
-              {/* Achievements List */}
+              {/* Achievements List (Only for projects without a dedicated Case Study page) */}
               {!proj.slug &&
                 proj.achievements &&
                 proj.achievements.length > 0 && (
@@ -415,7 +318,7 @@ function WorkExperience() {
         {/* Editorial Timeline container */}
         <div className="w-full px-6 sm:px-12 max-w-[1600px] mx-auto z-10 relative">
           <div className="flex flex-col border-b border-white/10">
-            {ExperienceData.map((exp, index) => (
+            {experienceData.map((exp, index) => (
               <CompanyDropdown
                 key={index}
                 exp={exp}

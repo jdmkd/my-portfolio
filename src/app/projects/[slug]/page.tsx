@@ -6,13 +6,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
 
+import { Building2 } from "lucide-react";
 import {
   projectData,
   isCodeAvailable,
 } from "../../../components/Projects/project_data";
 import TechTags from "@/components/Projects/TechTags";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { UserCircle2 } from "lucide-react";
 
 interface ProjectDetailProps {
   params: Promise<{ slug: string }>;
@@ -37,13 +37,20 @@ export default function ProjectDetail({ params }: ProjectDetailProps) {
       </div>
     );
 
+  const hasRealImages =
+    project.images &&
+    project.images.length > 0 &&
+    !project.images.every(
+      (img) => typeof img === "string" && img.includes("wolf_placeholder"),
+    );
+
   return (
-    <section className="min-h-screen bg-[#000000] text-white pt-24 lg:pt-32 pb-[6rem] px-4 sm:px-12 py-4 sm:py-12 font-sans selection:bg-white/20 ">
+    <section className="min-h-screen bg-[#000000] text-white pt-24 lg:pt-36 pb-[6rem] px-4 sm:px-12 py-4 sm:py-[8rem] font-sans selection:bg-white/20 ">
       {/* Main Layout Grid */}
       <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 mb-6 lg:mb-8 pb-8 border-b border-white/20">
         {/* Left Column: Image Slider */}
         <div className="flex-1 min-w-0">
-          {project.images && project.images.length > 0 && (
+          {hasRealImages ? (
             <div className="w-full overflow-hidden shadow-[0_20px_50px_rgba(255,255,255,0.02)] border border-white/10 bg-[#050505] relative">
               <div className="relative group/slider">
                 <Swiper
@@ -160,6 +167,14 @@ export default function ProjectDetail({ params }: ProjectDetailProps) {
                 </div>
               </div>
             </div>
+          ) : (
+            <div className="w-full overflow-hidden shadow-[0_20px_50px_rgba(255,255,255,0.02)] border border-white/10 bg-[#050505] relative aspect-video sm:h-[350px] lg:h-[450px] flex items-center justify-center p-8">
+              <img
+                src="/assets/images/wolf_placeholder.webp"
+                alt="Placeholder Preview"
+                className="w-full h-full object-contain opacity-25 invert mix-blend-screen"
+              />
+            </div>
           )}
         </div>
 
@@ -169,12 +184,16 @@ export default function ProjectDetail({ params }: ProjectDetailProps) {
           <h1 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight text-white leading-[1.1]">
             {project.title}
           </h1>
-          {/* Action Links */}
-          {project.isClientProject && (
+          {/* Company / Client Metadata */}
+          {project.company && (
             <div className="flex flex-col gap-4">
               <span className="inline-flex items-center justify-center px-4 py-4 bg-white/10 text-white border border-white/10 text-xs font-bold uppercase tracking-[0.2em]">
-                <UserCircle2 className="w-4 h-4 mr-2" />
-                Client Project
+                <Building2 className="w-4 h-4 mr-2" />
+                {project.company === "Param Divya"
+                  ? "Built at Param Divya"
+                  : project.isClientProject
+                  ? "Freelance Client Project"
+                  : project.company}
               </span>
             </div>
           )}

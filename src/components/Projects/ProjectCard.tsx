@@ -16,11 +16,18 @@ const ProjectCard = ({ item }) => {
     setIsLoading(true);
   };
 
+  const hasRealImages =
+    item.images &&
+    item.images.length > 0 &&
+    !item.images.every(
+      (img) => typeof img === "string" && img.includes("wolf_placeholder"),
+    );
+
   return (
-    <div className="flex flex-col h-full w-full bg-[#030303] group hover:bg-[#0a0a0a] transition-colors duration-500">
+    <div className="flex flex-col h-full w-full bg-[#030303] group hover:bg-[#0a0a0a] transition-all duration-500 border border-white/5 hover:border-white/10">
       {/* Clickable Image Container */}
       <div className="px-8 sm:px-12 pt-8 sm:pt-12">
-        {item.images?.length > 0 ? (
+        {hasRealImages ? (
           <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden bg-[#000000] group/slider">
             <Swiper
               spaceBetween={0}
@@ -150,7 +157,7 @@ const ProjectCard = ({ item }) => {
               <img
                 src="/assets/images/wolf_placeholder.webp"
                 alt="Placeholder Preview"
-                className="w-full h-full object-contain opacity-50 invert mix-blend-screen group-hover:scale-110 group-hover:opacity-80 transition-all duration-700 ease-out"
+                className="w-full h-full object-contain opacity-25 invert mix-blend-screen group-hover:scale-110 group-hover:opacity-40 transition-all duration-700 ease-out"
               />
             </div>
           </Link>
@@ -159,6 +166,19 @@ const ProjectCard = ({ item }) => {
 
       {/* Content Container */}
       <div className="p-8 sm:p-12 flex flex-col flex-grow">
+        {/* Company Tag */}
+        {item.company && (
+          <div className="mb-3">
+            <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-400 bg-white/5 border border-white/10 px-3 py-1">
+              {item.company === "Param Divya"
+                ? "Built at Param Divya"
+                : item.isClientProject
+                  ? "Freelance Client Project"
+                  : item.company}
+            </span>
+          </div>
+        )}
+
         {/* Title */}
         <div className="mb-4">
           <Link href={`/projects/${item.slug}`} onClick={handleNavigate}>

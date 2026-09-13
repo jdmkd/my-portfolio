@@ -23,6 +23,7 @@ export interface ProjectData {
   additional_details?: string;
   isClientProject: boolean;
   clientMessage?: string;
+  company?: string;
 }
 
 export interface SkillItem {

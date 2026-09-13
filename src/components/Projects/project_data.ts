@@ -1,55 +1,79 @@
-
-
 import { ProjectData } from "../../types";
+
+export interface CompanyMetadata {
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  overview: string;
+  customProjects?: {
+    name: string;
+    slug?: string;
+    liveLink?: string | null;
+    achievements?: string[];
+    techStack: string[];
+  }[];
+}
 
 export const projectData: ProjectData[] = [
   {
     "id": 1,
-    "slug": "inventoryops",
-    "title": "InventoryOps – Multi-Tenant SaaS POS & Inventory",
+    "company": "Param Divya",
+    "slug": "acrspace",
+    "title": "ACRSpace – Multi-Tenant SaaS Inventory, POS & Billing Platform",
     "tech_stack": [
-      "React.js",
       "Next.js",
+      "React.js",
       "Node.js",
+      "Express.js",
       "MongoDB",
       "Redis",
-      "NextAuth",
-      "RBAC",
+      "TypeScript",
+      "Razorpay",
       "REST APIs",
-      "TypeScript"
+      "RBAC",
+      "Cloudinary",
+      "Tally XML",
+      "Zustand",
+      "TanStack Query"
     ],
-    "live_demo": "https://invops.vercel.app",
+    "live_demo": "https://acrspace.com",
     "code": null,
-    "about": "A powerful multi-tenant SaaS point-of-sale and inventory management system.",
+    "about": "Architected and engineered an enterprise-grade multi-tenant, multi-warehouse B2B SaaS platform powering point-of-sale (POS), procurement, inventory control, automated billing, and ledger accounting with strict organization-level data isolation.",
     "features": [
-      "Reduced backend response times from 7s–9s to 300–800ms through Redis caching, MongoDB aggregation pipelines, query optimization, and intelligent cache invalidation.",
-      "Engineered Redis-backed request coalescing to prevent cache stampedes and eliminate duplicate database queries during concurrent cache misses.",
-      "Architected a dual-layer Redis + in-memory caching system with graceful degradation fallback, maintaining API responsiveness during cache outages.",
-      "Built centralized event-driven cache invalidation across inventory, orders, products, and dashboard analytics.",
-      "Implemented RBAC enforcement across 40+ protected API routes and multi-role administrative workflows.",
-      "Designed transactional inventory update mechanisms to maintain stock consistency and prevent overselling across billing, purchase, and order operations."
+      "Architected a 'Two-Lock Door' authorization engine decoupling Subscription Entitlements (Limit Engine) from Enterprise RBAC across 50+ protected REST API routes with sub-millisecond permission checks and zero-downtime instant revocation.",
+      "Cut API latency from 7s–9s to 300–800ms (and repeat lookups to 1–20ms) using a dual-layer waterfall cache (L1 In-Memory LRU <1ms + L2 Remote Redis) backed by a Promise Coalescing Stampede Shield preventing thundering herd database overload.",
+      "Engineered multi-warehouse stock management featuring O(1) embedded warehouseStocks arrays with atomic MongoDB arrayFilters, x-warehouse-id header context, and automated plan-based location quota guards (WarehouseQuotaGuard).",
+      "Engineered an append-only immutable StockMovement accounting ledger tracking Purchase, Sale, Return, Adjustment, and Multi-Warehouse Transfer operations with zero-ghost immutability.",
+      "Built an ACID-compliant POS checkout & revision pipeline using MongoDB $session transactions for split payments, atomic stock deductions, and strict bounds checking preventing overselling.",
+      "Integrated Razorpay subscription billing with a deterministic state machine, HMAC-SHA256 webhooks, automated PDF invoice generation, and an institutional Tally Prime XML export engine for CPA balance-sheet reconciliation.",
+      "Designed a direct-to-cloud media upload pipeline using HMAC-SHA1 signatures and client-side HTML5 canvas interception, compressing 5MB smartphone photos down to ~150KB WebP assets before transit.",
+      "Developed real-time cross-device & tab synchronization via browser BroadcastChannel API and tab-visibility heartbeat polling (/api/v1/sync/version), eliminating stale state without hard refreshes.",
+      "Built serverless background worker queues and cron endpoints for Redis Audit Log Flushing, Subscription Expiration Sweeping (with Redis mutex locks), and Nightly MongoDB Aggregation Usage Reconciliation.",
+      "Engineered an automated Fraud & Anti-Abuse engine featuring O(1) Redis Token Bucket velocity tracking, disposable email domain filtering, and a Mongoose Change Data Capture (CDC) audit system pushing pre-mutation snapshots to a Redis Outbox (batch-processed at 1,000 logs/batch)."
     ],
-    "isClientProject": false,
-    "clientMessage": "SaaS Platform currently in production",
+    "isClientProject": true,
+    "clientMessage": "Code repository restricted due to client confidentiality",
     "images": [
-      "/assets/project_images/inventoryops/inventoryops_image_14.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_1.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_2.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_3.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_4.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_5.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_6.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_7.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_8.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_9.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_10.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_11.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_12.webp",
-      "/assets/project_images/inventoryops/inventoryops_image_13.webp",
+      "/assets/project_images/acrspace/acrspace_image_14.webp",
+      "/assets/project_images/acrspace/acrspace_image_1.webp",
+      "/assets/project_images/acrspace/acrspace_image_2.webp",
+      "/assets/project_images/acrspace/acrspace_image_3.webp",
+      "/assets/project_images/acrspace/acrspace_image_4.webp",
+      "/assets/project_images/acrspace/acrspace_image_5.webp",
+      "/assets/project_images/acrspace/acrspace_image_6.webp",
+      "/assets/project_images/acrspace/acrspace_image_7.webp",
+      "/assets/project_images/acrspace/acrspace_image_8.webp",
+      "/assets/project_images/acrspace/acrspace_image_9.webp",
+      "/assets/project_images/acrspace/acrspace_image_10.webp",
+      "/assets/project_images/acrspace/acrspace_image_11.webp",
+      "/assets/project_images/acrspace/acrspace_image_12.webp",
+      "/assets/project_images/acrspace/acrspace_image_13.webp",
     ]
   },
   {
     "id": 2,
+    "company": "Param Divya",
     "slug": "param-divya-agency",
     "title": "Param Divya Agency - Wood Import/Export Platform",
     "tech_stack": [
@@ -71,19 +95,21 @@ export const projectData: ProjectData[] = [
     ],
     "live_demo": "https://www.paramdivya.com",
     "code": null,
-    "about": "A specialized B2B Premium Timber Import & Custom Woodwork Platform.",
+    "about": "Built a production-grade B2B digital catalog for a Kutch/Gandhinagar based premium hardwood importer and custom woodwork manufacturer. Covers two distinct product lines — imported timber (teak logs, sawn timber, planks, veneers) and custom woodwork projects (mandirs, doors, furniture, flooring, wall paneling).",
     "features": [
-      "Reduced product search API latency from 4.2s to 400–620ms by introducing Redis caching, PostgreSQL GIN index, query prefetching, and eliminating N+1 ORM queries.",
-      "Optimized frontend delivery using route-level code splitting, lazy loading, and WebP media optimization, reducing total network payload from 60.8MB to 9.7MB (84% reduction).",
-      "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to 1ms–20ms with tag-based invalidation ensuring catalog stays fresh on every admin product update.",
-      "Optimized global and product search using PostgreSQL vector search, GIN index, and trigram fuzzy matching for partial and misspelled query support.",
-      "Implemented react-snap SSG with dynamic sitemap ensuring 100% indexability across product and blog pages."
+      "Developed advanced product discovery capabilities with multi-dimensional filtering across timber species, grade, drying type, origin, dimensions, and product forms, enabling efficient navigation across large product inventories.",
+      "Built a direct-to-cloud image pipeline with client-side WebP compression and signed Cloudinary uploads, eliminating server-side upload processing and orphaned storage.",
+      "Reduced product search and catalog REST API response times from 5–6s to 200–620ms through PostgreSQL query optimization, GIN indexing, trigram fuzzy matching, and N+1 query elimination.",
+      "Implemented Redis + TanStack Query caching with event-driven invalidation, serving repeat requests in 1–5ms while reducing database load.",
+      "Built a Node.js + Sharp image optimization pipeline that automatically converts, compresses, and rewrites static asset imports to WebP, reducing frontend payload from 60.8MB to 9.7MB (84% reduction).",
+      "Implemented react-snap SSG with dynamic sitemap generation ensuring 100% indexability of all product and blog pages."
     ],
     "isClientProject": true,
     "clientMessage": "Code repository restricted due to client confidentiality"
   },
   {
     "id": 3,
+    "company": "Param Divya",
     "slug": "housingwaala",
     "title": "HousingWaala - Real Estate Platform",
     "tech_stack": [
@@ -118,21 +144,22 @@ export const projectData: ProjectData[] = [
     ],
     "live_demo": "https://www.housingwaala.com",
     "code": null,
-    "about": "A comprehensive real estate platform enabling high-performance property searches and filtering.",
+    "about": "A full-scale real estate platform featuring dynamic, admin-managed property listings across multiple property types, unit configurations, and cities. Includes property discovery with filtering, lead capture, developer profiles, possession tracking, and Cloudinary media handling.",
     "features": [
-      "Reduced listing API response from 8.5s to 500–700ms by returning only card-essential fields and deferring full property data to the detail page.",
-      "Optimized multi-table property detail queries from 9s–12s to 800ms–1.5s using prefetch_related, select_related, PostgreSQL index across images, amenities, pricing, location, and specification relationships.",
-      "Implemented dual-layer caching with Redis and TanStack Query, reducing repeat requests to under 20ms with event-driven invalidation across listing, detail, and search endpoints.",
-      "Optimized property search using PostgreSQL vector search, Q objects, and GIN index across multi-table relational data.",
-      "Built a global configurable pagination system with dynamic page size override and next/previous links in the response, eliminating frontend pagination business logic."
+      "Built property listings, search, detail pages, filtering, lead capture, developer profiles, and map-based property discovery.",
+      "Reduced property listing REST API response times from 6–8s to 500–700ms by implementing selective field projections and deferred ORM model hydration, eliminating expensive multi-table join overhead during paginated catalog queries.",
+      "Optimized multi-table property detail queries from 9–12s to 0.7–1.5s using prefetch_related, select_related, and PostgreSQL indexing across images, amenities, pricing, location, and specification relationships.",
+      "Designed a dual-layer caching system (Redis + TanStack Query) with event-driven invalidation, bringing repeat requests to under 20ms across listing, detail, and search endpoints.",
+      "Built a global pagination system with configurable default page size, dynamic ?page_size override per endpoint, and next/previous links directly in the response — reducing frontend pagination logic to zero."
     ],
     "isClientProject": true,
     "clientMessage": "Code repository restricted due to client confidentiality"
   },
   {
     "id": 4,
+    "company": "Freelance / Independent",
     "slug": "greenmendbio",
-    "title": "GreenmendBio – Global Export Platform",
+    "title": "GreenmendBio – B2B Showcase Landing Page",
     "tech_stack": [
       "Next.js",
       "React.js",
@@ -140,11 +167,11 @@ export const projectData: ProjectData[] = [
     ],
     "live_demo": "https://www.greenmendbio.com",
     "code": null,
-    "about": "Global export platform for a Made-in-India manufacturer of FDA-approved, ISO-certified sugarcane bagasse tableware serving businesses across 5+ countries.",
+    "about": "A high-performance B2B showcase landing page built with Next.js, React, and static data (SSG) for a Made-in-India manufacturer of FDA-approved, ISO-certified sugarcane bagasse tableware.",
     "features": [
-      "Designed and developed the complete B2B website catering to global enterprise clients.",
+      "Designed and developed a responsive B2B showcase landing page using Next.js static site generation (SSG) with zero backend/REST API overhead.",
       "Achieved Lighthouse scores of 98 performance, 92 SEO, and 0 CLS.",
-      "Optimized loading speed with 0.5s FCP and 0.9s LCP through Next.js SSG, WebP image optimization, and route-level code splitting."
+      "Optimized asset delivery with 0.5s FCP and 0.9s LCP through static generation, WebP image optimization, and route-level code splitting."
     ],
     "isClientProject": true,
     "clientMessage": "Code repository restricted due to client confidentiality",
@@ -161,8 +188,9 @@ export const projectData: ProjectData[] = [
   },
   {
     "id": 5,
-    "slug": "ecotte-ecommerce",
-    "title": "ECOTTE Ecommerce REST API",
+    "company": "Freelance / Independent",
+    "slug": "ecotte-ecommerce-backend",
+    "title": "Ecotte - E-Commerce Backend",
     "tech_stack": [
       "Node.js",
       "Express.js",
@@ -180,10 +208,14 @@ export const projectData: ProjectData[] = [
       "Integrated Cloudinary media handling and Stripe/Razorpay dual payment gateways.",
       "Enforced Role-Based Access Control (RBAC) and secure password management."
     ],
-    "isClientProject": false
+    "isClientProject": false,
+    "images": [
+      "/assets/images/wolf_placeholder.webp"
+    ]
   },
   {
     "id": 6,
+    "company": "Freelance / Independent",
     "slug": "starlettecars",
     "title": "StarletteCars – Vehicle Rental Platform",
     "tech_stack": [
@@ -221,23 +253,7 @@ export const projectData: ProjectData[] = [
   },
   {
     "id": 7,
-    "slug": "flutter-ecommerce-app",
-    "title": "Flutter E-Commerce App",
-    "tech_stack": [
-      "Flutter",
-      "Dart",
-      "Node.js",
-      "Express.js",
-      "Cloudinary",
-      "MongoDB"
-    ],
-    "live_demo": null,
-    "code": "https://github.com/jdmkd/flutter-nodejs-ecomm-app-complete",
-    "about": "Designed a cross-platform e-commerce app with Node.js backend and MongoDB, dedicated interfaces for admins and customers. Allowing real-time product management for admin and seamless customer checkout experience.",
-    "isClientProject": false
-  },
-  {
-    "id": 8,
+    "company": "Freelance / Independent",
     "slug": "personal-portfolio",
     "title": "Personal Portfolio Application",
     "tech_stack": [
@@ -248,12 +264,77 @@ export const projectData: ProjectData[] = [
     "live_demo": "https://my-portfoliox.vercel.app",
     "code": "https://github.com/jdmkd/my-portfolio",
     "about": "A modern and responsive personal portfolio website built with Next.js and React, showcasing professional skills, education, and project work. Features a clean user interface with smooth navigation, project showcase section with detailed descriptions and tech stacks, contact information, and optimized performance. Styled with Tailwind CSS for a professional appearance and deployed on Vercel for fast global access.",
-    "isClientProject": false
+    "isClientProject": false,
+    "images": [
+      "/assets/images/wolf_placeholder.webp"
+    ]
   }
 ];
 
+export const companiesData: CompanyMetadata[] = [
+  {
+    company: "Param Divya",
+    role: "Full Stack Developer",
+    duration: "Jul 2025 — Present",
+    location: "Gandhinagar, Gujarat",
+    overview:
+      "Core engineering team building high-performance B2B, SaaS, and ecommerce systems in production. Focused on massive latency reductions and architectural scaling.",
+  },
+  {
+    company: "Freelance / Independent",
+    role: "Full Stack Developer",
+    duration: "2023 — 2025",
+    location: "Remote",
+    overview:
+      "Architected and deployed multiple full-stack applications while pursuing my MCA. Focused heavily on mastering production-level system design, authentication flows, and relational database architecture.",
+  },
+  {
+    company: "InfoLabz",
+    role: "Python Developer (Intern)",
+    duration: "May 2021 — Dec 2021",
+    location: "Ahmedabad, Gujarat",
+    overview:
+      "Completed an intensive internship focusing on backend software engineering, API design, and web development using Python and the Django framework.",
+    customProjects: [
+      {
+        name: "Backend Engineering Internship",
+        slug: "",
+        liveLink: "",
+        achievements: [
+          "Developed core backend logic and RESTful APIs using Python and Django.",
+          "Gained hands-on experience with relational database modeling and integrating with Django's ORM.",
+          "Collaborated on codebase management, learning industry-standard version control and deployment practices.",
+        ],
+        techStack: ["Python", "Django", "SQL", "REST APIs", "Git"],
+      },
+    ],
+  },
+];
+
+// Single Source of Truth for Experience Data derived directly from projectData & companiesData
+export const experienceData = companiesData.map((company) => {
+  const companyProjects = projectData
+    .filter((p) => p.company === company.company)
+    .map((p) => ({
+      name: p.title,
+      slug: p.slug,
+      liveLink: p.live_demo,
+      achievements: p.features || [],
+      techStack: p.tech_stack,
+    }));
+
+  return {
+    company: company.company,
+    role: company.role,
+    duration: company.duration,
+    location: company.location,
+    overview: company.overview,
+    projects: [...companyProjects, ...(company.customProjects || [])],
+  };
+});
+
 // Helper function to get display message for code link
-export const getCodeLinkDisplay = (project) => {
+export const getCodeLinkDisplay = (project: ProjectData) => {
   if (project.isClientProject) {
     return project.clientMessage || "Code repository restricted due to client confidentiality";
   }
@@ -261,6 +342,6 @@ export const getCodeLinkDisplay = (project) => {
 };
 
 // Helper function to check if code is available
-export const isCodeAvailable = (project) => {
+export const isCodeAvailable = (project: ProjectData) => {
   return !project.isClientProject && project.code;
 };
