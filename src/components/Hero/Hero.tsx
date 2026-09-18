@@ -7,8 +7,10 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
@@ -23,20 +25,22 @@ const Hero = () => {
   const name = "Dinesh Kumar.";
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 50, rotateX: -90 },
-    visible: { opacity: 1, y: 0, rotateX: 0 },
+    hidden: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <div className="relative bg-[#030303] overflow-hidden font-sans pt-[80px] min-h-screen flex flex-col justify-center items-center border-b border-white/20">
       {/* Interactive Mouse Spotlight */}
-      <motion.div
-        className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-screen"
-        animate={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.06), transparent 40%)`,
-        }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
-      />
+      {isMounted && (
+        <motion.div
+          className="pointer-events-none fixed inset-0 z-0 opacity-40 mix-blend-screen"
+          animate={{
+            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.06), transparent 40%)`,
+          }}
+          transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+        />
+      )}
 
       {/* Animated Grid Background */}
       <div
@@ -58,7 +62,7 @@ const Hero = () => {
         <div className="flex flex-col items-center w-full">
           {/* Eyebrow / Overline */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8 flex items-center gap-3 sm:gap-4 text-[10px] sm:text-sm lg:text-xl tracking-[0.04em] uppercase text-zinc-500 font-bold"
@@ -70,40 +74,16 @@ const Hero = () => {
             <span className="text-zinc-300">Perfection</span>
           </motion.div>
 
-          {/* 3D Character Reveal Name */}
-          <motion.h1
-            className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[9rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 1 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.05, delayChildren: 0.2 },
-              },
-            }}
-          >
-            {name.split(" ").map((word, wordIndex) => (
-              <span key={wordIndex} className="inline-block whitespace-nowrap">
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={charIndex}
-                    variants={letterVariants}
-                    transition={{ type: "spring", damping: 12, stiffness: 100 }}
-                    className="inline-block capitalize text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300"
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
-          </motion.h1>
+          {/* 3D Character Reveal Name - Fully Visible on SSR */}
+          <h1 className="text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[9rem] font-black leading-[0.9] mb-12 flex flex-wrap justify-center overflow-hidden gap-x-[4vw] lg:gap-x-12 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-300">
+            {name}
+          </h1>
 
           {/* High-End Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl text-lg md:text-xl lg:text-2xl text-zinc-400 leading-relaxed mb-16 mx-auto"
           >
             I architect and build{" "}
@@ -116,9 +96,9 @@ const Hero = () => {
 
           {/* Premium CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
           >
             <Link
