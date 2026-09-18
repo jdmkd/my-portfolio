@@ -1,11 +1,28 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: "Resume & Curriculum Vitae (CV)",
+  description:
+    "View and download the software engineering resume of Dinesh Harish Kumar, Senior Full Stack Developer specializing in Node.js, React, Next.js, and Django REST Framework.",
+  alternates: {
+    canonical: `${siteConfig.url}/resume`,
+  },
+  openGraph: {
+    title: "Resume & CV | Dinesh Harish Kumar - Full Stack Developer",
+    description:
+      "Curriculum Vitae highlighting software engineering experience, system architecture projects, and performance optimizations.",
+    url: `${siteConfig.url}/resume`,
+    type: "website",
+  },
+};
 
 export default function Resume() {
   return (
     <div className="w-full bg-[#fcfcfc] min-h-screen">
-      
       {/* Header section matching Editorial Grid */}
       <div className="border-b border-gray-200 p-8 sm:p-12 lg:p-16 bg-white flex flex-col md:flex-row justify-between items-center gap-8">
         <div>
@@ -16,12 +33,12 @@ export default function Resume() {
             Resume.
           </h1>
         </div>
-        
-        <Link 
-          href="/Dinesh_kumar_resume.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          download 
+
+        <Link
+          href="/Dinesh_kumar_resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
           className="flex items-center gap-4 bg-[#111111] text-white px-8 py-4 rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl group"
         >
           Download PDF
@@ -32,24 +49,27 @@ export default function Resume() {
       {/* PDF Viewer Container */}
       <div className="w-full max-w-7xl mx-auto p-4 sm:p-8 lg:p-12">
         <div className="w-full h-[100vh] border border-gray-200 shadow-2xl bg-white rounded-sm overflow-hidden relative">
-          
           {/* Fallback text for browsers that don't support inline PDFs */}
-          <object 
-            data="/Dinesh_kumar_resume.pdf" 
-            type="application/pdf" 
+          <object
+            data="/Dinesh_kumar_resume.pdf"
+            type="application/pdf"
             className="w-full h-full absolute inset-0 z-10"
           >
             <div className="flex flex-col items-center justify-center h-full gap-4 text-center p-8 bg-gray-50">
-              <p className="text-gray-600 font-medium">Your browser doesn't support inline PDFs.</p>
-              <a href="/Dinesh_kumar_resume.pdf" download className="text-blue-600 font-bold underline">
+              <p className="text-gray-600 font-medium">
+                Your browser doesn't support inline PDFs.
+              </p>
+              <a
+                href="/Dinesh_kumar_resume.pdf"
+                download
+                className="text-blue-600 font-bold underline"
+              >
                 Download the PDF instead
               </a>
             </div>
           </object>
-
         </div>
       </div>
-      
     </div>
   );
 }

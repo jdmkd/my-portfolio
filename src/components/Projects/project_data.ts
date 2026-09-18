@@ -261,7 +261,7 @@ export const projectData: ProjectData[] = [
       "React.js",
       "Tailwind CSS"
     ],
-    "live_demo": "https://my-portfoliox.vercel.app",
+    "live_demo": "https://dineshkumar9.vercel.app",
     "code": "https://github.com/jdmkd/my-portfolio",
     "about": "A modern and responsive personal portfolio website built with Next.js and React, showcasing professional skills, education, and project work. Features a clean user interface with smooth navigation, project showcase section with detailed descriptions and tech stacks, contact information, and optimized performance. Styled with Tailwind CSS for a professional appearance and deployed on Vercel for fast global access.",
     "isClientProject": false,

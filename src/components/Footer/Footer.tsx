@@ -71,7 +71,7 @@ function Footer() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/dj-kumar-9a2a2b236"
+              href="https://www.linkedin.com/in/dineshkumarx"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg font-medium text-zinc-400 hover:text-white transition-colors w-fit"
@@ -118,9 +118,9 @@ function Footer() {
 
       {/* Massive Typography Name */}
       <div className="w-full flex justify-center items-center border-t border-white/10 mt-12 pt-8 pb-8">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none text-white text-center opacity-90 w-full px-4 break-words">
+        <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-none text-white text-center opacity-90 w-full px-4 break-words">
           DINESH KUMAR.
-        </h1>
+        </div>
       </div>
 
       {/* Bottom Bar */}

@@ -136,14 +136,14 @@ export async function POST(req: Request) {
                 </tr>
                 <tr>
                   <td>
-                    <a href="https://my-portfoliox.vercel.app" style="text-decoration: none; margin-right: 14px; display: inline-block;">
+                    <a href="https://dineshkumar9.vercel.app" style="text-decoration: none; margin-right: 14px; display: inline-block;">
                       <img src="https://img.icons8.com/ios-filled/50/000000/domain.png" alt="Portfolio" width="28" height="28" style="vertical-align: middle; border: none;" />
                     </a>
                     <a href="https://www.linkedin.com/in/dineshkumarx" style="text-decoration: none; margin-right: 14px; display: inline-block;">
                       <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" width="28" height="28" style="vertical-align: middle; border: none;" />
                     </a>
                     <a href="https://github.com/jdmkd" style="text-decoration: none; display: inline-block;">
-                      <img src="https://my-portfoliox.vercel.app/assets/tech_skill_Icon/GitHub.svg" alt="GitHub" width="28" height="28" style="vertical-align: middle; border: none;" />
+                      <img src="https://dineshkumar9.vercel.app/assets/tech_skill_Icon/GitHub.svg" alt="GitHub" width="28" height="28" style="vertical-align: middle; border: none;" />
                     </a>
                   </td>
                 </tr>

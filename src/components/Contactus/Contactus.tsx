@@ -149,7 +149,7 @@ function Contactus() {
                         LinkedIn
                       </a>
                       <a
-                        href="https://my-portfoliox.vercel.app"
+                        href="https://dineshkumar9.vercel.app"
                         target="_blank"
                         rel="noreferrer"
                         className="text-sm font-bold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors"
